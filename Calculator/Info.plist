@@ -28,11 +28,20 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>digital-7 (italic).ttf</string>
+		<string>digital-7 (mono italic).ttf</string>
+		<string>digital-7 (mono).ttf</string>
+		<string>digital-7.tff</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 </dict>
 </plist>
