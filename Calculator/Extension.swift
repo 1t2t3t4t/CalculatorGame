@@ -16,6 +16,7 @@ extension UIViewController {
 }
 
 extension String {
+    
     static func +=(lhs: inout String?,rhs:String) {
         guard lhs != nil else {
             lhs = rhs
@@ -23,9 +24,25 @@ extension String {
         }
         lhs = lhs!+rhs
     }
+    
     static postfix func --(lhs: inout String) {
         lhs = lhs.substring(to: lhs.index(lhs.endIndex, offsetBy: -1))
     }
+    
+    static func +(lhs:String,rhs:String) -> String{
+        return "\(lhs)\(rhs)"
+    }
+    
+    mutating func popLast() {
+        guard self != "" else {
+            return
+        }
+        self--
+    }
+}
+
+func randomInt(fromOneUpTo int:Int) -> Int {
+    return Int(arc4random_uniform(UInt32(int))+1)
 }
 
 extension UIView {

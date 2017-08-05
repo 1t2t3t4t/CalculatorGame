@@ -25,6 +25,8 @@
 		8184B1EF1F2F34A700156D2E /* GetSetGoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1EE1F2F34A700156D2E /* GetSetGoView.swift */; };
 		8184B1F11F2F34B400156D2E /* GetSetGoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8184B1F01F2F34B400156D2E /* GetSetGoView.xib */; };
 		8184B1F31F2FB32100156D2E /* CalculatorGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1F21F2FB32100156D2E /* CalculatorGameViewModel.swift */; };
+		8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1F81F30C2A800156D2E /* ResultView.swift */; };
+		8184B1FB1F30C2B300156D2E /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8184B1FA1F30C2B300156D2E /* ResultView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		8184B1EE1F2F34A700156D2E /* GetSetGoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSetGoView.swift; sourceTree = "<group>"; };
 		8184B1F01F2F34B400156D2E /* GetSetGoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetSetGoView.xib; sourceTree = "<group>"; };
 		8184B1F21F2FB32100156D2E /* CalculatorGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorGameViewModel.swift; sourceTree = "<group>"; };
+		8184B1F81F30C2A800156D2E /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		8184B1FA1F30C2B300156D2E /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,8 @@
 		8184B1E61F2F28D000156D2E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8184B1F81F30C2A800156D2E /* ResultView.swift */,
+				8184B1FA1F30C2B300156D2E /* ResultView.xib */,
 				8184B1EE1F2F34A700156D2E /* GetSetGoView.swift */,
 				8184B1F01F2F34B400156D2E /* GetSetGoView.xib */,
 			);
@@ -316,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8184B1FB1F30C2B300156D2E /* ResultView.xib in Resources */,
 				8184B1E51F2F26C100156D2E /* digital-7 (mono).ttf in Resources */,
 				8184B1AF1F2F164B00156D2E /* LaunchScreen.storyboard in Resources */,
 				8184B1E41F2F26C100156D2E /* digital-7 (mono italic).ttf in Resources */,
@@ -350,6 +357,7 @@
 			files = (
 				8184B1DF1F2F20BE00156D2E /* Extension.swift in Sources */,
 				8184B1F31F2FB32100156D2E /* CalculatorGameViewModel.swift in Sources */,
+				8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */,
 				8184B1A71F2F164A00156D2E /* MainMenuViewController.swift in Sources */,
 				8184B1EF1F2F34A700156D2E /* GetSetGoView.swift in Sources */,
 				8184B1A51F2F164A00156D2E /* AppDelegate.swift in Sources */,

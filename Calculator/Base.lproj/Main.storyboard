@@ -204,8 +204,8 @@
                                 <fontDescription key="fontDescription" name="Digital-7MonoItalic" family="Digital-7" pointSize="45"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEA-si-2aB">
-                                <rect key="frame" x="162" y="28" width="52" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEA-si-2aB">
+                                <rect key="frame" x="175" y="28" width="25" height="20"/>
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
