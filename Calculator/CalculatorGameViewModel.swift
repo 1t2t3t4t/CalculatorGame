@@ -8,64 +8,71 @@
 
 import Foundation
 
-enum Difficulty {
-    case easy
-    case normal
-    case hard
-    case difficulty(withString:String)
-}
-
-extension Difficulty {
-    func stringToDifficulty() -> Difficulty {
-        switch self {
-        case .difficulty(withString: let string):
-            if string == "easy" { return .easy }
-            else if string == "normal" { return .normal }
-            else { return .hard }
-        default:
-            return self
-        }
-    }
-}
 
 class CalculatorGameViewModel {
     
-    var difficulty:Difficulty!
     var answer:Int! = 0
-    var userAnswer = ""
+    var userAnswer = 0
     var problem = ""
     var total:Int = 100
     var correct:Int = 0
+    var choice:[String] = []
+    var selectedChoice = 0
+    var count = 0
     
     func generateProblem() {
-        self.userAnswer = ""
-        var first = randomInt(fromOneUpTo: 99)
-        var second = randomInt(fromOneUpTo: 99)
-        let operation = self.getRandomOperation()
-        if first < second && operation == "-" {
-            let temp = first
-            first = second
-            second = temp
-        }
-        self.problem = "\(first)\(operation)\(second)"
+        
+        count = 0
+        selectedChoice = 0
+        
+        self.problem = "\(randomInt(num: 9))\(self.getRandomOperation())\(randomInt(num: 9))" + "\(self.getRandomOperation())\(randomInt(num: 9))" + "\(self.getRandomOperation())\(randomInt(num: 9))"
+        
         self.answer = NSExpression(format: self.problem).expressionValue(with: nil, context: nil) as! Int
+        
+        choice = ["\(self.answer-1)","\(self.answer-2)","\(self.answer+1)","\(self.answer+2)"]
+        print("after choice \(self.answer)")
+        
+        selectedChoice = Int(arc4random_uniform(UInt32(choice.count)))
     }
     
-    func checkAnswer() {
-        guard let userAns = Int(self.userAnswer) else {
-            return
+    func generateChoice() -> String{
+        if count == selectedChoice {
+            count+=1
+            return "\(self.answer!)"
         }
-        if userAns == self.answer {
+        else {
+            count+=1
+            let num = Int(arc4random_uniform(UInt32(choice.count)))
+            let temp = choice[num]
+            choice.remove(at: num)
+            return temp
+        }
+        
+    }
+    func checkBestScore(score:Int) {
+        if let best = UserDefaults.loadScore(key: "bestScore") {
+            if best < score {
+                UserDefaults.saveScore(value: score, key: "bestScore")
+            }
+        }
+        else {
+            UserDefaults.saveScore(value: score, key: "bestScore")
+        }
+
+    }
+    func checkAnswer() {
+        if self.userAnswer == self.answer {
             self.correct += 1
         }
     }
     
     func getRandomOperation() -> String {
-        return randomInt(fromOneUpTo: 2) == 1 ? "+" : "-"
+        return "+"
+        //return randomInt(num: 2) == 1 ? "+" : "-"
     }
     
     func updateNumberField() -> String {
-        return problem+" = "+userAnswer
+        return self.problem
     }
 
 }

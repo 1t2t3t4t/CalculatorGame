@@ -41,8 +41,8 @@ extension String {
     }
 }
 
-func randomInt(fromOneUpTo int:Int) -> Int {
-    return Int(arc4random_uniform(UInt32(int))+1)
+func randomInt(num:Int) -> Int {
+    return Int(arc4random_uniform(UInt32(num))) + 1
 }
 
 extension UIView {
@@ -51,3 +51,22 @@ extension UIView {
     }
 
 }
+extension UserDefaults {
+    class func saveScore(value:Int,key:String) {
+        UserDefaults.standard.set(value, forKey: key)
+        UserDefaults.standard.synchronize()
+    }
+    class func loadScore(key:String) -> Int? {
+        if UserDefaults.standard.value(forKey: key) != nil {
+        let ans = UserDefaults.standard.value(forKey: key) as! Int
+        return ans
+        }
+        else {
+            return nil
+        }
+    }
+}
+
+
+
+

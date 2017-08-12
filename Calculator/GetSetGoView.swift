@@ -35,7 +35,7 @@ class GetSetGoView: UIView {
     
     private func animateLabel(withCompletion completion: @escaping (Bool) -> Void) {
         self.textLabel.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        UIView.animate(withDuration: 1.2, animations: {
+        UIView.animate(withDuration: 0.85, animations: {
             self.textLabel.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }, completion: completion)
     }
