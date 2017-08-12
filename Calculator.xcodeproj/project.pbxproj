@@ -27,6 +27,7 @@
 		8184B1F31F2FB32100156D2E /* CalculatorGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1F21F2FB32100156D2E /* CalculatorGameViewModel.swift */; };
 		8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1F81F30C2A800156D2E /* ResultView.swift */; };
 		8184B1FB1F30C2B300156D2E /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8184B1FA1F30C2B300156D2E /* ResultView.xib */; };
+		8197EC011F3F0AE900B44D3C /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC001F3F0AE900B44D3C /* Problem.swift */; };
 		EF183C9C1F376E59009CF97B /* PressableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9A1F376E59009CF97B /* PressableButton.swift */; };
 		EF183C9D1F376E59009CF97B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9B1F376E59009CF97B /* Utils.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		8184B1F21F2FB32100156D2E /* CalculatorGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorGameViewModel.swift; sourceTree = "<group>"; };
 		8184B1F81F30C2A800156D2E /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		8184B1FA1F30C2B300156D2E /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
+		8197EC001F3F0AE900B44D3C /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		EF183C9A1F376E59009CF97B /* PressableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableButton.swift; sourceTree = "<group>"; };
 		EF183C9B1F376E59009CF97B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 		8184B1A31F2F164A00156D2E /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				8197EBFF1F3F0AD500B44D3C /* Model */,
 				8184B1D41F2F1A0B00156D2E /* Core */,
 				8184B1D31F2F17C500156D2E /* Storyboard */,
 				8184B1D21F2F17B900156D2E /* ViewControllers */,
@@ -216,6 +219,14 @@
 				8184B1F21F2FB32100156D2E /* CalculatorGameViewModel.swift */,
 			);
 			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		8197EBFF1F3F0AD500B44D3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8197EC001F3F0AE900B44D3C /* Problem.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8184B1DF1F2F20BE00156D2E /* Extension.swift in Sources */,
+				8197EC011F3F0AE900B44D3C /* Problem.swift in Sources */,
 				8184B1F31F2FB32100156D2E /* CalculatorGameViewModel.swift in Sources */,
 				8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */,
 				8184B1A71F2F164A00156D2E /* MainMenuViewController.swift in Sources */,

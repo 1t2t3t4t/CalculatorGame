@@ -25,7 +25,6 @@ class CalculatorGameViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         self.numberTextField.layer.cornerRadius = 5.0
         self.numberTextField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
         self.numberTextField.layer.borderWidth = 3.0
@@ -36,10 +35,7 @@ class CalculatorGameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.animateOpening {
-            //...
-            
             self.generateNewRound()
-            
             self.startTimer()
         }
     }
@@ -62,11 +58,9 @@ class CalculatorGameViewController: UIViewController {
         let window = (UIApplication.shared.delegate as! AppDelegate).window
         UIView.transition(with: window!, duration: 1.0, options: .curveEaseInOut, animations: {
             window?.rootViewController = vc
-            
         }) { (finished) in
             //Finished animation
         }
-
     }
     
     func animateOpening(withCompletion completion: @escaping completion) {
@@ -76,13 +70,12 @@ class CalculatorGameViewController: UIViewController {
     }
     
     func generateNewRound() {
-        self.viewModel.generateProblem()
-        self.choiceOne.setTitle(self.viewModel.generateChoice(), for: .normal)
-        self.choiceTwo.setTitle(self.viewModel.generateChoice(), for: .normal)
-        self.choiceThree.setTitle(self.viewModel.generateChoice(), for: .normal)
-        self.choiceFour.setTitle(self.viewModel.generateChoice(), for: .normal)
-        
-        self.numberTextField.text = self.viewModel.updateNumberField()
+        self.viewModel.problem = Problem()
+        self.choiceOne.setTitle(self.viewModel.problem.choice[0], for: .normal)
+        self.choiceTwo.setTitle(self.viewModel.problem.choice[1], for: .normal)
+        self.choiceThree.setTitle(self.viewModel.problem.choice[2], for: .normal)
+        self.choiceFour.setTitle(self.viewModel.problem.choice[3], for: .normal)
+        self.numberTextField.text = self.viewModel.problem.problem
     }
     
     func gameFinished() {
@@ -102,7 +95,7 @@ class CalculatorGameViewController: UIViewController {
                self.gameFinished()
                Timer.invalidate()
             }else{
-                self.timerLabel.text = "\(time!-1)"
+                self.timerLabel.text = "\(time!-10)"
             }
         }
     }

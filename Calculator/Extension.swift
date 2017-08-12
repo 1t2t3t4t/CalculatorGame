@@ -51,11 +51,14 @@ extension UIView {
     }
 
 }
+
 extension UserDefaults {
+    
     class func saveScore(value:Int,key:String) {
         UserDefaults.standard.set(value, forKey: key)
         UserDefaults.standard.synchronize()
     }
+    
     class func loadScore(key:String) -> Int? {
         if UserDefaults.standard.value(forKey: key) != nil {
         let ans = UserDefaults.standard.value(forKey: key) as! Int

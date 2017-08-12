@@ -32,7 +32,9 @@ class MainMenuViewController: UIViewController {
         self.numberTextField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
         self.numberTextField.layer.borderWidth = 3.0
         
-        self.bestScore.text = "BEST : \(UserDefaults.loadScore(key: "bestScore")!)"
+        if let bestScore = UserDefaults.loadScore(key: "bestScore") {
+            self.bestScore.text = "BEST : \(bestScore)"
+        }
     }
     @IBAction func clickPlay(_ sender:Any?) {
         print(String(describing: self))
