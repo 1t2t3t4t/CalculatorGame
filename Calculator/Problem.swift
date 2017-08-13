@@ -8,22 +8,22 @@
 
 import Foundation
 
-class Problem {
+struct Problem {
     
     var choice:[String] = []
-    var problem = ""
+    var text = ""
     var answer:Int! = 0
     var selectedChoice = 0
     
     init() {
-        self.problem = "\(randomInt(num: 9))+\(randomInt(num: 9))+\(randomInt(num: 9))+\(randomInt(num: 9))"
-        self.answer = NSExpression(format: self.problem).expressionValue(with: nil, context: nil) as! Int
+        self.text = "\(randomInt(num: 9))+\(randomInt(num: 9))+\(randomInt(num: 9))+\(randomInt(num: 9))"
+        self.answer = NSExpression(format: self.text).expressionValue(with: nil, context: nil) as! Int
         choice = ["\(self.answer-1)","\(self.answer-2)","\(self.answer+1)","\(self.answer+2)"]
         choice[randomInt(num: 4)-1] = "\(self.answer!)"
         self.shuffleChoices()
     }
     
-    func shuffleChoices() {
+    mutating func shuffleChoices() {
         for i in 0...3 {
             let index = randomInt(num: 4)-1
             let temp = self.choice[i]

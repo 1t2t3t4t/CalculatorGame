@@ -37,9 +37,12 @@ class MainMenuViewController: UIViewController {
         }
     }
     @IBAction func clickPlay(_ sender:Any?) {
-        print(String(describing: self))
         self.performSegue(withIdentifier: Constant.SHOW_PROBLEM, sender: sender)
     }
     
+    @IBAction func twoPlayersClicked(_ sender:Any?) {
+        self.performSegue(withIdentifier: Constant.SHOW_TWO_PLAYERS, sender: sender)
+    }
+
 }
 

@@ -47,10 +47,10 @@ class CalculatorGameViewController: UIViewController {
         guard let number = Int(text) else {
             return
         }
-        self.viewModel.userAnswer = number
+        self.viewModel.player.answer = number
         self.viewModel.checkAnswer()
         self.generateNewRound()
-    
+
     }
     
     @IBAction func back(_ sender:UIButton) {
@@ -75,12 +75,12 @@ class CalculatorGameViewController: UIViewController {
         self.choiceTwo.setTitle(self.viewModel.problem.choice[1], for: .normal)
         self.choiceThree.setTitle(self.viewModel.problem.choice[2], for: .normal)
         self.choiceFour.setTitle(self.viewModel.problem.choice[3], for: .normal)
-        self.numberTextField.text = self.viewModel.problem.problem
+        self.numberTextField.text = self.viewModel.problem.text
     }
     
     func gameFinished() {
-        let message = "You've got \n \(self.viewModel.correct) / 100 \nIn 100 seconds" //\(self.viewModel.total)
-        self.viewModel.checkBestScore(score: self.viewModel.correct)
+        let message = "You've got \n \(self.viewModel.player.score) / 100 \nIn 100 seconds" //\(self.viewModel.total)
+        self.viewModel.checkBestScore(score: self.viewModel.player.score)
         let resultView = ResultView.view as! ResultView
         resultView.results = message
         resultView.smallView.layer.cornerRadius = 10.0

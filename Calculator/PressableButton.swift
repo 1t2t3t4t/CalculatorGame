@@ -99,7 +99,6 @@ open class PressableButton: UIButton {
     }
     
     func updateTitleInsets() {
-        print("press")
         let topPadding = isHighlighted ? shadowHeight * CGFloat(depth) : 0
         let bottomPadding = isHighlighted ? shadowHeight * (1 - CGFloat(depth)) : shadowHeight
         titleEdgeInsets = UIEdgeInsets(top: topPadding, left: 0, bottom: bottomPadding, right: 0)

@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class DifficultySelectionViewController: UIViewController {
 
     @IBAction func showProblem(_ sender:UIButton) {
@@ -18,7 +16,6 @@ class DifficultySelectionViewController: UIViewController {
         UIView.transition(with: window!, duration: 0.5, options: .transitionCurlUp, animations: {
             window?.rootViewController = vc
         }) { (finished) in
-
             //Finished animation
         }
     }

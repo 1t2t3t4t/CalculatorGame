@@ -12,6 +12,9 @@ struct Constant {
     
     static let DIFFICULTY_SELECTION = "DifficultySelection"
     static let SHOW_PROBLEM = "showProblem"
+    static let SHOW_TWO_PLAYERS = "showTwoPlayers"
+    
+    
     static let READY = "READY??"
     static let SET = "SET"
     static let GO = "GO"

@@ -11,11 +11,7 @@ import Foundation
 
 class CalculatorGameViewModel {
     
-    var userAnswer = 0
-    var total:Int = 100
-    var correct:Int = 0
-    var count = 0
-    
+    var player = Player()
     var problem = Problem()
     
     func checkBestScore(score:Int) {
@@ -30,9 +26,8 @@ class CalculatorGameViewModel {
     }
     
     func checkAnswer() {
-        if self.userAnswer == self.problem.answer {
-            self.correct += 1
+        if self.player.answer == self.problem.answer {
+            self.player.score += 1
         }
     }
-    
 }

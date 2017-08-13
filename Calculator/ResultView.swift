@@ -43,7 +43,6 @@ class ResultView: UIView {
             let window = (UIApplication.shared.delegate as! AppDelegate).window
             UIView.transition(with: window!, duration: 1.0, options: .curveEaseInOut, animations: {
                 window?.rootViewController = vc
-                
             }) { (finished) in
                 //Finished animation
             }
