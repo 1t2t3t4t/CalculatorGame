@@ -47,6 +47,7 @@ class CalculatorGameViewController: UIViewController {
         guard let number = Int(text) else {
             return
         }
+        print(number)
         self.viewModel.player.answer = number
         self.viewModel.checkAnswer()
         self.generateNewRound()

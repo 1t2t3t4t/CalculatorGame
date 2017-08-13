@@ -10,6 +10,9 @@ import UIKit
 
 class TwoPlayersGameViewController: UIViewController {
     
+    @IBOutlet weak var PlayerTwoView: UIView!
+    @IBOutlet weak var PlayerOneView: UIView!
+    
     @IBOutlet var playerOneButtons:[UIButton]!
     @IBOutlet var playerTwoButtons:[UIButton]!
     
@@ -25,22 +28,19 @@ class TwoPlayersGameViewController: UIViewController {
         self.playerTwoTextField.transform =  CGAffineTransform(rotationAngle: CGFloat.pi)
         self.playerTwoTextField.layer.removeAllAnimations()
         for i in 0...3 {
-           
             self.playerTwoButtons[i].transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-             self.playerTwoButtons[i].layer.removeAllAnimations()
+            self.playerTwoButtons[i].layer.removeAllAnimations()
         }
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       
-
         self.animateOpening {
             self.viewModel.addNewProblem()
             self.updatePlayerOneTextField()
             self.updatePlayerTwoTextField()
             self.startTimer()
         }
-        
     }
     
     @IBAction func playerOneDidAnswer(_ sender:UIButton) {
@@ -90,7 +90,7 @@ class TwoPlayersGameViewController: UIViewController {
                 self.gameFinished()
                 Timer.invalidate()
             }else{
-                self.timerLabel.text = "\(time!-50)"
+                self.timerLabel.text = "\(time!-10)"
             }
         }
     }
@@ -108,8 +108,17 @@ class TwoPlayersGameViewController: UIViewController {
     }
     
     func animateOpening(withCompletion completion: @escaping completion) {
-        let view = GetSetGoView.view as! GetSetGoView
-        self.view.addSubview(view)
-        view.animateOpening(completion: completion)
+        let playerOneView = GetSetGoView.view as! GetSetGoView
+        let playerTwoView = GetSetGoView.view as! GetSetGoView
+        let bound = self.PlayerOneView.bounds
+        playerOneView.frame = bound
+        playerTwoView.frame = bound
+        playerTwoView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        self.PlayerOneView.addSubview(playerOneView)
+        self.PlayerTwoView.addSubview(playerTwoView)
+        playerOneView.animateOpening("PLAYER ONE") { 
+            
+        }
+        playerTwoView.animateOpening("PLAYER TWO", completion: completion)
     }
 }

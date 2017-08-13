@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -183,7 +183,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEV-Pa-WfH" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="34" y="224" width="345.66666666666669" height="77"/>
+                                <rect key="frame" x="34" y="224.00000000000003" width="345.66666666666669" height="76.666666666666714"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zEV-Pa-WfH" secondAttribute="height" multiplier="157:35" id="JGy-Kd-LVF"/>
                                 </constraints>
@@ -202,9 +202,12 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="j3D-IJ-CNc" eventType="touchUpInside" id="o3d-Mk-ePY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntn-f8-ElU" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="34" y="331" width="345.66666666666669" height="77"/>
+                                <rect key="frame" x="34" y="330.66666666666669" width="345.66666666666669" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ntn-f8-ElU" secondAttribute="height" multiplier="157:35" id="unx-Ps-ez0"/>
                                 </constraints>
@@ -223,9 +226,12 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="j3D-IJ-CNc" eventType="touchUpInside" id="KsC-Tg-GHy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-b6-WxF" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="34" y="438" width="345.66666666666669" height="77"/>
+                                <rect key="frame" x="34" y="437.66666666666663" width="345.66666666666669" height="76.999999999999886"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4ui-b6-WxF" secondAttribute="height" multiplier="157:35" id="hJu-2N-aXb"/>
                                 </constraints>
@@ -244,9 +250,12 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="j3D-IJ-CNc" eventType="touchUpInside" id="Yit-Q1-KJG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMi-mS-1j9" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="34" y="545" width="345.66666666666669" height="76.666666666666629"/>
+                                <rect key="frame" x="34" y="544.66666666666652" width="345.66666666666669" height="76.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AMi-mS-1j9" secondAttribute="height" multiplier="157:35" constant="1.7619047619049297" id="kL4-lv-8rS"/>
                                 </constraints>
@@ -265,6 +274,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="j3D-IJ-CNc" eventType="touchUpInside" id="c5P-6b-ke3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wS-I3-9EX" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="26" y="32" width="50" height="36"/>
@@ -339,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuR-zw-44T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.79999999999995" y="789.35532233883066"/>
+            <point key="canvasLocation" x="867" y="832"/>
         </scene>
         <!--Two Players Game View Controller-->
         <scene sceneID="Fob-sX-2SL">
@@ -661,6 +673,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="PlayerOneView" destination="jKJ-5k-Nnf" id="c5Z-eP-6Wj"/>
+                        <outlet property="PlayerTwoView" destination="usR-d5-1yO" id="b9x-6u-RO5"/>
                         <outlet property="playerOneTextField" destination="K9W-AO-Plj" id="qCE-yi-vl2"/>
                         <outlet property="playerTwoTextField" destination="9Bk-lK-GCr" id="f0n-sX-Rh1"/>
                         <outlet property="timerLabel" destination="gpU-wf-ybI" id="Xz6-dr-dZv"/>
@@ -676,7 +690,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLS-r3-sKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736.8" y="790.25487256371821"/>
+            <point key="canvasLocation" x="1700.0000000000002" y="831.52173913043487"/>
         </scene>
         <!--More View Controller-->
         <scene sceneID="9n0-5j-LWU">
