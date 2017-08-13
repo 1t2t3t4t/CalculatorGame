@@ -33,6 +33,7 @@
 		8197EC071F4068E300B44D3C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC061F4068E300B44D3C /* Player.swift */; };
 		EF183C9C1F376E59009CF97B /* PressableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9A1F376E59009CF97B /* PressableButton.swift */; };
 		EF183C9D1F376E59009CF97B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9B1F376E59009CF97B /* Utils.swift */; };
+		EF7BD3AB1F40A7DC002ABFEE /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		8197EC061F4068E300B44D3C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EF183C9A1F376E59009CF97B /* PressableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableButton.swift; sourceTree = "<group>"; };
 		EF183C9B1F376E59009CF97B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		8184B1D21F2F17B900156D2E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */,
 				8184B1A61F2F164A00156D2E /* MainMenuViewController.swift */,
 				8184B1DC1F2F1ECE00156D2E /* DifficultySelectionViewController.swift */,
 				8184B1E01F2F22D800156D2E /* CalculatorGameViewController.swift */,
@@ -386,6 +389,7 @@
 				8184B1F31F2FB32100156D2E /* CalculatorGameViewModel.swift in Sources */,
 				8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */,
 				8184B1A71F2F164A00156D2E /* MainMenuViewController.swift in Sources */,
+				EF7BD3AB1F40A7DC002ABFEE /* MoreViewController.swift in Sources */,
 				8184B1EF1F2F34A700156D2E /* GetSetGoView.swift in Sources */,
 				EF183C9C1F376E59009CF97B /* PressableButton.swift in Sources */,
 				8184B1A51F2F164A00156D2E /* AppDelegate.swift in Sources */,

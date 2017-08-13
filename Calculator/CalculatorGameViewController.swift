@@ -54,13 +54,7 @@ class CalculatorGameViewController: UIViewController {
     }
     
     @IBAction func back(_ sender:UIButton) {
-        let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
-        let window = (UIApplication.shared.delegate as! AppDelegate).window
-        UIView.transition(with: window!, duration: 1.0, options: .curveEaseInOut, animations: {
-            window?.rootViewController = vc
-        }) { (finished) in
-            //Finished animation
-        }
+       self.dismiss(animated: true, completion: nil)
     }
     
     func animateOpening(withCompletion completion: @escaping completion) {

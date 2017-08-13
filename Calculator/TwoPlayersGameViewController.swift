@@ -22,20 +22,25 @@ class TwoPlayersGameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.playerTwoTextField.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        self.playerTwoTextField.transform =  CGAffineTransform(rotationAngle: CGFloat.pi)
+        self.playerTwoTextField.layer.removeAllAnimations()
         for i in 0...3 {
+           
             self.playerTwoButtons[i].transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+             self.playerTwoButtons[i].layer.removeAllAnimations()
         }
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+       
+
         self.animateOpening {
             self.viewModel.addNewProblem()
             self.updatePlayerOneTextField()
             self.updatePlayerTwoTextField()
             self.startTimer()
         }
+        
     }
     
     @IBAction func playerOneDidAnswer(_ sender:UIButton) {
@@ -85,7 +90,7 @@ class TwoPlayersGameViewController: UIViewController {
                 self.gameFinished()
                 Timer.invalidate()
             }else{
-                self.timerLabel.text = "\(time!-10)"
+                self.timerLabel.text = "\(time!-50)"
             }
         }
     }
@@ -93,9 +98,10 @@ class TwoPlayersGameViewController: UIViewController {
     func gameFinished() {
         let playerOneScore = self.viewModel.playerOne.score
         let playerTwoScore = self.viewModel.playerTwo.score
-        let message = "Player 1 Score is \(playerOneScore) : Player 2 Score is \(playerTwoScore)"
+        let message = "Player 1 Score is \(playerOneScore)\nPlayer 2 Score is \(playerTwoScore)"
         let resultView = ResultView.view as! ResultView
         resultView.results = message
+        resultView.twoPlayer = true
         resultView.smallView.layer.cornerRadius = 10.0
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
