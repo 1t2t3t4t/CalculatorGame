@@ -64,7 +64,6 @@ class TwoPlayersGameViewController: UIViewController {
             self.startTimer()
         }
         }
-        
     }
     
     @IBAction func playerOneDidAnswer(_ sender:UIButton) {

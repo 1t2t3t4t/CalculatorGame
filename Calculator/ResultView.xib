@@ -41,7 +41,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-CE-rg1" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                            <rect key="frame" x="41" y="193" width="210" height="40"/>
+                            <rect key="frame" x="41" y="200" width="210" height="40"/>
                             <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="qe8-dw-OuO"/>
@@ -100,9 +100,9 @@
                         <constraint firstItem="Wdv-Te-cn3" firstAttribute="trailing" secondItem="ifx-2p-rYv" secondAttribute="trailing" id="3H3-vT-hv5"/>
                         <constraint firstItem="Wdv-Te-cn3" firstAttribute="top" secondItem="QzE-Uu-sDr" secondAttribute="topMargin" id="3Lg-qS-nST"/>
                         <constraint firstItem="ifx-2p-rYv" firstAttribute="top" secondItem="oHc-U1-epr" secondAttribute="top" id="E8o-rl-6Iq"/>
-                        <constraint firstItem="Kca-CE-rg1" firstAttribute="top" secondItem="oHc-U1-epr" secondAttribute="bottom" constant="8" symbolic="YES" id="KWt-sP-2RL"/>
+                        <constraint firstItem="Kca-CE-rg1" firstAttribute="top" secondItem="oHc-U1-epr" secondAttribute="bottom" constant="15" id="KWt-sP-2RL"/>
                         <constraint firstItem="ifx-2p-rYv" firstAttribute="firstBaseline" secondItem="oHc-U1-epr" secondAttribute="baseline" id="PiP-SJ-XNP"/>
-                        <constraint firstAttribute="bottom" secondItem="Kca-CE-rg1" secondAttribute="bottom" constant="37" id="S9H-mr-32C"/>
+                        <constraint firstAttribute="bottom" secondItem="Kca-CE-rg1" secondAttribute="bottom" constant="30" id="S9H-mr-32C"/>
                         <constraint firstItem="Wdv-Te-cn3" firstAttribute="leading" secondItem="oHc-U1-epr" secondAttribute="leading" id="UtO-7Z-f2t"/>
                         <constraint firstAttribute="trailing" secondItem="ifx-2p-rYv" secondAttribute="trailing" constant="18" id="bew-9R-zYA"/>
                         <constraint firstItem="ifx-2p-rYv" firstAttribute="leading" secondItem="oHc-U1-epr" secondAttribute="trailing" constant="11" id="fxE-MN-jRf"/>

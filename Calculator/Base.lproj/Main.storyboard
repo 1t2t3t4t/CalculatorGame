@@ -374,7 +374,7 @@
                                             <constraint firstAttribute="width" secondItem="dTM-xe-WuL" secondAttribute="height" multiplier="11:10" id="IYF-tB-ArS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
-                                        <state key="normal">
+                                        <state key="normal" title="0">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -398,7 +398,7 @@
                                             <constraint firstAttribute="width" secondItem="PMe-IU-wbl" secondAttribute="height" multiplier="11:10" id="iqy-ab-y2t"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
-                                        <state key="normal">
+                                        <state key="normal" title="9">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -422,7 +422,7 @@
                                             <constraint firstAttribute="width" secondItem="Wwa-Ww-OCM" secondAttribute="height" multiplier="11:10" id="Sh4-KK-NLe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
-                                        <state key="normal">
+                                        <state key="normal" title="4">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -446,7 +446,7 @@
                                             <constraint firstAttribute="width" secondItem="38u-qP-f18" secondAttribute="height" multiplier="11:10" id="KDv-Xx-M88"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
-                                        <state key="normal">
+                                        <state key="normal" title="1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
