@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PauseView" customModule="Calculator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rf-Le-bPj" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                    <rect key="frame" x="16" y="188" width="346" height="77"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="2rf-Le-bPj" secondAttribute="height" multiplier="157:35" id="05R-1u-e12"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                    <state key="normal" title="Continue">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="lxI-A0-H48"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnC-ES-bmI" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                    <rect key="frame" x="16" y="295" width="346" height="77"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="BnC-ES-bmI" secondAttribute="height" multiplier="157:35" id="cgw-OT-06u"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                    <state key="normal" title="Restart">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Zf6-xM-ZqX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLp-z5-tZO" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                    <rect key="frame" x="16" y="402" width="346" height="77"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jLp-z5-tZO" secondAttribute="height" multiplier="157:35" id="W8e-vO-1fG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                    <state key="normal" title="Main Menu ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="p8m-mw-jUh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="BnC-ES-bmI" firstAttribute="width" secondItem="BnC-ES-bmI" secondAttribute="height" multiplier="157:35" id="2vX-DU-CNa"/>
+                <constraint firstItem="BnC-ES-bmI" firstAttribute="leading" secondItem="jLp-z5-tZO" secondAttribute="leading" id="81J-TU-A3B"/>
+                <constraint firstItem="2rf-Le-bPj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="8Uz-rA-1xQ"/>
+                <constraint firstItem="2rf-Le-bPj" firstAttribute="width" secondItem="2rf-Le-bPj" secondAttribute="height" multiplier="157:35" id="Cnr-jT-Kqi"/>
+                <constraint firstItem="2rf-Le-bPj" firstAttribute="leading" secondItem="BnC-ES-bmI" secondAttribute="leading" id="DlK-d2-nyX"/>
+                <constraint firstItem="jLp-z5-tZO" firstAttribute="top" secondItem="BnC-ES-bmI" secondAttribute="bottom" constant="30" id="MOZ-NR-9Mw"/>
+                <constraint firstAttribute="trailing" secondItem="2rf-Le-bPj" secondAttribute="trailing" constant="13" id="gaC-jZ-fCr"/>
+                <constraint firstItem="jLp-z5-tZO" firstAttribute="width" secondItem="jLp-z5-tZO" secondAttribute="height" multiplier="157:35" id="qAe-ak-pBx"/>
+                <constraint firstItem="BnC-ES-bmI" firstAttribute="trailing" secondItem="jLp-z5-tZO" secondAttribute="trailing" id="uAO-BS-Ak5"/>
+                <constraint firstItem="BnC-ES-bmI" firstAttribute="top" secondItem="2rf-Le-bPj" secondAttribute="bottom" constant="30" id="xe2-xu-XgC"/>
+                <constraint firstItem="BnC-ES-bmI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xo2-eK-IwY"/>
+                <constraint firstItem="2rf-Le-bPj" firstAttribute="trailing" secondItem="BnC-ES-bmI" secondAttribute="trailing" id="yVZ-Ae-ueb"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

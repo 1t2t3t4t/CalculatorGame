@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GoogleMobileAds
 
 class MainMenuViewController: UIViewController {
     @IBOutlet weak var numberTextField:UITextField!
@@ -15,6 +16,8 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var twoPlayer:PressableButton!
     @IBOutlet weak var more:PressableButton!
     @IBOutlet weak var bestScore:UITextField!
+    
+    var bannerView: GADBannerView!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -36,6 +39,17 @@ class MainMenuViewController: UIViewController {
             self.bestScore.text = "BEST : \(bestScore)"
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let rate = RateMyApp.sharedInstance
+        rate.appID = "123456"
+        rate.trackAppUsage()
+    
+        startLoadingAd()
+    }
+    
     @IBAction func clickPlay(_ sender:Any?) {
         self.performSegue(withIdentifier: Constant.SHOW_PROBLEM, sender: sender)
     }
@@ -47,5 +61,61 @@ class MainMenuViewController: UIViewController {
         self.performSegue(withIdentifier: Constant.SHOW_MORE, sender: sender)
     }
 
+}
+
+extension MainMenuViewController:GADBannerViewDelegate {
+    
+    func startLoadingAd() {
+        bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
+        bannerView.delegate = self
+        
+        bannerView.adUnitID = "ca-app-pub-1801504340872159/5814595704"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5" ]
+        bannerView.load(request)
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0.0
+        bannerView.frame.origin.x = 0.0
+        bannerView.frame.origin.y = self.view.frame.height - bannerView.frame.height
+        self.view.addSubview(bannerView)
+        
+
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
+        bannerView.alpha = 1.0
+        }, completion: nil)
+        
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that a full screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+    
+    /// Tells the delegate that the full screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+    
+    /// Tells the delegate that the full screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
+    }
+    
 }
 

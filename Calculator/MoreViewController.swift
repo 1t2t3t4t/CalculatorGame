@@ -8,13 +8,21 @@
 
 import UIKit
 import Social
-class MoreViewController: UIViewController {
+import MessageUI
+import FacebookShare
+import FBSDKCoreKit
+import FBSDKLoginKit
+import GoogleMobileAds
+
+class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var shareApp:PressableButton!
     @IBOutlet weak var rateUs:PressableButton!
     @IBOutlet weak var contactUs:PressableButton!
     @IBOutlet weak var removeAd:PressableButton!
     @IBOutlet weak var restorePurchase:PressableButton!
     @IBOutlet weak var backButton:PressableButton!
+    
+    var bannerView: GADBannerView!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -28,25 +36,129 @@ class MoreViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        startLoadingAd()
+        InAppManager.getProduct()
+        
+    }
     @IBAction func back(_ sender:Any?) {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func buttonAction(_ sender:PressableButton) {
         switch sender.tag {
         case 0:
-            
+            shareApplication()
             break
         case 1:
+            rateApp()
             break
         case 2:
+            sendEmail()
             break
         case 3:
+            InAppManager.purchaseProduct()
             break
         default:
+            InAppManager.restorePurchase()
             break
         }
     }
-
-  
-
+    
+    func shareApplication() {
+        let firstActivityItem = "How fast can you do this math quiz in 60 seconds?\nLet's find out!\n"
+        let secondActivityItem : NSURL = NSURL(string: "https://www.google.com")!
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [
+            UIActivityType.addToReadingList,
+            UIActivityType.airDrop,
+            UIActivityType.assignToContact,
+            UIActivityType.openInIBooks,
+            UIActivityType.saveToCameraRoll
+        ]
+        
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func rateApp() {
+        RateMyApp.sharedInstance.okButtonPressed()
+    }
+    
+    func sendEmail() {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        // Configure the fields of the interface.
+        composeVC.setToRecipients(["stellateamdev@gmail.com"])
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        // Check the result or perform other tasks.
+        // Dismiss the mail compose view controller.
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
+
+extension MoreViewController:GADBannerViewDelegate {
+    
+    func startLoadingAd() {
+        bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
+        bannerView.delegate = self
+        
+        bannerView.adUnitID = "ca-app-pub-1801504340872159/2434588045"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5" ]
+        bannerView.load(request)
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0.0
+        bannerView.frame.origin.x = 0.0
+        bannerView.frame.origin.y = self.view.frame.height - bannerView.frame.height
+        self.view.addSubview(bannerView)
+        
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
+            bannerView.alpha = 1.0
+        }, completion: nil)
+        
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that a full screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+    
+    /// Tells the delegate that the full screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+    
+    /// Tells the delegate that the full screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
+    }
+    
+}
+
+

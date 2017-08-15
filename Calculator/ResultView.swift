@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import FacebookShare
+import FBSDKShareKit
 
 class ResultView: UIView {
     
     @IBOutlet weak var resulsLabel:UILabel!
     @IBOutlet weak var smallView:UIView!
     
+    var gameObject:CalculatorGameViewController!
     var twoPlayer = false
+    var score = 0
     
     override func awakeFromNib() {
-        
         super.awakeFromNib()
         resulsLabel.numberOfLines = 0
         resulsLabel.lineBreakMode = .byWordWrapping
@@ -53,6 +56,7 @@ class ResultView: UIView {
             }
             break
         case 1:
+            shareApplication()
             break
         default:
             let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
@@ -65,4 +69,21 @@ class ResultView: UIView {
         
         }
     }
+    
+    func shareApplication() {
+       let firstActivityItem = "I've got \(score) out of 60 in 60 seconds. How much will you get? Let's find out!\nDownload 60:60 now."
+        let secondActivityItem : NSURL = NSURL(string: "https://www.google.com")!
+        let image : UIImage = UIImage(named: "pause.png")!
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem, secondActivityItem,image], applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [
+            UIActivityType.addToReadingList,
+            UIActivityType.airDrop,
+            UIActivityType.assignToContact,
+            UIActivityType.openInIBooks,
+            UIActivityType.saveToCameraRoll]
+        gameObject.present(activityViewController, animated: true, completion: nil)
+    }
+
 }
