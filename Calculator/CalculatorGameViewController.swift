@@ -62,7 +62,6 @@ class CalculatorGameViewController: UIViewController {
         self.viewModel.player.answer = number
         self.viewModel.checkAnswer()
         self.generateNewRound()
-
     }
     
     @IBAction func back(_ sender:UIButton) {
@@ -85,7 +84,8 @@ class CalculatorGameViewController: UIViewController {
     }
     
     func gameFinished() {
-        let message = "You've got \n \(self.viewModel.player.score) / 100 \nIn 100 seconds"
+//        let message = "You've got \n \(self.viewModel.player.score) / 100 \nIn 100 seconds"
+        let message = "\(self.viewModel.player.score)/60"
         self.viewModel.checkBestScore(score: self.viewModel.player.score)
         
         let resultView = ResultView.view as! ResultView

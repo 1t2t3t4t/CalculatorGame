@@ -12,8 +12,9 @@ import FBSDKShareKit
 
 class ResultView: UIView {
     
-    @IBOutlet weak var resulsLabel:UILabel!
     @IBOutlet weak var smallView:UIView!
+    @IBOutlet weak var resultField: UITextField!
+    @IBOutlet weak var viewForResult:UIView!
     
     var gameObject:CalculatorGameViewController!
     var twoPlayer = false
@@ -21,13 +22,14 @@ class ResultView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        resulsLabel.numberOfLines = 0
-        resulsLabel.lineBreakMode = .byWordWrapping
+        self.resultField.layer.cornerRadius = 5.0
+        self.resultField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
+        self.resultField.layer.borderWidth = 3.0
     }
     
     var results:String! {
         didSet{
-            self.resulsLabel.text = self.results
+            resultField.text = results
         }
     }
 
@@ -73,7 +75,8 @@ class ResultView: UIView {
     func shareApplication() {
        let firstActivityItem = "I've got \(score) out of 60 in 60 seconds. How much will you get? Let's find out!\nDownload 60:60 now."
         let secondActivityItem : NSURL = NSURL(string: "https://www.google.com")!
-        let image : UIImage = UIImage(named: "pause.png")!
+        viewForResult.backgroundColor = UIColor(red: 227/255, green: 220/255, blue: 208/255, alpha: 1)
+        let image : UIImage = viewForResult.asImage()
         
         let activityViewController : UIActivityViewController = UIActivityViewController(
             activityItems: [firstActivityItem, secondActivityItem,image], applicationActivities: nil)
