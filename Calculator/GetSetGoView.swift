@@ -14,11 +14,6 @@ class GetSetGoView: UIView {
 
     @IBOutlet weak var textLabel:UILabel!
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-    }
-    
     func animateOpening(_ string:String? = "READY??",completion: @escaping completion) {
         self.textLabel.text = string
         self.animateLabel { (done) in
@@ -26,6 +21,8 @@ class GetSetGoView: UIView {
                 self.animateOpening("GO!!",completion: completion)
             }else if string == "READY??" {
                 self.animateOpening("SET",completion: completion)
+            }else if string != "GO!!" {
+                self.animateOpening("READY??", completion: completion)
             }else {
                 completion()
                 self.removeFromSuperview()
@@ -35,7 +32,7 @@ class GetSetGoView: UIView {
     
     private func animateLabel(withCompletion completion: @escaping (Bool) -> Void) {
         self.textLabel.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        UIView.animate(withDuration: 1.2, animations: {
+        UIView.animate(withDuration: 0.85, animations: {
             self.textLabel.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }, completion: completion)
     }

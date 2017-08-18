@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="digital-7.ttf">
-            <string>Digital-7</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,34 +21,65 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-Uu-sDr">
                     <rect key="frame" x="42" y="198" width="291" height="270"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHc-U1-epr">
-                            <rect key="frame" x="130" y="173" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHc-U1-epr" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                            <rect key="frame" x="20" y="145" width="120" height="40"/>
                             <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="0Ld-Po-NfI"/>
+                                <constraint firstAttribute="height" constant="40" id="4JQ-ch-6h2"/>
+                                <constraint firstAttribute="width" constant="120" id="KQR-ZI-y1v"/>
                             </constraints>
-                            <state key="normal" title="OK">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="PLAY AGAIN"/>
                             <connections>
                                 <action selector="okClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Sq-iZ-tYG"/>
                             </connections>
                         </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-CE-rg1" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                            <rect key="frame" x="20" y="201" width="250" height="40"/>
+                            <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="qe8-dw-OuO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="BACK TO MAIN MENU"/>
+                            <connections>
+                                <action selector="okClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="vis-p2-vW7"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6x8-CW-Y4H">
-                            <rect key="frame" x="65" y="97" width="160" height="37"/>
-                            <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="30"/>
+                            <rect key="frame" x="8" y="19" width="275" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="2sd-to-fEa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifx-2p-rYv" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                            <rect key="frame" x="151" y="145" width="119" height="40"/>
+                            <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="SHARE"/>
+                            <connections>
+                                <action selector="okClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="zF1-mC-HzT"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="top" secondItem="QzE-Uu-sDr" secondAttribute="top" constant="97" id="8Lf-sp-qAG"/>
-                        <constraint firstItem="oHc-U1-epr" firstAttribute="top" secondItem="6x8-CW-Y4H" secondAttribute="bottom" constant="39" id="BrD-Hy-FXo"/>
-                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="leading" secondItem="QzE-Uu-sDr" secondAttribute="leading" constant="65" id="fpw-lF-w5N"/>
+                        <constraint firstItem="ifx-2p-rYv" firstAttribute="trailing" secondItem="Kca-CE-rg1" secondAttribute="trailing" id="4b1-2O-quz"/>
+                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="top" secondItem="QzE-Uu-sDr" secondAttribute="top" constant="19" id="8Lf-sp-qAG"/>
+                        <constraint firstItem="Kca-CE-rg1" firstAttribute="top" secondItem="oHc-U1-epr" secondAttribute="bottom" constant="16" id="9d6-ot-dV9"/>
+                        <constraint firstItem="Kca-CE-rg1" firstAttribute="centerX" secondItem="6x8-CW-Y4H" secondAttribute="centerX" id="B5v-Ss-oNI"/>
+                        <constraint firstItem="ifx-2p-rYv" firstAttribute="firstBaseline" secondItem="oHc-U1-epr" secondAttribute="baseline" id="DmZ-2e-eTF"/>
+                        <constraint firstAttribute="bottom" secondItem="Kca-CE-rg1" secondAttribute="bottom" constant="29" id="S9H-mr-32C"/>
+                        <constraint firstItem="ifx-2p-rYv" firstAttribute="baseline" secondItem="oHc-U1-epr" secondAttribute="firstBaseline" id="Ws1-FY-8Wo"/>
+                        <constraint firstItem="ifx-2p-rYv" firstAttribute="leading" secondItem="oHc-U1-epr" secondAttribute="trailing" constant="11" id="ZBH-CB-r65"/>
+                        <constraint firstItem="oHc-U1-epr" firstAttribute="leading" secondItem="Kca-CE-rg1" secondAttribute="leading" id="aQY-dY-DOG"/>
+                        <constraint firstItem="ifx-2p-rYv" firstAttribute="top" secondItem="oHc-U1-epr" secondAttribute="top" id="d8l-Dc-nRi"/>
+                        <constraint firstItem="oHc-U1-epr" firstAttribute="leading" secondItem="QzE-Uu-sDr" secondAttribute="leadingMargin" constant="12" id="eHa-cj-3JF"/>
+                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="leading" secondItem="QzE-Uu-sDr" secondAttribute="leading" constant="8" id="fpw-lF-w5N"/>
                         <constraint firstItem="6x8-CW-Y4H" firstAttribute="centerX" secondItem="QzE-Uu-sDr" secondAttribute="centerX" id="uP0-3f-Ofj"/>
-                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="centerX" secondItem="oHc-U1-epr" secondAttribute="centerX" id="vHb-r0-pJI"/>
-                        <constraint firstAttribute="bottom" secondItem="oHc-U1-epr" secondAttribute="bottom" constant="67" id="zzs-b6-xuY"/>
                     </constraints>
                 </view>
             </subviews>
@@ -63,6 +92,7 @@
             </constraints>
             <connections>
                 <outlet property="resulsLabel" destination="6x8-CW-Y4H" id="ek8-Pr-xhN"/>
+                <outlet property="smallView" destination="QzE-Uu-sDr" id="Wo1-GG-hp4"/>
             </connections>
             <point key="canvasLocation" x="48.5" y="53.5"/>
         </view>

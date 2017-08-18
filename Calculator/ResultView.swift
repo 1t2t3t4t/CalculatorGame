@@ -9,8 +9,18 @@
 import UIKit
 
 class ResultView: UIView {
-
+    
     @IBOutlet weak var resulsLabel:UILabel!
+    @IBOutlet weak var smallView:UIView!
+    
+    var twoPlayer = false
+    
+    override func awakeFromNib() {
+        
+        super.awakeFromNib()
+        resulsLabel.numberOfLines = 0
+        resulsLabel.lineBreakMode = .byWordWrapping
+    }
     
     var results:String! {
         didSet{
@@ -19,12 +29,40 @@ class ResultView: UIView {
     }
 
     @IBAction func okClicked(_ sender:UIButton) {
-        let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
-        let window = (UIApplication.shared.delegate as! AppDelegate).window
-        UIView.transition(with: window!, duration: 0.5, options: .transitionCurlDown, animations: {
-            window?.rootViewController = vc
-        }) { (finished) in
-            //Finished animation
+        switch sender.tag {
+        case 0:
+            if twoPlayer {
+                let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
+                let window = (UIApplication.shared.delegate as! AppDelegate).window
+                UIView.transition(with: window!, duration: 0.5, options: .curveLinear, animations: {
+                    window?.rootViewController = vc
+                }) { (finished) in
+                    //Finished animation
+                }
+
+            }
+            else {
+                let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
+                let window = (UIApplication.shared.delegate as! AppDelegate).window
+                UIView.transition(with: window!, duration: 0.5, options: .curveLinear, animations: {
+                    window?.rootViewController = vc
+                }) { (finished) in
+                    //Finished animation
+                }
+
+            }
+            break
+        case 1:
+            break
+        default:
+            let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+            let window = (UIApplication.shared.delegate as! AppDelegate).window
+            UIView.transition(with: window!, duration: 1.0, options: .curveEaseInOut, animations: {
+                window?.rootViewController = vc
+            }) { (finished) in
+                //Finished animation
+            }
+        
         }
     }
 }

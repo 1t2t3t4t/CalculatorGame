@@ -27,6 +27,13 @@
 		8184B1F31F2FB32100156D2E /* CalculatorGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1F21F2FB32100156D2E /* CalculatorGameViewModel.swift */; };
 		8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1F81F30C2A800156D2E /* ResultView.swift */; };
 		8184B1FB1F30C2B300156D2E /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8184B1FA1F30C2B300156D2E /* ResultView.xib */; };
+		8197EC011F3F0AE900B44D3C /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC001F3F0AE900B44D3C /* Problem.swift */; };
+		8197EC031F40632500B44D3C /* TwoPlayersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC021F40632500B44D3C /* TwoPlayersGameViewController.swift */; };
+		8197EC051F4064CA00B44D3C /* TwoPlayersGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC041F4064CA00B44D3C /* TwoPlayersGameViewModel.swift */; };
+		8197EC071F4068E300B44D3C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC061F4068E300B44D3C /* Player.swift */; };
+		EF183C9C1F376E59009CF97B /* PressableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9A1F376E59009CF97B /* PressableButton.swift */; };
+		EF183C9D1F376E59009CF97B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9B1F376E59009CF97B /* Utils.swift */; };
+		EF7BD3AB1F40A7DC002ABFEE /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		8184B1F21F2FB32100156D2E /* CalculatorGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorGameViewModel.swift; sourceTree = "<group>"; };
 		8184B1F81F30C2A800156D2E /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		8184B1FA1F30C2B300156D2E /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
+		8197EC001F3F0AE900B44D3C /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		8197EC021F40632500B44D3C /* TwoPlayersGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayersGameViewController.swift; sourceTree = "<group>"; };
+		8197EC041F4064CA00B44D3C /* TwoPlayersGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayersGameViewModel.swift; sourceTree = "<group>"; };
+		8197EC061F4068E300B44D3C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		EF183C9A1F376E59009CF97B /* PressableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableButton.swift; sourceTree = "<group>"; };
+		EF183C9B1F376E59009CF97B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +137,7 @@
 		8184B1A31F2F164A00156D2E /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				8197EBFF1F3F0AD500B44D3C /* Model */,
 				8184B1D41F2F1A0B00156D2E /* Core */,
 				8184B1D31F2F17C500156D2E /* Storyboard */,
 				8184B1D21F2F17B900156D2E /* ViewControllers */,
@@ -155,9 +170,11 @@
 		8184B1D21F2F17B900156D2E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */,
 				8184B1A61F2F164A00156D2E /* MainMenuViewController.swift */,
 				8184B1DC1F2F1ECE00156D2E /* DifficultySelectionViewController.swift */,
 				8184B1E01F2F22D800156D2E /* CalculatorGameViewController.swift */,
+				8197EC021F40632500B44D3C /* TwoPlayersGameViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +191,8 @@
 		8184B1D41F2F1A0B00156D2E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				EF183C9A1F376E59009CF97B /* PressableButton.swift */,
+				EF183C9B1F376E59009CF97B /* Utils.swift */,
 				8184B1A41F2F164A00156D2E /* AppDelegate.swift */,
 				8184B1B01F2F164B00156D2E /* Info.plist */,
 				8184B1D51F2F1A1900156D2E /* Constant.swift */,
@@ -208,8 +227,18 @@
 			isa = PBXGroup;
 			children = (
 				8184B1F21F2FB32100156D2E /* CalculatorGameViewModel.swift */,
+				8197EC041F4064CA00B44D3C /* TwoPlayersGameViewModel.swift */,
 			);
 			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		8197EBFF1F3F0AD500B44D3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8197EC001F3F0AE900B44D3C /* Problem.swift */,
+				8197EC061F4068E300B44D3C /* Player.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,14 +385,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8184B1DF1F2F20BE00156D2E /* Extension.swift in Sources */,
+				8197EC011F3F0AE900B44D3C /* Problem.swift in Sources */,
 				8184B1F31F2FB32100156D2E /* CalculatorGameViewModel.swift in Sources */,
 				8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */,
 				8184B1A71F2F164A00156D2E /* MainMenuViewController.swift in Sources */,
+				EF7BD3AB1F40A7DC002ABFEE /* MoreViewController.swift in Sources */,
 				8184B1EF1F2F34A700156D2E /* GetSetGoView.swift in Sources */,
+				EF183C9C1F376E59009CF97B /* PressableButton.swift in Sources */,
 				8184B1A51F2F164A00156D2E /* AppDelegate.swift in Sources */,
+				8197EC051F4064CA00B44D3C /* TwoPlayersGameViewModel.swift in Sources */,
+				EF183C9D1F376E59009CF97B /* Utils.swift in Sources */,
 				8184B1DD1F2F1ECE00156D2E /* DifficultySelectionViewController.swift in Sources */,
 				8184B1E11F2F22D800156D2E /* CalculatorGameViewController.swift in Sources */,
 				8184B1D61F2F1A1900156D2E /* Constant.swift in Sources */,
+				8197EC071F4068E300B44D3C /* Player.swift in Sources */,
+				8197EC031F40632500B44D3C /* TwoPlayersGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
