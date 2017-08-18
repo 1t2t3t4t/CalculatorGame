@@ -393,7 +393,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-IU-wbl" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="120" y="235" width="76" height="69"/>
+                                        <rect key="frame" x="120.00000000000001" y="235" width="76.333333333333357" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PMe-IU-wbl" secondAttribute="height" multiplier="11:10" id="iqy-ab-y2t"/>
                                         </constraints>
@@ -417,7 +417,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwa-Ww-OCM" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="216" y="235" width="76" height="69"/>
+                                        <rect key="frame" x="216.33333333333331" y="235" width="75.999999999999943" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wwa-Ww-OCM" secondAttribute="height" multiplier="11:10" id="Sh4-KK-NLe"/>
                                         </constraints>
@@ -441,7 +441,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38u-qP-f18" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="312" y="235" width="75" height="69"/>
+                                        <rect key="frame" x="312.33333333333331" y="235" width="75" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="38u-qP-f18" secondAttribute="height" multiplier="11:10" id="KDv-Xx-M88"/>
                                         </constraints>

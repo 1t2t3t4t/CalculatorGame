@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+var launchedShortcutItem: UIApplicationShortcutItem?
 
 struct Constant {
     
@@ -18,4 +21,16 @@ struct Constant {
     static let READY = "READY??"
     static let SET = "SET"
     static let GO = "GO"
+}
+enum ShortcutIdentifier:String {
+    case onePlayer
+    case twoPlayer
+    init?(fullType: String) {
+        guard let last = fullType.components(separatedBy: ".").last else { return nil }
+        self.init(rawValue: last)
+    }
+    var type: String {
+        return Bundle.main.bundleIdentifier! + ".\(self.rawValue)"
+    }
+    
 }
