@@ -213,23 +213,18 @@ extension TwoPlayersGameViewController:GADInterstitialDelegate {
 extension TwoPlayersGameViewController: PauseViewDelegate {
     
     func restartGame() {
-        self.dismiss(animated: false) {
-            let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
-            let appdelegate = UIApplication.shared.delegate as! AppDelegate
-            UIView.transition(with: appdelegate.window!, duration: 0.5, options: .curveLinear, animations: {
-                appdelegate.window?.rootViewController = vc
-            }) { (finished) in
-                //Finished animation
-            }
-        }
+        self.dismiss(animated: false,completion: nil)
+        let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+            appdelegate.window?.rootViewController = vc
+        
     }
     
     func didPressedMainMenu() {
-        self.dismiss(animated: false, completion: {
-            let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
-            let window = (UIApplication.shared.delegate as! AppDelegate).window
-            window?.rootViewController = vc
-        })
+        self.dismiss(animated: false, completion:nil)
+        let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        window?.rootViewController = vc
     }
     func resumeGame() {
         self.startTimer()
