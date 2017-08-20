@@ -11,8 +11,9 @@ import FacebookShare
 import FBSDKShareKit
 
 protocol ResultViewDelegate:class {
-    func mainMenu() -> Void
+    func didPressMainMenu() -> Void
     func restartGame() -> Void
+    func shareApplication(activityController:UIActivityViewController) -> Void
 }
 
 class ResultView: UIView {
@@ -23,8 +24,9 @@ class ResultView: UIView {
     @IBOutlet weak var resultField:UITextView!
     
     weak var delegate:ResultViewDelegate?
-    var gameObjectOnePlayer:CalculatorGameViewController!
-    var gameObjectTwoPlayer:TwoPlayersGameViewController!
+    weak var gameObjectOnePlayer:CalculatorGameViewController!
+    weak var gameObjectTwoPlayer:TwoPlayersGameViewController!
+    
     var twoPlayer = false
     var score = 0
 
@@ -35,8 +37,6 @@ class ResultView: UIView {
         self.resultField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
         self.resultField.layer.borderWidth = 3.0
         self.resultField.layer.cornerRadius = 10.0
-
-
     }
     
     var results:String! {
@@ -48,40 +48,13 @@ class ResultView: UIView {
     @IBAction func okClicked(_ sender:UIButton) {
         switch sender.tag {
         case 0:
-            if twoPlayer {
-                gameObjectTwoPlayer.dismiss(animated: false, completion:nil)
-                let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
-                let window = (UIApplication.shared.delegate as! AppDelegate).window
-                window?.rootViewController = vc
-
-            }
-            else {
-                gameObjectOnePlayer.dismiss(animated: false, completion:nil)
-                let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
-                let window = (UIApplication.shared.delegate as! AppDelegate).window
-                window?.rootViewController = vc
-                
-            }
+            self.delegate?.restartGame()
             break
         case 1:
             shareApplication()
             break
         default:
-            if twoPlayer {
-                gameObjectTwoPlayer.dismiss(animated: false, completion:nil)
-                let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
-                let window = (UIApplication.shared.delegate as! AppDelegate).window
-                window?.rootViewController = vc
-            }
-            else {
-                print("enter onePlayer")
-                gameObjectOnePlayer.dismiss(animated: false, completion:nil)
-                let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
-                let window = (UIApplication.shared.delegate as! AppDelegate).window
-                window?.rootViewController = vc
-            }
-            
-        
+            self.delegate?.didPressMainMenu()
         }
     }
     
@@ -99,13 +72,7 @@ class ResultView: UIView {
             UIActivityType.assignToContact,
             UIActivityType.openInIBooks,
             UIActivityType.saveToCameraRoll]
-        if twoPlayer {
-            gameObjectTwoPlayer.present(activityViewController, animated: true, completion: nil)
-        }
-        else {
-            gameObjectOnePlayer.present(activityViewController, animated: true, completion: nil)
-        }
-        
+        self.delegate?.shareApplication(activityController: activityViewController)
     }
 
 }

@@ -37,13 +37,10 @@ class TwoPlayersGameViewController: UIViewController {
         self.playerTwoTextField.layer.removeAllAnimations()
         self.timerLabelPlayerTwo.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         self.timerLabelPlayerTwo.layer.removeAllAnimations()
-        
         for i in 0...3 {
-           
             self.playerTwoButtons[i].transform = CGAffineTransform(rotationAngle: CGFloat.pi)
              self.playerTwoButtons[i].layer.removeAllAnimations()
         }
-        
         pauseButton.tintColor = UIColor.white
         pauseButton.colors = .init(button: UIColor(red: 70/255.0, green: 73/255.0, blue: 76/255.0, alpha: 1), shadow: UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1))
         pauseButton.backgroundColor = UIColor.clear
@@ -58,13 +55,13 @@ class TwoPlayersGameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       if !finishGame {
-        self.animateOpening {
-            self.viewModel.addNewProblem()
-            self.updatePlayerOneTextField()
-            self.updatePlayerTwoTextField()
-            self.startTimer()
-        }
+        if !finishGame {
+            self.animateOpening { [unowned self] in
+                self.viewModel.addNewProblem()
+                self.updatePlayerOneTextField()
+                self.updatePlayerTwoTextField()
+                self.startTimer()
+            }
         }
     }
     
@@ -93,14 +90,12 @@ class TwoPlayersGameViewController: UIViewController {
     }
     
     @IBAction func clickPause(_ sender:Any?) {
-        print("pause button")
         let view = PauseView.view as! PauseView
         view.frame = self.view.frame
         view.twoPlayer = self
         view.delegate = self
         timeObject.invalidate()
         self.view.addSubview(view)
-       
     }
     
     func updatePlayerOneTextField() {
@@ -120,25 +115,25 @@ class TwoPlayersGameViewController: UIViewController {
     }
     
     func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] (Timer) in
             self.timeObject = Timer
             let time = Int(self.timerLabelPlayerOne.text!)
             if time! <= 0 {
                 self.gameFinished()
                 Timer.invalidate()
             }else{
-                self.timerLabelPlayerOne.text = "\(time!-100)"
-                self.timerLabelPlayerTwo.text =  "\(time!-100)"
+                self.timerLabelPlayerOne.text = "\(time!-50)"
+                self.timerLabelPlayerTwo.text =  "\(time!-50)"
             }
         }
     }
-    
     
     func gameFinished() {
         let playerOneScore = self.viewModel.playerOne.score
         let playerTwoScore = self.viewModel.playerTwo.score
         let message = "\nPlayer 1 Score\n\(playerOneScore)/60\n\nPlayer 2 Score\n\(playerTwoScore)/60"
         let resultView = ResultView.view as! ResultView
+        resultView.delegate = self
         resultView.resultField.font = UIFont(name: "Digital-7MonoItalic", size: 25.0)
         resultView.results = message
         resultView.frame = self.view.frame
@@ -148,12 +143,11 @@ class TwoPlayersGameViewController: UIViewController {
         resultView.smallView.layer.cornerRadius = 10.0
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
-        if UserDefaults.checkPurchase(key: "purchase") == nil {
+        if UserDefaults.checkPurchase(key: "purchase") == nil && interstitial != nil {
             if interstitial.isReady  {
                 interstitial.present(fromRootViewController: self)
             }
         }
-   
         finishGame = true
     }
     
@@ -163,8 +157,6 @@ class TwoPlayersGameViewController: UIViewController {
         self.view.addSubview(view)
         view.animateOpening(completion: completion)
     }
-    
-    
 }
 
 extension TwoPlayersGameViewController:GADInterstitialDelegate {
@@ -177,57 +169,31 @@ extension TwoPlayersGameViewController:GADInterstitialDelegate {
         interstitial.load(request)
     }
     
-    /// Tells the delegate an ad request failed.
-       func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        print("interstitialDidReceiveAd")
-    }
-    
-    /// Tells the delegate an ad request failed.
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-        print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-    
-    /// Tells the delegate that an interstitial will be presented.
-    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
-        print("interstitialWillPresentScreen")
-    }
-    
-    /// Tells the delegate the interstitial is to be animated off the screen.
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-        print("interstitialWillDismissScreen")
-    }
-    
-    /// Tells the delegate the interstitial had been animated off the screen.
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        print("interstitialDidDismissScreen")
-    }
-    
-    /// Tells the delegate that a user click will open another app
-    /// (such as the App Store), backgrounding the current app.
-    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
-        print("interstitialWillLeaveApplication")
-    }
-    
 }
 
-extension TwoPlayersGameViewController: PauseViewDelegate {
+extension TwoPlayersGameViewController: PauseViewDelegate,ResultViewDelegate {
     
     func restartGame() {
         self.dismiss(animated: false,completion: nil)
         let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
             appdelegate.window?.rootViewController = vc
-        
+        self.interstitial = nil
     }
     
-    func didPressedMainMenu() {
+    func didPressMainMenu() {
         self.dismiss(animated: false, completion:nil)
         let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
         let window = (UIApplication.shared.delegate as! AppDelegate).window
         window?.rootViewController = vc
+        self.interstitial = nil
     }
+    
+    func shareApplication(activityController: UIActivityViewController) {
+        self.present(activityController, animated: true, completion: nil)
+    }
+    
     func resumeGame() {
         self.startTimer()
     }
 }
-

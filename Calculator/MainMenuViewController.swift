@@ -51,13 +51,16 @@ class MainMenuViewController: UIViewController {
         }
     }
     
+    deinit {
+        self.bannerView.removeFromSuperview()
+        self.bannerView = nil
+    }
+    
     @IBAction func clickPlay(_ sender:Any?) {
        //self.performSegue(withIdentifier: Constant.SHOW_PROBLEM, sender: sender)
         let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
         let window = (UIApplication.shared.delegate as! AppDelegate).window
         window?.rootViewController = vc
-
-
     }
     
     @IBAction func twoPlayersClicked(_ sender:Any?) {
@@ -93,40 +96,11 @@ extension MainMenuViewController:GADBannerViewDelegate {
         bannerView.frame.origin.x = 0.0
         bannerView.frame.origin.y = self.view.frame.height - bannerView.frame.height
         self.view.addSubview(bannerView)
-        
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
         bannerView.alpha = 1.0
         }, completion: nil)
         
-    }
-    
-    /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-    
-    /// Tells the delegate that a full screen view will be presented in response
-    /// to the user clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("adViewWillPresentScreen")
-    }
-    
-    /// Tells the delegate that the full screen view will be dismissed.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewWillDismissScreen")
-    }
-    
-    /// Tells the delegate that the full screen view has been dismissed.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewDidDismissScreen")
-    }
-    
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("adViewWillLeaveApplication")
     }
     
 }

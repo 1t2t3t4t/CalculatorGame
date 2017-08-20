@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PauseViewDelegate:class {
-    func didPressedMainMenu() -> Void
+    func didPressMainMenu() -> Void
     func restartGame() -> Void
     func resumeGame() -> Void
 }
@@ -24,10 +24,6 @@ class PauseView: UIView {
     weak var delegate:PauseViewDelegate?
     var twoPlayer = TwoPlayersGameViewController()
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-    }
-    
     @IBAction func buttonClicked(_ sender:UIButton) {
         switch sender.tag {
         case 0:
@@ -37,24 +33,10 @@ class PauseView: UIView {
            self.delegate?.restartGame()
                 break
         default:
-            self.delegate?.didPressedMainMenu()
+            self.delegate?.didPressMainMenu()
             break
-            
         }
-       
+        self.removeFromSuperview()
     }
-
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

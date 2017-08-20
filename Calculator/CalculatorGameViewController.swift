@@ -20,8 +20,8 @@ class CalculatorGameViewController: UIViewController {
     @IBOutlet weak var backButton:PressableButton!
     
     var viewModel:CalculatorGameViewModel = CalculatorGameViewModel()
-    var bannerView: GADBannerView!
-    var interstitial: GADInterstitial!
+    var bannerView:GADBannerView!
+    var interstitial:GADInterstitial!
     var finishGame = false
     
     override var prefersStatusBarHidden: Bool {
@@ -53,7 +53,6 @@ class CalculatorGameViewController: UIViewController {
         }
     }
     
-    
     @IBAction func buttonPressed(_ sender:UIButton) {
         guard let text = sender.titleLabel?.text else {
             return
@@ -67,12 +66,11 @@ class CalculatorGameViewController: UIViewController {
     }
     
     @IBAction func back(_ sender:UIButton) {
-        print("backfromGame1")
        self.dismiss(animated: false, completion: nil)
         let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
         let window = (UIApplication.shared.delegate as! AppDelegate).window
         window?.rootViewController = vc
-
+        self.clearAd()
     }
     
     func animateOpening(withCompletion completion: @escaping completion) {
@@ -92,25 +90,29 @@ class CalculatorGameViewController: UIViewController {
     }
     
     func gameFinished() {
-//        let message = "You've got \n \(self.viewModel.player.score) / 100 \nIn 100 seconds"
         let message = "\(self.viewModel.player.score)/60"
         self.viewModel.checkBestScore(score: self.viewModel.player.score)
-        
         let resultView = ResultView.view as! ResultView
         resultView.frame = self.view.frame
+        resultView.delegate = self
         resultView.results = message
         resultView.gameObjectOnePlayer = self
         resultView.score = self.viewModel.player.score
         resultView.smallView.layer.cornerRadius = 10.0
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
-        
-        if UserDefaults.checkPurchase(key: "purchase") == nil {
+        if UserDefaults.checkPurchase(key: "purchase") == nil && interstitial != nil {
             if interstitial.isReady  {
                 interstitial.present(fromRootViewController: self)
             }
         }
         finishGame = true
+    }
+    
+    func clearAd() {
+        self.bannerView.removeFromSuperview()
+        self.bannerView = nil
+        self.interstitial = nil
     }
     
     func startTimer() {
@@ -120,10 +122,34 @@ class CalculatorGameViewController: UIViewController {
                self.gameFinished()
                Timer.invalidate()
             }else{
-                self.timerLabel.text = "\(time!-10)"
+                self.timerLabel.text = "\(time!-50)"
             }
         }
     }
+}
+
+extension CalculatorGameViewController: ResultViewDelegate {
+    
+    func restartGame() {
+        self.dismiss(animated: false, completion:nil)
+        let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        window?.rootViewController = vc
+        self.clearAd()
+    }
+    
+    func didPressMainMenu() {
+        self.dismiss(animated: false, completion:nil)
+        let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        window?.rootViewController = vc
+        self.clearAd()
+    }
+    
+    func shareApplication(activityController: UIActivityViewController) {
+        self.present(activityController, animated: true, completion: nil)
+    }
+    
 }
 
 extension CalculatorGameViewController:GADBannerViewDelegate,GADInterstitialDelegate {
@@ -152,66 +178,6 @@ extension CalculatorGameViewController:GADBannerViewDelegate,GADInterstitialDele
             bannerView.alpha = 1.0
             print("show banner now")
         }, completion: nil)
-        
     }
-    
-    /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-    
-    /// Tells the delegate that a full screen view will be presented in response
-    /// to the user clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("adViewWillPresentScreen")
-    }
-    
-    /// Tells the delegate that the full screen view will be dismissed.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewWillDismissScreen")
-    }
-    
-    /// Tells the delegate that the full screen view has been dismissed.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewDidDismissScreen")
-    }
-    
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("adViewWillLeaveApplication")
-    }
-    
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        print("interstitialDidReceiveAd")
-    }
-    
-    /// Tells the delegate an ad request failed.
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-        print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-    
-    /// Tells the delegate that an interstitial will be presented.
-    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
-        print("interstitialWillPresentScreen")
-    }
-    
-    /// Tells the delegate the interstitial is to be animated off the screen.
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-        print("interstitialWillDismissScreen")
-    }
-    
-    /// Tells the delegate the interstitial had been animated off the screen.
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        print("interstitialDidDismissScreen")
-    }
-    
-    /// Tells the delegate that a user click will open another app
-    /// (such as the App Store), backgrounding the current app.
-    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
-        print("interstitialWillLeaveApplication")
-    }
-    
 }
 
