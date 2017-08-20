@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Player {
+struct Player {
     
     var answer:Int = 0
     var score:Int = 0

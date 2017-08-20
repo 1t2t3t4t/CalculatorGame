@@ -16,7 +16,6 @@ class ResultView: UIView {
     var twoPlayer = false
     
     override func awakeFromNib() {
-        
         super.awakeFromNib()
         resulsLabel.numberOfLines = 0
         resulsLabel.lineBreakMode = .byWordWrapping
@@ -39,7 +38,6 @@ class ResultView: UIView {
                 }) { (finished) in
                     //Finished animation
                 }
-
             }
             else {
                 let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
@@ -49,7 +47,6 @@ class ResultView: UIView {
                 }) { (finished) in
                     //Finished animation
                 }
-
             }
             break
         case 1:
@@ -62,7 +59,7 @@ class ResultView: UIView {
             }) { (finished) in
                 //Finished animation
             }
-        
         }
+        self.removeFromSuperview()
     }
 }

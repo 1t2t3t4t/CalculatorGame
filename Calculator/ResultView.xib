@@ -1,32 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ResultView" customModule="Calculator" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-Uu-sDr">
-                    <rect key="frame" x="42" y="198" width="291" height="270"/>
+                    <rect key="frame" x="46.333333333333343" y="233" width="321.33333333333337" height="270"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHc-U1-epr" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                            <rect key="frame" x="20" y="145" width="120" height="40"/>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-CE-rg1" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                            <rect key="frame" x="70" y="201" width="182.33333333333337" height="40"/>
                             <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="4JQ-ch-6h2"/>
-                                <constraint firstAttribute="width" constant="120" id="KQR-ZI-y1v"/>
+                                <constraint firstAttribute="height" constant="40" id="9as-dJ-jhY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="MAIN MENU"/>
+                            <connections>
+                                <action selector="okClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="vis-p2-vW7"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6x8-CW-Y4H">
+                            <rect key="frame" x="8" y="19" width="305.33333333333337" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="d6p-85-Clm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifx-2p-rYv" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                            <rect key="frame" x="70" y="153" width="182.33333333333337" height="40"/>
+                            <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="vO1-IE-Vc2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="SHARE"/>
+                            <connections>
+                                <action selector="okClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="zF1-mC-HzT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHc-U1-epr" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                            <rect key="frame" x="70" y="105" width="182.33333333333337" height="40"/>
+                            <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="FJh-bV-89g"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                             <state key="normal" title="PLAY AGAIN"/>
@@ -34,67 +64,36 @@
                                 <action selector="okClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Sq-iZ-tYG"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-CE-rg1" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                            <rect key="frame" x="20" y="201" width="250" height="40"/>
-                            <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="qe8-dw-OuO"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                            <state key="normal" title="BACK TO MAIN MENU"/>
-                            <connections>
-                                <action selector="okClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="vis-p2-vW7"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6x8-CW-Y4H">
-                            <rect key="frame" x="8" y="19" width="275" height="31"/>
-                            <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="2sd-to-fEa"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifx-2p-rYv" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                            <rect key="frame" x="151" y="145" width="119" height="40"/>
-                            <color key="backgroundColor" red="0.83514869209999998" green="0.83512365820000001" blue="0.83513784410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                            <state key="normal" title="SHARE"/>
-                            <connections>
-                                <action selector="okClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="zF1-mC-HzT"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="ifx-2p-rYv" firstAttribute="trailing" secondItem="Kca-CE-rg1" secondAttribute="trailing" id="4b1-2O-quz"/>
-                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="top" secondItem="QzE-Uu-sDr" secondAttribute="top" constant="19" id="8Lf-sp-qAG"/>
-                        <constraint firstItem="Kca-CE-rg1" firstAttribute="top" secondItem="oHc-U1-epr" secondAttribute="bottom" constant="16" id="9d6-ot-dV9"/>
-                        <constraint firstItem="Kca-CE-rg1" firstAttribute="centerX" secondItem="6x8-CW-Y4H" secondAttribute="centerX" id="B5v-Ss-oNI"/>
-                        <constraint firstItem="ifx-2p-rYv" firstAttribute="firstBaseline" secondItem="oHc-U1-epr" secondAttribute="baseline" id="DmZ-2e-eTF"/>
-                        <constraint firstAttribute="bottom" secondItem="Kca-CE-rg1" secondAttribute="bottom" constant="29" id="S9H-mr-32C"/>
-                        <constraint firstItem="ifx-2p-rYv" firstAttribute="baseline" secondItem="oHc-U1-epr" secondAttribute="firstBaseline" id="Ws1-FY-8Wo"/>
-                        <constraint firstItem="ifx-2p-rYv" firstAttribute="leading" secondItem="oHc-U1-epr" secondAttribute="trailing" constant="11" id="ZBH-CB-r65"/>
-                        <constraint firstItem="oHc-U1-epr" firstAttribute="leading" secondItem="Kca-CE-rg1" secondAttribute="leading" id="aQY-dY-DOG"/>
-                        <constraint firstItem="ifx-2p-rYv" firstAttribute="top" secondItem="oHc-U1-epr" secondAttribute="top" id="d8l-Dc-nRi"/>
-                        <constraint firstItem="oHc-U1-epr" firstAttribute="leading" secondItem="QzE-Uu-sDr" secondAttribute="leadingMargin" constant="12" id="eHa-cj-3JF"/>
-                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="leading" secondItem="QzE-Uu-sDr" secondAttribute="leading" constant="8" id="fpw-lF-w5N"/>
-                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="centerX" secondItem="QzE-Uu-sDr" secondAttribute="centerX" id="uP0-3f-Ofj"/>
+                        <constraint firstItem="oHc-U1-epr" firstAttribute="trailing" secondItem="ifx-2p-rYv" secondAttribute="trailing" id="4cb-hh-xkT"/>
+                        <constraint firstItem="ifx-2p-rYv" firstAttribute="leading" secondItem="Kca-CE-rg1" secondAttribute="leading" id="6u6-O7-DHX"/>
+                        <constraint firstItem="oHc-U1-epr" firstAttribute="leading" secondItem="ifx-2p-rYv" secondAttribute="leading" id="EX8-Ic-RBQ"/>
+                        <constraint firstItem="Kca-CE-rg1" firstAttribute="top" secondItem="ifx-2p-rYv" secondAttribute="bottom" constant="8" symbolic="YES" id="FcD-4R-cci"/>
+                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="top" secondItem="QzE-Uu-sDr" secondAttribute="top" constant="19" id="NHs-cG-Khs"/>
+                        <constraint firstItem="oHc-U1-epr" firstAttribute="top" secondItem="6x8-CW-Y4H" secondAttribute="bottom" constant="55" id="RRA-xh-eMx"/>
+                        <constraint firstAttribute="trailing" secondItem="6x8-CW-Y4H" secondAttribute="trailing" constant="8" id="TnB-eN-71Y"/>
+                        <constraint firstItem="ifx-2p-rYv" firstAttribute="trailing" secondItem="Kca-CE-rg1" secondAttribute="trailing" id="bpb-bM-bFv"/>
+                        <constraint firstItem="ifx-2p-rYv" firstAttribute="top" secondItem="oHc-U1-epr" secondAttribute="bottom" constant="8" symbolic="YES" id="h4o-br-4q5"/>
+                        <constraint firstItem="oHc-U1-epr" firstAttribute="leading" secondItem="QzE-Uu-sDr" secondAttribute="leading" constant="70" id="nE6-tw-zM1"/>
+                        <constraint firstAttribute="trailing" secondItem="oHc-U1-epr" secondAttribute="trailing" constant="68.329999999999998" id="r3J-96-r9Y"/>
+                        <constraint firstAttribute="bottom" secondItem="Kca-CE-rg1" secondAttribute="bottom" constant="29" id="xQn-ed-dp5"/>
+                        <constraint firstItem="6x8-CW-Y4H" firstAttribute="leading" secondItem="QzE-Uu-sDr" secondAttribute="leading" constant="8" id="xbJ-BE-SNn"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="QzE-Uu-sDr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="C2Y-cZ-4TT"/>
-                <constraint firstItem="QzE-Uu-sDr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="198" id="TzZ-17-av8"/>
+                <constraint firstItem="QzE-Uu-sDr" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="291:667" id="JNu-9t-5Tn"/>
                 <constraint firstItem="QzE-Uu-sDr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gXq-n4-36p"/>
-                <constraint firstItem="QzE-Uu-sDr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="42" id="lMn-YG-Mdx"/>
             </constraints>
             <connections>
                 <outlet property="resulsLabel" destination="6x8-CW-Y4H" id="ek8-Pr-xhN"/>
                 <outlet property="smallView" destination="QzE-Uu-sDr" id="Wo1-GG-hp4"/>
             </connections>
-            <point key="canvasLocation" x="48.5" y="53.5"/>
+            <point key="canvasLocation" x="48" y="53"/>
         </view>
     </objects>
 </document>

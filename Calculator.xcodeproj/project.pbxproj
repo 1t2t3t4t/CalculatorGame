@@ -31,6 +31,8 @@
 		8197EC031F40632500B44D3C /* TwoPlayersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC021F40632500B44D3C /* TwoPlayersGameViewController.swift */; };
 		8197EC051F4064CA00B44D3C /* TwoPlayersGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC041F4064CA00B44D3C /* TwoPlayersGameViewModel.swift */; };
 		8197EC071F4068E300B44D3C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8197EC061F4068E300B44D3C /* Player.swift */; };
+		81BFF4181F486958009F73A2 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFF4171F486958009F73A2 /* PauseView.swift */; };
+		81BFF41A1F48696D009F73A2 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BFF4191F48696D009F73A2 /* PauseView.xib */; };
 		EF183C9C1F376E59009CF97B /* PressableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9A1F376E59009CF97B /* PressableButton.swift */; };
 		EF183C9D1F376E59009CF97B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9B1F376E59009CF97B /* Utils.swift */; };
 		EF7BD3AB1F40A7DC002ABFEE /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */; };
@@ -84,6 +86,8 @@
 		8197EC021F40632500B44D3C /* TwoPlayersGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayersGameViewController.swift; sourceTree = "<group>"; };
 		8197EC041F4064CA00B44D3C /* TwoPlayersGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayersGameViewModel.swift; sourceTree = "<group>"; };
 		8197EC061F4068E300B44D3C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		81BFF4171F486958009F73A2 /* PauseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		81BFF4191F48696D009F73A2 /* PauseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
 		EF183C9A1F376E59009CF97B /* PressableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableButton.swift; sourceTree = "<group>"; };
 		EF183C9B1F376E59009CF97B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
@@ -170,11 +174,9 @@
 		8184B1D21F2F17B900156D2E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */,
-				8184B1A61F2F164A00156D2E /* MainMenuViewController.swift */,
+				81BFF41C1F486984009F73A2 /* GamePlayeViewControllers */,
+				81BFF41B1F486973009F73A2 /* MainMenuViewControllers */,
 				8184B1DC1F2F1ECE00156D2E /* DifficultySelectionViewController.swift */,
-				8184B1E01F2F22D800156D2E /* CalculatorGameViewController.swift */,
-				8197EC021F40632500B44D3C /* TwoPlayersGameViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -219,6 +221,8 @@
 				8184B1FA1F30C2B300156D2E /* ResultView.xib */,
 				8184B1EE1F2F34A700156D2E /* GetSetGoView.swift */,
 				8184B1F01F2F34B400156D2E /* GetSetGoView.xib */,
+				81BFF4171F486958009F73A2 /* PauseView.swift */,
+				81BFF4191F48696D009F73A2 /* PauseView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -239,6 +243,24 @@
 				8197EC061F4068E300B44D3C /* Player.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		81BFF41B1F486973009F73A2 /* MainMenuViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8184B1A61F2F164A00156D2E /* MainMenuViewController.swift */,
+				EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */,
+			);
+			name = MainMenuViewControllers;
+			sourceTree = "<group>";
+		};
+		81BFF41C1F486984009F73A2 /* GamePlayeViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8184B1E01F2F22D800156D2E /* CalculatorGameViewController.swift */,
+				8197EC021F40632500B44D3C /* TwoPlayersGameViewController.swift */,
+			);
+			name = GamePlayeViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +376,7 @@
 				8184B1FB1F30C2B300156D2E /* ResultView.xib in Resources */,
 				8184B1E51F2F26C100156D2E /* digital-7 (mono).ttf in Resources */,
 				8184B1AF1F2F164B00156D2E /* LaunchScreen.storyboard in Resources */,
+				81BFF41A1F48696D009F73A2 /* PauseView.xib in Resources */,
 				8184B1E41F2F26C100156D2E /* digital-7 (mono italic).ttf in Resources */,
 				8184B1E31F2F26C100156D2E /* digital-7 (italic).ttf in Resources */,
 				8184B1AC1F2F164B00156D2E /* Assets.xcassets in Resources */,
@@ -385,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8184B1DF1F2F20BE00156D2E /* Extension.swift in Sources */,
+				81BFF4181F486958009F73A2 /* PauseView.swift in Sources */,
 				8197EC011F3F0AE900B44D3C /* Problem.swift in Sources */,
 				8184B1F31F2FB32100156D2E /* CalculatorGameViewModel.swift in Sources */,
 				8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */,
