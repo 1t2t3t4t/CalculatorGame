@@ -46,19 +46,31 @@ class MainMenuViewController: UIViewController {
         let rate = RateMyApp.sharedInstance
         rate.appID = "123456"
         rate.trackAppUsage()
-    
+        if UserDefaults.checkPurchase(key: "purchase") == nil {
         startLoadingAd()
+        }
     }
     
     @IBAction func clickPlay(_ sender:Any?) {
-        self.performSegue(withIdentifier: Constant.SHOW_PROBLEM, sender: sender)
+       //self.performSegue(withIdentifier: Constant.SHOW_PROBLEM, sender: sender)
+        let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        window?.rootViewController = vc
+
+
     }
     
     @IBAction func twoPlayersClicked(_ sender:Any?) {
-        self.performSegue(withIdentifier: Constant.SHOW_TWO_PLAYERS, sender: sender)
+        let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        window?.rootViewController = vc
+        //self.performSegue(withIdentifier: Constant.SHOW_TWO_PLAYERS, sender: sender)
     }
     @IBAction func clickMore(_ sender:Any?) {
-        self.performSegue(withIdentifier: Constant.SHOW_MORE, sender: sender)
+        let vc = MoreViewController.instantiateViewController() as! MoreViewController
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        window?.rootViewController = vc
+        //self.performSegue(withIdentifier: Constant.SHOW_MORE, sender: sender)
     }
 
 }

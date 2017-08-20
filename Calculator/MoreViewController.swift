@@ -13,6 +13,7 @@ import FacebookShare
 import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleMobileAds
+import SwiftyStoreKit
 
 class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var shareApp:PressableButton!
@@ -23,7 +24,7 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
     @IBOutlet weak var backButton:PressableButton!
     
     var bannerView: GADBannerView!
-    
+    var indicator = UIActivityIndicatorView()
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -39,15 +40,27 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        startLoadingAd()
+        indicator = UIActivityIndicatorView(frame: CGRect(x: self.view.frame.midX-40, y: self.view.frame.midY-40, width: 80, height: 80))
+        indicator.layer.cornerRadius = 10.0
+        indicator.activityIndicatorViewStyle = .whiteLarge
+        indicator.backgroundColor = UIColor.darkGray
+        if UserDefaults.checkPurchase(key: "purchase") == nil {
+            startLoadingAd()
+        }
         InAppManager.getProduct()
         
     }
     @IBAction func back(_ sender:Any?) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
+        let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        window?.rootViewController = vc
+
     }
     @IBAction func buttonAction(_ sender:PressableButton) {
+        let inApp = InAppManager()
+
+        self.view.addSubview(indicator)
         switch sender.tag {
         case 0:
             shareApplication()
@@ -59,10 +72,14 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
             sendEmail()
             break
         case 3:
-            InAppManager.purchaseProduct()
+            inApp.moreObject = indicator
+            indicator.startAnimating()
+            inApp.purchaseProduct()
             break
         default:
-            InAppManager.restorePurchase()
+            inApp.moreObject = indicator
+            indicator.startAnimating()
+            inApp.restorePurchase()
             break
         }
     }
@@ -80,8 +97,10 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
             UIActivityType.openInIBooks,
             UIActivityType.saveToCameraRoll
         ]
-        
-        self.present(activityViewController, animated: true, completion: nil)
+        self.indicator.removeFromSuperview()
+        self.present(activityViewController, animated: true, completion: {
+            
+        })
     }
     
     func rateApp() {
@@ -94,14 +113,16 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
         // Configure the fields of the interface.
         composeVC.setToRecipients(["stellateamdev@gmail.com"])
         // Present the view controller modally.
-        self.present(composeVC, animated: true, completion: nil)
+        self.indicator.removeFromSuperview()
+        self.present(composeVC, animated: true, completion: {})
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         // Check the result or perform other tasks.
         // Dismiss the mail compose view controller.
-        controller.dismiss(animated: true, completion: nil)
+        self.indicator.removeFromSuperview()
+        controller.dismiss(animated: true, completion:{})
     }
 }
 

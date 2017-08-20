@@ -17,11 +17,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rf-Le-bPj" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                    <rect key="frame" x="16" y="188" width="346" height="77"/>
+                    <rect key="frame" x="37" y="188" width="300" height="77"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="2rf-Le-bPj" secondAttribute="height" multiplier="157:35" id="05R-1u-e12"/>
+                        <constraint firstAttribute="width" secondItem="2rf-Le-bPj" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="05R-1u-e12"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
                     <state key="normal" title="Continue">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -41,11 +41,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnC-ES-bmI" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                    <rect key="frame" x="16" y="295" width="346" height="77"/>
+                    <rect key="frame" x="36" y="295" width="300" height="77"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="BnC-ES-bmI" secondAttribute="height" multiplier="157:35" id="cgw-OT-06u"/>
+                        <constraint firstAttribute="width" secondItem="BnC-ES-bmI" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="cgw-OT-06u"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
                     <state key="normal" title="Restart">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -65,11 +65,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLp-z5-tZO" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                    <rect key="frame" x="16" y="402" width="346" height="77"/>
+                    <rect key="frame" x="36" y="402" width="300" height="77"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="jLp-z5-tZO" secondAttribute="height" multiplier="157:35" id="W8e-vO-1fG"/>
+                        <constraint firstAttribute="width" secondItem="jLp-z5-tZO" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="W8e-vO-1fG"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
                     <state key="normal" title="Main Menu ">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -85,24 +85,24 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="p8m-mw-jUh"/>
+                        <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="jiz-kD-cyX"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="BnC-ES-bmI" firstAttribute="width" secondItem="BnC-ES-bmI" secondAttribute="height" multiplier="157:35" id="2vX-DU-CNa"/>
+                <constraint firstItem="BnC-ES-bmI" firstAttribute="width" secondItem="BnC-ES-bmI" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="2vX-DU-CNa"/>
                 <constraint firstItem="BnC-ES-bmI" firstAttribute="leading" secondItem="jLp-z5-tZO" secondAttribute="leading" id="81J-TU-A3B"/>
-                <constraint firstItem="2rf-Le-bPj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="8Uz-rA-1xQ"/>
-                <constraint firstItem="2rf-Le-bPj" firstAttribute="width" secondItem="2rf-Le-bPj" secondAttribute="height" multiplier="157:35" id="Cnr-jT-Kqi"/>
-                <constraint firstItem="2rf-Le-bPj" firstAttribute="leading" secondItem="BnC-ES-bmI" secondAttribute="leading" id="DlK-d2-nyX"/>
+                <constraint firstItem="2rf-Le-bPj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="37" id="8Uz-rA-1xQ"/>
+                <constraint firstItem="2rf-Le-bPj" firstAttribute="width" secondItem="2rf-Le-bPj" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="Cnr-jT-Kqi"/>
+                <constraint firstItem="2rf-Le-bPj" firstAttribute="leading" secondItem="BnC-ES-bmI" secondAttribute="leading" constant="1" id="DlK-d2-nyX"/>
                 <constraint firstItem="jLp-z5-tZO" firstAttribute="top" secondItem="BnC-ES-bmI" secondAttribute="bottom" constant="30" id="MOZ-NR-9Mw"/>
-                <constraint firstAttribute="trailing" secondItem="2rf-Le-bPj" secondAttribute="trailing" constant="13" id="gaC-jZ-fCr"/>
-                <constraint firstItem="jLp-z5-tZO" firstAttribute="width" secondItem="jLp-z5-tZO" secondAttribute="height" multiplier="157:35" id="qAe-ak-pBx"/>
+                <constraint firstAttribute="trailing" secondItem="2rf-Le-bPj" secondAttribute="trailing" constant="38" id="gaC-jZ-fCr"/>
+                <constraint firstItem="jLp-z5-tZO" firstAttribute="width" secondItem="jLp-z5-tZO" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="qAe-ak-pBx"/>
                 <constraint firstItem="BnC-ES-bmI" firstAttribute="trailing" secondItem="jLp-z5-tZO" secondAttribute="trailing" id="uAO-BS-Ak5"/>
                 <constraint firstItem="BnC-ES-bmI" firstAttribute="top" secondItem="2rf-Le-bPj" secondAttribute="bottom" constant="30" id="xe2-xu-XgC"/>
                 <constraint firstItem="BnC-ES-bmI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xo2-eK-IwY"/>
-                <constraint firstItem="2rf-Le-bPj" firstAttribute="trailing" secondItem="BnC-ES-bmI" secondAttribute="trailing" id="yVZ-Ae-ueb"/>
+                <constraint firstItem="2rf-Le-bPj" firstAttribute="trailing" secondItem="BnC-ES-bmI" secondAttribute="trailing" constant="1" id="yVZ-Ae-ueb"/>
             </constraints>
         </view>
     </objects>

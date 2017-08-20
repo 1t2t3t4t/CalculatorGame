@@ -10,7 +10,6 @@
 		566EAE5D1D2F32A6ADFD213B /* Pods_CalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3354A0AE6A7A670D8B52D9D3 /* Pods_CalculatorTests.framework */; };
 		8184B1A51F2F164A00156D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1A41F2F164A00156D2E /* AppDelegate.swift */; };
 		8184B1A71F2F164A00156D2E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1A61F2F164A00156D2E /* MainMenuViewController.swift */; };
-		8184B1AA1F2F164B00156D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8184B1A81F2F164B00156D2E /* Main.storyboard */; };
 		8184B1AC1F2F164B00156D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8184B1AB1F2F164B00156D2E /* Assets.xcassets */; };
 		8184B1AF1F2F164B00156D2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8184B1AD1F2F164B00156D2E /* LaunchScreen.storyboard */; };
 		8184B1BA1F2F164B00156D2E /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B1B91F2F164B00156D2E /* CalculatorTests.swift */; };
@@ -38,6 +37,9 @@
 		EF7BD3AB1F40A7DC002ABFEE /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */; };
 		EF7BD3AD1F41BF74002ABFEE /* RateMyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7BD3AC1F41BF74002ABFEE /* RateMyApp.swift */; };
 		EF7BD3B11F41CC71002ABFEE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7BD3B01F41CC71002ABFEE /* StoreKit.framework */; };
+		EFD952561F49914300014315 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD952551F49914300014315 /* Main.storyboard */; };
+		EFD952581F49D9DB00014315 /* RemindUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD952571F49D9DB00014315 /* RemindUser.swift */; };
+		EFD9525A1F49DD5300014315 /* DLLocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD952591F49DD5300014315 /* DLLocalNotifications.swift */; };
 		EFDFB4091F42120E00948FC0 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDFB4081F42120E00948FC0 /* FBSDKShareKit.framework */; };
 		EFDFB40B1F42128600948FC0 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDFB40A1F42128600948FC0 /* FacebookCore.framework */; };
 		EFDFB40D1F42129700948FC0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDFB40C1F42129700948FC0 /* FBSDKCoreKit.framework */; };
@@ -73,7 +75,6 @@
 		8184B1A11F2F164A00156D2E /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8184B1A41F2F164A00156D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8184B1A61F2F164A00156D2E /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		8184B1A91F2F164B00156D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8184B1AB1F2F164B00156D2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8184B1AE1F2F164B00156D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8184B1B01F2F164B00156D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +110,9 @@
 		EF7BD3AC1F41BF74002ABFEE /* RateMyApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateMyApp.swift; sourceTree = "<group>"; };
 		EF7BD3AE1F41CC68002ABFEE /* Calculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calculator.entitlements; sourceTree = "<group>"; };
 		EF7BD3B01F41CC71002ABFEE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EFD952551F49914300014315 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EFD952571F49D9DB00014315 /* RemindUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindUser.swift; sourceTree = "<group>"; };
+		EFD952591F49DD5300014315 /* DLLocalNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLLocalNotifications.swift; sourceTree = "<group>"; };
 		EFDFB4081F42120E00948FC0 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		EFDFB40A1F42128600948FC0 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = "../../../Library/Developer/Xcode/DerivedData/Calculator-bcbihpefbgxlnlbsmiematyvkhkt/Build/Products/Debug-iphoneos/FacebookCore/FacebookCore.framework"; sourceTree = "<group>"; };
 		EFDFB40C1F42129700948FC0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Calculator-bcbihpefbgxlnlbsmiematyvkhkt/Build/Products/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
@@ -218,8 +222,8 @@
 		8184B1D31F2F17C500156D2E /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				EFD952551F49914300014315 /* Main.storyboard */,
 				8184B1AD1F2F164B00156D2E /* LaunchScreen.storyboard */,
-				8184B1A81F2F164B00156D2E /* Main.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -274,9 +278,11 @@
 		8197EBFF1F3F0AD500B44D3C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EFD952591F49DD5300014315 /* DLLocalNotifications.swift */,
 				EF7BD3AC1F41BF74002ABFEE /* RateMyApp.swift */,
 				8197EC001F3F0AE900B44D3C /* Problem.swift */,
 				8197EC061F4068E300B44D3C /* Player.swift */,
+				EFD952571F49D9DB00014315 /* RemindUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -436,13 +442,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8184B1FB1F30C2B300156D2E /* ResultView.xib in Resources */,
+				EFD952561F49914300014315 /* Main.storyboard in Resources */,
 				8184B1E51F2F26C100156D2E /* digital-7 (mono).ttf in Resources */,
 				8184B1AF1F2F164B00156D2E /* LaunchScreen.storyboard in Resources */,
 				EFE779231F41DF630014437B /* PauseView.xib in Resources */,
 				8184B1E41F2F26C100156D2E /* digital-7 (mono italic).ttf in Resources */,
 				8184B1E31F2F26C100156D2E /* digital-7 (italic).ttf in Resources */,
 				8184B1AC1F2F164B00156D2E /* Assets.xcassets in Resources */,
-				8184B1AA1F2F164B00156D2E /* Main.storyboard in Resources */,
 				8184B1F11F2F34B400156D2E /* GetSetGoView.xib in Resources */,
 				8184B1E21F2F26BD00156D2E /* digital-7.ttf in Resources */,
 			);
@@ -620,6 +626,8 @@
 				EF5293381F41F8C10029E26C /* InAppManager.swift in Sources */,
 				8184B1A51F2F164A00156D2E /* AppDelegate.swift in Sources */,
 				8197EC051F4064CA00B44D3C /* TwoPlayersGameViewModel.swift in Sources */,
+				EFD952581F49D9DB00014315 /* RemindUser.swift in Sources */,
+				EFD9525A1F49DD5300014315 /* DLLocalNotifications.swift in Sources */,
 				EF183C9D1F376E59009CF97B /* Utils.swift in Sources */,
 				8184B1E11F2F22D800156D2E /* CalculatorGameViewController.swift in Sources */,
 				8184B1D61F2F1A1900156D2E /* Constant.swift in Sources */,
@@ -660,14 +668,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8184B1A81F2F164B00156D2E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8184B1A91F2F164B00156D2E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8184B1AD1F2F164B00156D2E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -787,9 +787,10 @@
 				INFOPLIST_FILE = Calculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stella.calculatorGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stella.sixtysixty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -808,9 +809,10 @@
 				INFOPLIST_FILE = Calculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stella.calculatorGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stella.sixtysixty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

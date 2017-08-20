@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
-
+import SwiftyStoreKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
          UIApplication.shared.isStatusBarHidden = false
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                if purchase.transaction.transactionState == .purchased || purchase.transaction.transactionState == .restored {
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                    print("purchased: \(purchase)")
+                    UserDefaults.setPurchase(value: true, key: "purchase")
+                
+                }
+            }
+        }
+        
         // Override point for customization after application launch.
         GADMobileAds.configure(withApplicationID: "ca-app-pub-1801504340872159~6984207147")
         if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {

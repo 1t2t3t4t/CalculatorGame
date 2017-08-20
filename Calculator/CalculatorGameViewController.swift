@@ -38,7 +38,9 @@ class CalculatorGameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        startLoadingAd()
+        if UserDefaults.checkPurchase(key: "purchase") == nil {
+            startLoadingAd()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,11 +67,17 @@ class CalculatorGameViewController: UIViewController {
     }
     
     @IBAction func back(_ sender:UIButton) {
-       self.dismiss(animated: true, completion: nil)
+        print("backfromGame1")
+       self.dismiss(animated: false, completion: nil)
+        let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        window?.rootViewController = vc
+
     }
     
     func animateOpening(withCompletion completion: @escaping completion) {
         let view = GetSetGoView.view as! GetSetGoView
+        view.frame = self.view.frame
         self.view.addSubview(view)
         view.animateOpening(completion: completion)
     }
@@ -89,15 +97,18 @@ class CalculatorGameViewController: UIViewController {
         self.viewModel.checkBestScore(score: self.viewModel.player.score)
         
         let resultView = ResultView.view as! ResultView
+        resultView.frame = self.view.frame
         resultView.results = message
-        resultView.gameObject = self
+        resultView.gameObjectOnePlayer = self
         resultView.score = self.viewModel.player.score
         resultView.smallView.layer.cornerRadius = 10.0
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
         
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
+        if UserDefaults.checkPurchase(key: "purchase") == nil {
+            if interstitial.isReady  {
+                interstitial.present(fromRootViewController: self)
+            }
         }
         finishGame = true
     }
@@ -203,5 +214,4 @@ extension CalculatorGameViewController:GADBannerViewDelegate,GADInterstitialDele
     }
     
 }
-
 

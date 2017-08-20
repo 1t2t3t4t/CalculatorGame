@@ -51,7 +51,9 @@ class TwoPlayersGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startLoadingAd()
+        if UserDefaults.checkPurchase(key: "purchase") == nil {
+            startLoadingAd()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,9 +93,12 @@ class TwoPlayersGameViewController: UIViewController {
     }
     
     @IBAction func clickPause(_ sender:Any?) {
-        timeObject.invalidate()
+        print("pause button")
         let view = PauseView.view as! PauseView
+        view.frame = self.view.frame
         view.twoPlayer = self
+        view.delegate = self
+        timeObject.invalidate()
         self.view.addSubview(view)
        
     }
@@ -122,8 +127,8 @@ class TwoPlayersGameViewController: UIViewController {
                 self.gameFinished()
                 Timer.invalidate()
             }else{
-                self.timerLabelPlayerOne.text = "\(time!-10)"
-                self.timerLabelPlayerTwo.text =  "\(time!-10)"
+                self.timerLabelPlayerOne.text = "\(time!-100)"
+                self.timerLabelPlayerTwo.text =  "\(time!-100)"
             }
         }
     }
@@ -132,22 +137,29 @@ class TwoPlayersGameViewController: UIViewController {
     func gameFinished() {
         let playerOneScore = self.viewModel.playerOne.score
         let playerTwoScore = self.viewModel.playerTwo.score
-        let message = "Player 1 Score is \(playerOneScore)\nPlayer 2 Score is \(playerTwoScore)"
+        let message = "\nPlayer 1 Score\n\(playerOneScore)/60\n\nPlayer 2 Score\n\(playerTwoScore)/60"
         let resultView = ResultView.view as! ResultView
+        resultView.resultField.font = UIFont(name: "Digital-7MonoItalic", size: 25.0)
         resultView.results = message
+        resultView.frame = self.view.frame
+        resultView.gameObjectTwoPlayer = self
         resultView.twoPlayer = true
+        print("hello my nig")
         resultView.smallView.layer.cornerRadius = 10.0
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
+        if UserDefaults.checkPurchase(key: "purchase") == nil {
+            if interstitial.isReady  {
+                interstitial.present(fromRootViewController: self)
+            }
         }
+   
         finishGame = true
     }
     
     func animateOpening(withCompletion completion: @escaping completion) {
         let view = GetSetGoView.view as! GetSetGoView
-        print(self.view)
+        view.frame = self.view.frame
         self.view.addSubview(view)
         view.animateOpening(completion: completion)
     }
@@ -196,5 +208,31 @@ extension TwoPlayersGameViewController:GADInterstitialDelegate {
         print("interstitialWillLeaveApplication")
     }
     
+}
+
+extension TwoPlayersGameViewController: PauseViewDelegate {
+    
+    func restartGame() {
+        self.dismiss(animated: false) {
+            let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
+            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+            UIView.transition(with: appdelegate.window!, duration: 0.5, options: .curveLinear, animations: {
+                appdelegate.window?.rootViewController = vc
+            }) { (finished) in
+                //Finished animation
+            }
+        }
+    }
+    
+    func didPressedMainMenu() {
+        self.dismiss(animated: false, completion: {
+            let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+            let window = (UIApplication.shared.delegate as! AppDelegate).window
+            window?.rootViewController = vc
+        })
+    }
+    func resumeGame() {
+        self.startTimer()
+    }
 }
 

@@ -10,22 +10,33 @@ import UIKit
 import FacebookShare
 import FBSDKShareKit
 
+protocol ResultViewDelegate:class {
+    func mainMenu() -> Void
+    func restartGame() -> Void
+}
+
 class ResultView: UIView {
     
     @IBOutlet weak var smallView:UIView!
-    @IBOutlet weak var resultField: UITextField!
+    @IBOutlet weak var resultField2: UITextField!
     @IBOutlet weak var viewForResult:UIView!
+    @IBOutlet weak var resultField:UITextView!
     
-    var gameObject:CalculatorGameViewController!
+    weak var delegate:ResultViewDelegate?
+    var gameObjectOnePlayer:CalculatorGameViewController!
+    var gameObjectTwoPlayer:TwoPlayersGameViewController!
     var twoPlayer = false
     var score = 0
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.resultField.layer.cornerRadius = 5.0
+        self.resultField2.isHidden = true
         self.resultField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
         self.resultField.layer.borderWidth = 3.0
         self.resultField.layer.cornerRadius = 10.0
+
+
     }
     
     var results:String! {
@@ -38,37 +49,38 @@ class ResultView: UIView {
         switch sender.tag {
         case 0:
             if twoPlayer {
+                gameObjectTwoPlayer.dismiss(animated: false, completion:nil)
                 let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
                 let window = (UIApplication.shared.delegate as! AppDelegate).window
-                UIView.transition(with: window!, duration: 0.5, options: .curveLinear, animations: {
-                    window?.rootViewController = vc
-                }) { (finished) in
-                    //Finished animation
-                }
+                window?.rootViewController = vc
 
             }
             else {
+                gameObjectOnePlayer.dismiss(animated: false, completion:nil)
                 let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
                 let window = (UIApplication.shared.delegate as! AppDelegate).window
-                UIView.transition(with: window!, duration: 0.5, options: .curveLinear, animations: {
-                    window?.rootViewController = vc
-                }) { (finished) in
-                    //Finished animation
-                }
-
+                window?.rootViewController = vc
+                
             }
             break
         case 1:
             shareApplication()
             break
         default:
-            let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
-            let window = (UIApplication.shared.delegate as! AppDelegate).window
-            UIView.transition(with: window!, duration: 1.0, options: .curveEaseInOut, animations: {
+            if twoPlayer {
+                gameObjectTwoPlayer.dismiss(animated: false, completion:nil)
+                let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+                let window = (UIApplication.shared.delegate as! AppDelegate).window
                 window?.rootViewController = vc
-            }) { (finished) in
-                //Finished animation
             }
+            else {
+                print("enter onePlayer")
+                gameObjectOnePlayer.dismiss(animated: false, completion:nil)
+                let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+                let window = (UIApplication.shared.delegate as! AppDelegate).window
+                window?.rootViewController = vc
+            }
+            
         
         }
     }
@@ -87,7 +99,13 @@ class ResultView: UIView {
             UIActivityType.assignToContact,
             UIActivityType.openInIBooks,
             UIActivityType.saveToCameraRoll]
-        gameObject.present(activityViewController, animated: true, completion: nil)
+        if twoPlayer {
+            gameObjectTwoPlayer.present(activityViewController, animated: true, completion: nil)
+        }
+        else {
+            gameObjectOnePlayer.present(activityViewController, animated: true, completion: nil)
+        }
+        
     }
 
 }

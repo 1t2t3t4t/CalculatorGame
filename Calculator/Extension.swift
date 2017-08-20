@@ -82,8 +82,35 @@ extension UserDefaults {
             return nil
         }
     }
+    class func setPurchase(value:Bool,key:String) {
+        UserDefaults.standard.set(value, forKey: key)
+        UserDefaults.standard.synchronize()
+    }
+    class func checkPurchase(key:String) -> Bool? {
+        if UserDefaults.standard.value(forKey: key) != nil {
+            return true
+        }
+        else {
+            return nil
+        }
+    }
 }
 
-
+extension UIApplication {
+    
+    static func topViewController(base: UIViewController? = UIApplication.shared.delegate?.window??.rootViewController) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return topViewController(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
+            return topViewController(base: selected)
+        }
+        if let presented = base?.presentedViewController {
+            return topViewController(base: presented)
+        }
+        
+        return base
+    }
+}
 
 
