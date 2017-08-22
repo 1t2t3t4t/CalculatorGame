@@ -22,7 +22,7 @@
                         <constraint firstAttribute="width" secondItem="2rf-Le-bPj" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="05R-1u-e12"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                    <state key="normal" title="Continue">
+                    <state key="normal" title="CONTINUE">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -46,7 +46,7 @@
                         <constraint firstAttribute="width" secondItem="BnC-ES-bmI" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="cgw-OT-06u"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                    <state key="normal" title="Restart">
+                    <state key="normal" title="RESTART">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -70,7 +70,7 @@
                         <constraint firstAttribute="width" secondItem="jLp-z5-tZO" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="W8e-vO-1fG"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                    <state key="normal" title="Main Menu ">
+                    <state key="normal" title="MAIN MENU">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>

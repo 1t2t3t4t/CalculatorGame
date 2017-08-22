@@ -15,6 +15,10 @@ class TwoPlayersGameViewModel {
     var playerOne = Player()
     var playerTwo = Player()
     
+    var resultMessage: String {
+        return "\nPlayer 1 Score\n\(self.playerOne.score)/60\n\nPlayer 2 Score\n\(self.playerTwo.score)/60"
+    }
+    
     var playerOneCurrentProblem:Problem {
         return self.problems[self.playerOne.total]
     }

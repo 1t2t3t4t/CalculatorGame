@@ -96,9 +96,7 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
             UIActivityType.saveToCameraRoll
         ]
         self.indicator.removeFromSuperview()
-        self.present(activityViewController, animated: true, completion: {
-            
-        })
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     func rateApp() {

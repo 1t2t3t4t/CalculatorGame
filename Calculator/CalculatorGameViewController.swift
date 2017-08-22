@@ -122,7 +122,7 @@ class CalculatorGameViewController: UIViewController {
                self.gameFinished()
                Timer.invalidate()
             }else{
-                self.timerLabel.text = "\(time!-50)"
+                self.timerLabel.text = "\(time!-1)"
             }
         }
     }

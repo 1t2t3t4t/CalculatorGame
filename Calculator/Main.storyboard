@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -30,14 +30,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUu-ND-tvJ" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="62" y="443" width="251" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="5Mg-uu-cNM"/>
-                                </constraints>
+                                <rect key="frame" x="66" y="476.66666666666674" width="282" height="95.333333333333258"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="MORE">
@@ -59,10 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9r-Kh-Hp8" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="62" y="192" width="251" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="OUA-eY-5zN"/>
-                                </constraints>
+                                <rect key="frame" x="66" y="204.33333333333337" width="282" height="95.666666666666629"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="PLAY NOW">
@@ -83,18 +77,15 @@
                                     <action selector="clickPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEQ-ag-M5G"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="bezel" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pf-7d-B1Q">
-                                <rect key="frame" x="30" y="65" width="316" height="98"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pf-7d-B1Q">
+                                <rect key="frame" x="34" y="65" width="347" height="110.33333333333334"/>
                                 <color key="backgroundColor" red="0.57265514139999996" green="0.71885484460000004" blue="0.59611034389999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="98" id="TYU-yq-FAd"/>
-                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Digital-7MonoItalic" family="Digital-7" pointSize="60"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BEST : 5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bH-Tu-CSE">
-                                <rect key="frame" x="257" y="68" width="83" height="24.5"/>
+                                <rect key="frame" x="295" y="68" width="80" height="23.666666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1bH-Tu-CSE" secondAttribute="height" multiplier="44:13" id="xFh-Rm-j0L"/>
                                 </constraints>
@@ -103,10 +94,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjw-BL-2Xi" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="62" y="317" width="251" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="bwv-jl-1Od"/>
-                                </constraints>
+                                <rect key="frame" x="66" y="340" width="282" height="95.666666666666686"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="2-PLAYER ">
@@ -131,6 +119,7 @@
                         <color key="backgroundColor" red="0.8901960784313725" green="0.86274509803921573" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="kUu-ND-tvJ" secondAttribute="trailing" constant="46" id="0rT-Lf-lpe"/>
+                            <constraint firstItem="g9r-Kh-Hp8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.13" id="2Yb-xH-fhQ"/>
                             <constraint firstItem="wjw-BL-2Xi" firstAttribute="top" secondItem="g9r-Kh-Hp8" secondAttribute="bottom" constant="40" id="4tD-wy-YIF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wjw-BL-2Xi" secondAttribute="trailing" constant="46" id="6J7-sP-NUe"/>
                             <constraint firstItem="g9r-Kh-Hp8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="C8P-fD-iZa"/>
@@ -139,11 +128,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="1bH-Tu-CSE" secondAttribute="trailing" constant="19" id="SxO-Eo-lVK"/>
                             <constraint firstItem="wjw-BL-2Xi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="Tsy-D7-MVt"/>
                             <constraint firstItem="g9r-Kh-Hp8" firstAttribute="top" secondItem="2Pf-7d-B1Q" secondAttribute="bottom" constant="29" id="XSp-Sr-iJ4"/>
+                            <constraint firstItem="kUu-ND-tvJ" firstAttribute="height" secondItem="g9r-Kh-Hp8" secondAttribute="height" id="dnb-g0-i7A"/>
                             <constraint firstItem="kUu-ND-tvJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="eTQ-7B-cnb"/>
+                            <constraint firstItem="2Pf-7d-B1Q" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="ebb-ru-Wmt"/>
                             <constraint firstItem="2Pf-7d-B1Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="n2J-vj-T5k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g9r-Kh-Hp8" secondAttribute="trailing" constant="46" id="pae-92-Cva"/>
                             <constraint firstItem="2Pf-7d-B1Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="upF-TQ-ZID"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Pf-7d-B1Q" secondAttribute="trailing" constant="13" id="yw9-9I-2PF"/>
+                            <constraint firstItem="wjw-BL-2Xi" firstAttribute="height" secondItem="g9r-Kh-Hp8" secondAttribute="height" id="zJo-X8-Klr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -170,24 +162,18 @@
                         <viewControllerLayoutGuide type="bottom" id="VBr-2S-CvK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WNC-rM-kP0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="bezel" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BAF-qm-j8Z">
-                                <rect key="frame" x="30" y="87" width="314.5" height="90"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BAF-qm-j8Z">
+                                <rect key="frame" x="34" y="87" width="345.66666666666669" height="81"/>
                                 <color key="backgroundColor" red="0.57265514139999996" green="0.71885484460000004" blue="0.59611034389999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BAF-qm-j8Z" secondAttribute="height" multiplier="7:2" id="lL0-ZJ-1X1"/>
-                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Digital-7MonoItalic" family="Digital-7" pointSize="60"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEV-Pa-WfH" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="215" width="314.5" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="zEV-Pa-WfH" secondAttribute="height" multiplier="157:35" id="JGy-Kd-LVF"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="206" width="345.66666666666669" height="73.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -208,10 +194,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntn-f8-ElU" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="315" width="314.5" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ntn-f8-ElU" secondAttribute="height" multiplier="157:35" id="unx-Ps-ez0"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="309.66666666666669" width="345.66666666666669" height="74"/>
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,10 +215,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-b6-WxF" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="415" width="314.5" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4ui-b6-WxF" secondAttribute="height" multiplier="157:35" id="hJu-2N-aXb"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="413.66666666666669" width="345.66666666666669" height="73.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,10 +236,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMi-mS-1j9" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="515" width="314.5" height="69.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="AMi-mS-1j9" secondAttribute="height" multiplier="157:35" constant="1.7619047619049297" id="kL4-lv-8rS"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="517.33333333333348" width="345.66666666666669" height="73.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -280,7 +257,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wS-I3-9EX" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="22" y="32" width="50" height="36"/>
+                                <rect key="frame" x="26" y="32" width="50" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="4jk-cc-IWK"/>
                                     <constraint firstAttribute="height" constant="35.5" id="aCW-xg-Lta"/>
@@ -305,7 +282,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngO-a4-CHV">
-                                <rect key="frame" x="162.5" y="35" width="50" height="30"/>
+                                <rect key="frame" x="182" y="35" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Gg1-0m-3lU"/>
                                     <constraint firstAttribute="height" constant="30" id="Mtu-HP-f2c"/>
@@ -328,15 +305,20 @@
                             <constraint firstItem="ntn-f8-ElU" firstAttribute="leading" secondItem="WNC-rM-kP0" secondAttribute="leadingMargin" constant="14" id="UnY-h9-8yK"/>
                             <constraint firstItem="4ui-b6-WxF" firstAttribute="leading" secondItem="WNC-rM-kP0" secondAttribute="leadingMargin" constant="14" id="Ur0-Ko-Z4I"/>
                             <constraint firstItem="BAF-qm-j8Z" firstAttribute="leading" secondItem="WNC-rM-kP0" secondAttribute="leadingMargin" constant="14" id="aPJ-yL-N4h"/>
+                            <constraint firstItem="ntn-f8-ElU" firstAttribute="height" secondItem="zEV-Pa-WfH" secondAttribute="height" id="cle-il-TeP"/>
                             <constraint firstItem="ngO-a4-CHV" firstAttribute="top" secondItem="YCY-Zi-39r" secondAttribute="bottom" constant="15" id="eHR-YG-12c"/>
                             <constraint firstItem="zEV-Pa-WfH" firstAttribute="top" secondItem="BAF-qm-j8Z" secondAttribute="bottom" constant="38" id="fTv-8g-y0u"/>
+                            <constraint firstItem="BAF-qm-j8Z" firstAttribute="height" secondItem="WNC-rM-kP0" secondAttribute="height" multiplier="0.11" id="jQx-ab-OBm"/>
+                            <constraint firstItem="AMi-mS-1j9" firstAttribute="height" secondItem="4ui-b6-WxF" secondAttribute="height" id="jka-Zr-oIi"/>
                             <constraint firstItem="AMi-mS-1j9" firstAttribute="top" secondItem="4ui-b6-WxF" secondAttribute="bottom" constant="30" id="k55-b6-1cl"/>
                             <constraint firstItem="2wS-I3-9EX" firstAttribute="leading" secondItem="WNC-rM-kP0" secondAttribute="leadingMargin" constant="6" id="mA6-L4-REj"/>
                             <constraint firstItem="ntn-f8-ElU" firstAttribute="top" secondItem="zEV-Pa-WfH" secondAttribute="bottom" constant="30" id="mgP-iC-Wtn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4ui-b6-WxF" secondAttribute="trailing" constant="14.5" id="oeh-4H-mRf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zEV-Pa-WfH" secondAttribute="trailing" constant="14.5" id="r25-2C-sxA"/>
                             <constraint firstItem="2wS-I3-9EX" firstAttribute="top" secondItem="YCY-Zi-39r" secondAttribute="bottom" constant="12" id="wqE-pX-xmG"/>
+                            <constraint firstItem="4ui-b6-WxF" firstAttribute="height" secondItem="ntn-f8-ElU" secondAttribute="height" id="xS1-uH-Tdg"/>
                             <constraint firstItem="BAF-qm-j8Z" firstAttribute="top" secondItem="ngO-a4-CHV" secondAttribute="bottom" constant="22" id="zKo-fV-JEH"/>
+                            <constraint firstItem="zEV-Pa-WfH" firstAttribute="height" secondItem="WNC-rM-kP0" secondAttribute="height" multiplier="0.1" id="zMc-ne-AEC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -362,21 +344,21 @@
                         <viewControllerLayoutGuide type="bottom" id="hvK-Fo-QDr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="g3O-hl-sa9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKJ-5k-Nnf">
-                                <rect key="frame" x="0.0" y="335" width="375" height="333"/>
+                                <rect key="frame" x="0.0" y="369.66666666666674" width="414" height="367.33333333333326"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="bezel" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9W-AO-Plj">
-                                        <rect key="frame" x="30" y="70" width="315" height="90.5"/>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9W-AO-Plj">
+                                        <rect key="frame" x="30" y="70" width="354" height="77.333333333333314"/>
                                         <color key="backgroundColor" red="0.57265514139999996" green="0.71885484460000004" blue="0.59611034389999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Digital-7MonoItalic" family="Digital-7" pointSize="60"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-xe-WuL" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="211.5" width="67" height="60"/>
+                                        <rect key="frame" x="24" y="236.66666666666669" width="77" height="69.333333333333258"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dTM-xe-WuL" secondAttribute="height" multiplier="11:10" constant="1" id="IYF-tB-ArS"/>
                                         </constraints>
@@ -400,7 +382,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-IU-wbl" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="111" y="211.5" width="65" height="60"/>
+                                        <rect key="frame" x="120.99999999999999" y="236.66666666666669" width="74.666666666666643" height="69.333333333333258"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PMe-IU-wbl" secondAttribute="height" multiplier="11:10" constant="-1" id="iqy-ab-y2t"/>
                                         </constraints>
@@ -424,7 +406,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwa-Ww-OCM" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="197" y="211.5" width="66.5" height="60"/>
+                                        <rect key="frame" x="216.66666666666663" y="236.66666666666669" width="76.333333333333371" height="69.333333333333258"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wwa-Ww-OCM" secondAttribute="height" multiplier="11:10" id="Sh4-KK-NLe"/>
                                         </constraints>
@@ -448,7 +430,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38u-qP-f18" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="285.5" y="211.5" width="66" height="60"/>
+                                        <rect key="frame" x="315" y="236.66666666666669" width="75.666666666666686" height="69.333333333333258"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="38u-qP-f18" secondAttribute="height" multiplier="11:10" id="KDv-Xx-M88"/>
                                         </constraints>
@@ -471,8 +453,8 @@
                                             <action selector="playerOneDidAnswer:" destination="9Eq-3y-s9c" eventType="touchUpInside" id="58j-EV-gzb"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpU-wf-ybI">
-                                        <rect key="frame" x="176" y="34" width="23" height="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpU-wf-ybI">
+                                        <rect key="frame" x="195.66666666666666" y="34" width="23" height="19"/>
                                         <color key="backgroundColor" red="0.88620162010192871" green="0.86324393749237061" blue="0.8196176290512085" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gpU-wf-ybI" secondAttribute="height" multiplier="11:9" id="iqW-hk-vzY"/>
@@ -489,13 +471,13 @@
                                     <constraint firstItem="38u-qP-f18" firstAttribute="leading" secondItem="Wwa-Ww-OCM" secondAttribute="trailing" constant="21.999999999999886" id="4OH-vc-Shb"/>
                                     <constraint firstItem="38u-qP-f18" firstAttribute="baseline" secondItem="dTM-xe-WuL" secondAttribute="baseline" id="5DY-4i-wOB"/>
                                     <constraint firstItem="PMe-IU-wbl" firstAttribute="leading" secondItem="dTM-xe-WuL" secondAttribute="trailing" constant="20" id="8gN-km-tab"/>
+                                    <constraint firstItem="K9W-AO-Plj" firstAttribute="height" secondItem="jKJ-5k-Nnf" secondAttribute="height" multiplier="0.21" id="FVZ-7s-2Cb"/>
                                     <constraint firstItem="gpU-wf-ybI" firstAttribute="centerX" secondItem="jKJ-5k-Nnf" secondAttribute="centerX" id="Fvg-Un-X3s"/>
                                     <constraint firstItem="PMe-IU-wbl" firstAttribute="firstBaseline" secondItem="38u-qP-f18" secondAttribute="firstBaseline" id="GXR-n0-gnS"/>
                                     <constraint firstItem="dTM-xe-WuL" firstAttribute="leading" secondItem="jKJ-5k-Nnf" secondAttribute="leading" constant="24" id="IcN-hR-UrP"/>
                                     <constraint firstAttribute="bottom" secondItem="PMe-IU-wbl" secondAttribute="bottom" constant="61.333333333333258" id="JwH-B4-w0j"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="leading" secondItem="PMe-IU-wbl" secondAttribute="trailing" constant="21.000000000000057" id="LWF-Ip-eGE"/>
                                     <constraint firstItem="dTM-xe-WuL" firstAttribute="firstBaseline" secondItem="Wwa-Ww-OCM" secondAttribute="firstBaseline" id="O7h-f9-Nj6"/>
-                                    <constraint firstItem="38u-qP-f18" firstAttribute="top" secondItem="K9W-AO-Plj" secondAttribute="bottom" constant="51.000000000000057" id="QeK-aP-dBs"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="firstBaseline" secondItem="38u-qP-f18" secondAttribute="firstBaseline" id="XP7-Un-8WO"/>
                                     <constraint firstAttribute="trailing" secondItem="38u-qP-f18" secondAttribute="trailing" constant="24" id="Yaw-zb-Mxa"/>
                                     <constraint firstItem="dTM-xe-WuL" firstAttribute="firstBaseline" secondItem="PMe-IU-wbl" secondAttribute="firstBaseline" id="auR-RE-grP"/>
@@ -518,17 +500,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usR-d5-1yO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="bezel" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Bk-lK-GCr">
-                                        <rect key="frame" x="30" y="172" width="315" height="90"/>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Bk-lK-GCr">
+                                        <rect key="frame" x="30" y="218.99999999999997" width="354" height="77.333333333333286"/>
                                         <color key="backgroundColor" red="0.57265514139999996" green="0.71885484460000004" blue="0.59611034389999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Digital-7MonoItalic" family="Digital-7" pointSize="60"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbn-mF-e2n" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="23" y="60" width="66" height="60"/>
+                                        <rect key="frame" x="23" y="60" width="76" height="68.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Lbn-mF-e2n" secondAttribute="height" multiplier="11:10" id="xAF-J3-JXj"/>
                                         </constraints>
@@ -552,7 +534,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-NP-pWf" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="109" y="60" width="65.5" height="60"/>
+                                        <rect key="frame" x="119.00000000000001" y="60" width="75.333333333333357" height="68.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OYD-NP-pWf" secondAttribute="height" multiplier="11:10" id="HKX-VT-qWa"/>
                                         </constraints>
@@ -576,7 +558,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-qL-YRk" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="195.5" y="60" width="66.5" height="60"/>
+                                        <rect key="frame" x="215.33333333333337" y="60" width="75.666666666666629" height="68.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="a4i-qL-YRk" secondAttribute="height" multiplier="11:10" id="C2W-Z9-bgg"/>
                                         </constraints>
@@ -600,7 +582,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZK-bq-kjB" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="284" y="60" width="65.5" height="60"/>
+                                        <rect key="frame" x="313" y="60" width="75.666666666666686" height="68.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7ZK-bq-kjB" secondAttribute="height" multiplier="11:10" id="DHd-JG-TJe"/>
                                         </constraints>
@@ -623,8 +605,8 @@
                                             <action selector="playerTwoDidAnswer:" destination="9Eq-3y-s9c" eventType="touchUpInside" id="kW0-61-4FL"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G16-Vu-hjZ">
-                                        <rect key="frame" x="176" y="280" width="23" height="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G16-Vu-hjZ">
+                                        <rect key="frame" x="195.66666666666666" y="314.33333333333331" width="23" height="19"/>
                                         <color key="backgroundColor" red="0.88620162010000003" green="0.86324393749999995" blue="0.81961762910000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="rFp-PQ-FwM"/>
@@ -642,7 +624,6 @@
                                     <constraint firstAttribute="bottom" secondItem="G16-Vu-hjZ" secondAttribute="bottom" constant="34.333333333333258" id="1Bh-Nc-MVa"/>
                                     <constraint firstAttribute="trailing" secondItem="7ZK-bq-kjB" secondAttribute="trailing" constant="25.5" id="2Dt-Zj-cRf"/>
                                     <constraint firstItem="7ZK-bq-kjB" firstAttribute="baseline" secondItem="a4i-qL-YRk" secondAttribute="baseline" id="2Yo-h2-LBu"/>
-                                    <constraint firstItem="9Bk-lK-GCr" firstAttribute="top" secondItem="7ZK-bq-kjB" secondAttribute="bottom" constant="52" id="8Vl-1t-9LH"/>
                                     <constraint firstItem="OYD-NP-pWf" firstAttribute="firstBaseline" secondItem="7ZK-bq-kjB" secondAttribute="firstBaseline" constant="4" id="BLD-NX-Dhd"/>
                                     <constraint firstItem="G16-Vu-hjZ" firstAttribute="top" secondItem="9Bk-lK-GCr" secondAttribute="bottom" constant="17.5" id="E5m-cz-SO9"/>
                                     <constraint firstItem="a4i-qL-YRk" firstAttribute="bottom" secondItem="7ZK-bq-kjB" secondAttribute="bottom" id="ELi-k7-9i1"/>
@@ -670,11 +651,8 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHn-jh-hFR" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="161.5" y="307.5" width="52" height="52"/>
+                                <rect key="frame" x="190" y="351" width="34" height="34"/>
                                 <color key="backgroundColor" red="0.76042288540000003" green="0.55466955900000003" blue="0.38826873899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="GHn-jh-hFR" secondAttribute="height" multiplier="1:1" id="dWc-GE-WhN"/>
-                                </constraints>
                                 <state key="normal" image="pause"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -693,6 +671,7 @@
                             <constraint firstItem="usR-d5-1yO" firstAttribute="height" secondItem="g3O-hl-sa9" secondAttribute="height" multiplier="0.5" id="RkT-NY-V1m"/>
                             <constraint firstItem="usR-d5-1yO" firstAttribute="top" secondItem="g3O-hl-sa9" secondAttribute="top" id="SNK-7j-x4V"/>
                             <constraint firstAttribute="bottom" secondItem="jKJ-5k-Nnf" secondAttribute="bottom" constant="-1" id="bIX-8w-TUl"/>
+                            <constraint firstItem="9Bk-lK-GCr" firstAttribute="height" secondItem="K9W-AO-Plj" secondAttribute="height" id="dFO-Cb-bUi"/>
                             <constraint firstAttribute="trailing" secondItem="jKJ-5k-Nnf" secondAttribute="trailing" id="e4G-Mf-USY"/>
                             <constraint firstItem="GHn-jh-hFR" firstAttribute="centerY" secondItem="g3O-hl-sa9" secondAttribute="centerY" id="sqK-wY-bOH"/>
                             <constraint firstItem="jKJ-5k-Nnf" firstAttribute="leading" secondItem="g3O-hl-sa9" secondAttribute="leading" id="usQ-ZB-Xt3"/>
@@ -729,14 +708,11 @@
                         <viewControllerLayoutGuide type="bottom" id="d2p-j6-Zav"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cad-fg-YZ6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ng2-hi-Nc5" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="105" width="315" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="tTh-CM-79U"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="104.99999999999999" width="346" height="73.666666666666643"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Share This App">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -757,10 +733,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-EI-x2O" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="205" width="315" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="JRn-lW-75Y"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="207.66666666666669" width="346" height="73.666666666666686"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Rate Us">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -781,10 +754,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9q-tZ-4VP" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="305" width="315" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="5YU-rh-AxT"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="310.33333333333331" width="346" height="73.333333333333371"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Contact Us">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -805,10 +775,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAv-aj-aZQ" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="405" width="315" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="YqO-Zi-NTN"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="412.66666666666674" width="346" height="74.333333333333314"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Remove Ad">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -829,7 +796,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-rL-XzZ" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="16" y="38" width="54" height="36"/>
+                                <rect key="frame" x="20" y="38" width="54" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="54" id="8ZV-NC-fCB"/>
                                     <constraint firstAttribute="height" constant="35.5" id="Zf9-od-orH"/>
@@ -854,10 +821,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb1-FI-gzm" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="30" y="505" width="315" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="efm-H3-qnk"/>
-                                </constraints>
+                                <rect key="frame" x="34" y="516" width="346" height="73.666666666666629"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Restore Purchase">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -878,7 +842,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBV-Xk-5n9">
-                                <rect key="frame" x="150.5" y="32" width="74" height="42"/>
+                                <rect key="frame" x="170" y="32" width="74" height="42"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="0.27843137254901962" green="0.28627450980392155" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -901,10 +865,15 @@
                             <constraint firstItem="r8G-rL-XzZ" firstAttribute="leading" secondItem="Cad-fg-YZ6" secondAttribute="leadingMargin" id="WDM-gs-h3b"/>
                             <constraint firstItem="cBV-Xk-5n9" firstAttribute="top" secondItem="YMc-2c-F2z" secondAttribute="bottom" constant="12" id="WRb-pc-JiY"/>
                             <constraint firstItem="hkh-EI-x2O" firstAttribute="leading" secondItem="O9q-tZ-4VP" secondAttribute="leading" id="ZQJ-wC-JCR"/>
+                            <constraint firstItem="Ng2-hi-Nc5" firstAttribute="height" secondItem="Cad-fg-YZ6" secondAttribute="height" multiplier="0.1" id="abl-SV-eCa"/>
                             <constraint firstItem="cBV-Xk-5n9" firstAttribute="centerY" secondItem="r8G-rL-XzZ" secondAttribute="centerY" constant="-3" id="aqD-Zg-VG1"/>
+                            <constraint firstItem="hkh-EI-x2O" firstAttribute="height" secondItem="Ng2-hi-Nc5" secondAttribute="height" id="azW-ho-UOr"/>
                             <constraint firstItem="O9q-tZ-4VP" firstAttribute="top" secondItem="hkh-EI-x2O" secondAttribute="bottom" constant="29" id="cwE-sZ-wB2"/>
                             <constraint firstItem="hkh-EI-x2O" firstAttribute="top" secondItem="Ng2-hi-Nc5" secondAttribute="bottom" constant="29" id="cxc-Hy-sAK"/>
+                            <constraint firstItem="O9q-tZ-4VP" firstAttribute="height" secondItem="hkh-EI-x2O" secondAttribute="height" id="jNY-aP-ugc"/>
+                            <constraint firstItem="Lb1-FI-gzm" firstAttribute="height" secondItem="dAv-aj-aZQ" secondAttribute="height" id="kPw-f5-O2I"/>
                             <constraint firstItem="hkh-EI-x2O" firstAttribute="trailing" secondItem="O9q-tZ-4VP" secondAttribute="trailing" id="qGb-64-dBO"/>
+                            <constraint firstItem="dAv-aj-aZQ" firstAttribute="height" secondItem="O9q-tZ-4VP" secondAttribute="height" id="scC-p6-CJS"/>
                             <constraint firstItem="Ng2-hi-Nc5" firstAttribute="top" secondItem="YMc-2c-F2z" secondAttribute="bottom" constant="85" id="tfT-5Q-b2a"/>
                         </constraints>
                     </view>
@@ -923,6 +892,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pause" width="52" height="52"/>
+        <image name="pause" width="34" height="34"/>
     </resources>
 </document>
