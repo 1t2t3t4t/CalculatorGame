@@ -15,7 +15,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var playGame:PressableButton!
     @IBOutlet weak var twoPlayer:PressableButton!
     @IBOutlet weak var more:PressableButton!
-    @IBOutlet weak var bestScore:UITextField!
+    @IBOutlet dynamic weak var bestScore:UITextField!
     
     var bannerView: GADBannerView!
     
@@ -35,6 +35,9 @@ class MainMenuViewController: UIViewController {
         self.numberTextField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
         self.numberTextField.layer.borderWidth = 3.0
         
+        self.bestScore.adjustsFontSizeToFitWidth = true
+        self.bestScore.minimumFontSize = 15
+        
         if let bestScore = UserDefaults.loadScore(key: "bestScore") {
             self.bestScore.text = "BEST : \(bestScore)"
         }
@@ -42,7 +45,6 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let rate = RateMyApp.sharedInstance
         rate.appID = "123456"
         rate.trackAppUsage()
@@ -95,10 +97,10 @@ extension MainMenuViewController:GADBannerViewDelegate {
         bannerView.alpha = 0.0
         bannerView.frame.origin.x = 0.0
         bannerView.frame.origin.y = self.view.frame.height - bannerView.frame.height
+        bannerView.frame.size.width = self.view.frame.width
         self.view.addSubview(bannerView)
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-        //bannerView.alpha = 1.0
         }, completion: nil)
         
     }

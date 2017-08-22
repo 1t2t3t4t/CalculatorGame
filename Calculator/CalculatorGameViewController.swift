@@ -117,13 +117,16 @@ class CalculatorGameViewController: UIViewController {
     }
     
     func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
-            let time = Int(self.timerLabel.text!)
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] (Timer) in
+            guard self != nil else {
+                return
+            }
+            let time = Int((self?.timerLabel.text!)!)
             if time! <= 0 {
-               self.gameFinished()
+               self?.gameFinished()
                Timer.invalidate()
             }else{
-                self.timerLabel.text = "\(time!-1)"
+                self?.timerLabel.text = "\(time!-1)"
             }
         }
     }
@@ -174,6 +177,7 @@ extension CalculatorGameViewController:GADBannerViewDelegate,GADInterstitialDele
         bannerView.alpha = 0.0
         bannerView.frame.origin.x = 0.0
         bannerView.frame.origin.y = self.view.frame.height - bannerView.frame.height
+        bannerView.frame.size.width = self.view.frame.width
         self.view.addSubview(bannerView)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
             bannerView.alpha = 1.0

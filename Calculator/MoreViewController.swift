@@ -138,13 +138,10 @@ extension MoreViewController:GADBannerViewDelegate {
         bannerView.alpha = 0.0
         bannerView.frame.origin.x = 0.0
         bannerView.frame.origin.y = self.view.frame.height - bannerView.frame.height
+        bannerView.frame.size.width = self.view.frame.width
         self.view.addSubview(bannerView)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
             bannerView.alpha = 1.0
         }, completion: nil)
-        
     }
-    
 }
-
-

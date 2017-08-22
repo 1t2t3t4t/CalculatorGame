@@ -20,6 +20,9 @@ class TwoPlayersGameViewController: UIViewController {
     @IBOutlet weak var timerLabelPlayerOne:UILabel!
     @IBOutlet weak var timerLabelPlayerTwo:UILabel!
     
+    @IBOutlet weak var playerOneView: UIView!
+    @IBOutlet weak var playerTwoView: UIView!
+    
     @IBOutlet weak var pauseButton:PressableButton!
     
     var viewModel = TwoPlayersGameViewModel()
@@ -115,13 +118,14 @@ class TwoPlayersGameViewController: UIViewController {
     }
     
     func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] (Timer) in
-            
-            let time = Int(self.timerLabelPlayerOne.text!)
-            self.timeObject = Timer
+        self.timeObject = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] (Timer) in
+            guard self != nil else {
+                return
+            }
+            let time = Int((self?.timerLabelPlayerOne.text!)!)
             if time! <= 0 {
-                self?.gameFinished()
-                timer.invalidate()
+                self?.animateResult()
+                Timer.invalidate()
             }else{
                 self?.timerLabelPlayerOne.text = "\(time!-1)"
                 self?.timerLabelPlayerTwo.text =  "\(time!-1)"
@@ -129,10 +133,24 @@ class TwoPlayersGameViewController: UIViewController {
         }
     }
     
+    func animateResult() {
+        let one = GetSetGoView.view as! GetSetGoView
+        let two = GetSetGoView.view as! GetSetGoView
+        two.transform = CGAffineTransform(rotationAngle: .pi)
+        one.frame = self.playerOneView.bounds
+        two.frame = self.playerTwoView.bounds
+        self.playerOneView.addSubview(one)
+        self.playerTwoView.addSubview(two)
+        one.customAnimate(self.viewModel.isPlayerOneWin().toString)
+        two.customAnimate(self.viewModel.isPlayerTwoWin().toString) { 
+            self.gameFinished()
+        }
+    }
+    
     func gameFinished() {
         let resultView = ResultView.view as! ResultView
         resultView.delegate = self
-        resultView.resultField.font = UIFont(name: "Digital-7MonoItalic", size: 25.0)
+        resultView.resultField.font = UIFont(name: "Digital-7MonoItalic", size: 18.0)
         resultView.results = self.viewModel.resultMessage
         resultView.frame = self.view.frame
         resultView.gameObjectTwoPlayer = self
