@@ -36,7 +36,7 @@ class MainMenuViewController: UIViewController {
         self.numberTextField.layer.borderWidth = 3.0
         
         self.bestScore.adjustsFontSizeToFitWidth = true
-        self.bestScore.minimumFontSize = 15
+        self.bestScore.minimumFontSize = 10
         
         if let bestScore = UserDefaults.loadScore(key: "bestScore") {
             self.bestScore.text = "BEST : \(bestScore)"
