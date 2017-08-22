@@ -23,7 +23,7 @@ class TwoPlayersGameViewController: UIViewController {
     @IBOutlet weak var pauseButton:PressableButton!
     
     var viewModel = TwoPlayersGameViewModel()
-    var timeObject:Timer = Timer()
+    var timeObject:Timer?
     var interstitial: GADInterstitial!
     var finishGame = false
     
@@ -56,7 +56,7 @@ class TwoPlayersGameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !finishGame {
-            self.animateOpening { [unowned self] in
+            self.animateOpening { 
                 self.viewModel.addNewProblem()
                 self.updatePlayerOneTextField()
                 self.updatePlayerTwoTextField()
@@ -94,7 +94,7 @@ class TwoPlayersGameViewController: UIViewController {
         view.frame = self.view.frame
         view.twoPlayer = self
         view.delegate = self
-        timeObject.invalidate()
+        timeObject?.invalidate()
         self.view.addSubview(view)
     }
     
@@ -120,27 +120,23 @@ class TwoPlayersGameViewController: UIViewController {
             let time = Int(self.timerLabelPlayerOne.text!)
             self.timeObject = Timer
             if time! <= 0 {
-                self.gameFinished()
-                Timer.invalidate()
+                self?.gameFinished()
+                timer.invalidate()
             }else{
-                self.timerLabelPlayerOne.text = "\(time!-50)"
-                self.timerLabelPlayerTwo.text =  "\(time!-50)"
+                self?.timerLabelPlayerOne.text = "\(time!-1)"
+                self?.timerLabelPlayerTwo.text =  "\(time!-1)"
             }
         }
     }
     
     func gameFinished() {
-        let playerOneScore = self.viewModel.playerOne.score
-        let playerTwoScore = self.viewModel.playerTwo.score
-        let message = "\nPlayer 1 Score\n\(playerOneScore)/60\n\nPlayer 2 Score\n\(playerTwoScore)/60"
         let resultView = ResultView.view as! ResultView
         resultView.delegate = self
         resultView.resultField.font = UIFont(name: "Digital-7MonoItalic", size: 25.0)
-        resultView.results = message
+        resultView.results = self.viewModel.resultMessage
         resultView.frame = self.view.frame
         resultView.gameObjectTwoPlayer = self
         resultView.twoPlayer = true
-        print("hello my nig")
         resultView.smallView.layer.cornerRadius = 10.0
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)

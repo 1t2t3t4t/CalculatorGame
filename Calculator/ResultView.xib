@@ -142,9 +142,7 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="QzE-Uu-sDr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="C2Y-cZ-4TT"/>
-                <constraint firstItem="QzE-Uu-sDr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="198" id="TzZ-17-av8"/>
                 <constraint firstItem="QzE-Uu-sDr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gXq-n4-36p"/>
-                <constraint firstItem="QzE-Uu-sDr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="42" id="lMn-YG-Mdx"/>
             </constraints>
             <connections>
                 <outlet property="resultField" destination="wyW-BZ-aI7" id="w3A-3W-sk4"/>

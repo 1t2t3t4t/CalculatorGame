@@ -47,7 +47,7 @@ class MainMenuViewController: UIViewController {
         rate.appID = "123456"
         rate.trackAppUsage()
         if UserDefaults.checkPurchase(key: "purchase") == nil {
-        startLoadingAd()
+            startLoadingAd()
         }
     }
     
