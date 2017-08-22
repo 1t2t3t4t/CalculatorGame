@@ -116,8 +116,9 @@ class TwoPlayersGameViewController: UIViewController {
     
     func startTimer() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] (Timer) in
-            self.timeObject = Timer
+            
             let time = Int(self.timerLabelPlayerOne.text!)
+            self.timeObject = Timer
             if time! <= 0 {
                 self.gameFinished()
                 Timer.invalidate()

@@ -74,6 +74,7 @@ class CalculatorGameViewController: UIViewController {
     }
     
     func animateOpening(withCompletion completion: @escaping completion) {
+        print("enteranimate")
         let view = GetSetGoView.view as! GetSetGoView
         view.frame = self.view.frame
         self.view.addSubview(view)
@@ -122,7 +123,7 @@ class CalculatorGameViewController: UIViewController {
                self.gameFinished()
                Timer.invalidate()
             }else{
-                self.timerLabel.text = "\(time!-50)"
+                self.timerLabel.text = "\(time!-1)"
             }
         }
     }

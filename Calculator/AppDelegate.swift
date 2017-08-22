@@ -33,24 +33,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         GADMobileAds.configure(withApplicationID: "ca-app-pub-1801504340872159~6984207147")
-        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
-            if shortcutItem.type == "com.stella.calculatorGame.onePlaper" {
-                let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
-                let window = (UIApplication.shared.delegate as! AppDelegate).window
-                window?.rootViewController = vc
-
-            }
-            else if shortcutItem.type == "com.stella.calculatorGame.twoPlayer" {
-                let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
-                let window = (UIApplication.shared.delegate as! AppDelegate).window
-                window?.rootViewController = vc
-            }
-            else {}
-        }
         return true
     }
     
-  
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        if shortcutItem.type == "com.stella.calculatorGame.onePlayer" {
+            let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
+            let window = (UIApplication.shared.delegate as! AppDelegate).window
+            window?.rootViewController = vc
+            completionHandler(true)
+            
+        }
+        else if shortcutItem.type == "com.stella.calculatorGame.twoPlayer" {
+            let vc = TwoPlayersGameViewController.instantiateViewController() as! TwoPlayersGameViewController
+            let window = (UIApplication.shared.delegate as! AppDelegate).window
+            window?.rootViewController = vc
+            completionHandler(true)
+        }
+
+        else {
+            completionHandler(false)
+        }
+        
+    }
     
     
 
