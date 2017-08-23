@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import AVFoundation
+
 class TwoPlayersGameViewController: UIViewController {
     
     @IBOutlet var playerOneButtons:[UIButton]!
@@ -27,10 +28,8 @@ class TwoPlayersGameViewController: UIViewController {
     
     var viewModel = TwoPlayersGameViewModel()
     var timeObject:Timer?
-    var timer:Timer!
     var interstitial: GADInterstitial!
     var finishGame = false
-    
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -61,15 +60,13 @@ class TwoPlayersGameViewController: UIViewController {
             }
             self.playerTwoButtons[i].layer.removeAllAnimations()
         }
-        
         pauseButton.tintColor = UIColor.white
         pauseButton.colors = .init(button: UIColor(red: 70/255.0, green: 73/255.0, blue: 76/255.0, alpha: 1), shadow: UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1))
         pauseButton.backgroundColor = UIColor.clear
-           }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         if UserDefaults.checkPurchase(key: "purchase") == nil {
             startLoadingAd()
         }
@@ -84,7 +81,6 @@ class TwoPlayersGameViewController: UIViewController {
                     audioPlayer.numberOfLoops = -1
                     audioPlayer.prepareToPlay()
                     audioPlayer.play()
-                    
                 }
                 catch{
                     print(error)
@@ -97,10 +93,12 @@ class TwoPlayersGameViewController: UIViewController {
             }
         }
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         audioPlayer.stop()
     }
+    
     @IBAction func playerOneDidAnswer(_ sender:UIButton) {
         guard let text = sender.titleLabel?.text else {
             return
@@ -160,18 +158,33 @@ class TwoPlayersGameViewController: UIViewController {
             let time = Int((self?.timerLabelPlayerOne.text!)!)
             if time! <= 0 {
                 self?.animateResult()
-                Timer.invalidate()
+                timer.invalidate()
             }else{
                 self?.timerLabelPlayerOne.text = "\(time!-1)"
                 self?.timerLabelPlayerTwo.text =  "\(time!-1)"
             }
         }
     }
-      func gameFinished() {
+    
+    func animateResult() {
+        let one = GetSetGoView.view as! GetSetGoView
+        let two = GetSetGoView.view as! GetSetGoView
+        two.transform = CGAffineTransform(rotationAngle: .pi)
+        one.frame = self.playerOneView.bounds
+        two.frame = self.playerTwoView.bounds
+        self.playerOneView.addSubview(one)
+        self.playerTwoView.addSubview(two)
+        one.customAnimate(self.viewModel.isPlayerOneWin().toString)
+        two.customAnimate(self.viewModel.isPlayerTwoWin().toString) { 
+            self.gameFinished()
+        }
+    }
+    
+    func gameFinished() {
         let resultView = ResultView.view as! ResultView
         resultView.delegate = self
         resultView.resultField.font = UIFont(name: "Digital-7MonoItalic", size: 28.0)
-        resultView.resultField.contentInset = UIEdgeInsets(top: 7, left: 0, bottom: 0, right: 0)
+        
         resultView.results = self.viewModel.resultMessage
         resultView.frame = self.view.frame
         resultView.gameObjectTwoPlayer = self

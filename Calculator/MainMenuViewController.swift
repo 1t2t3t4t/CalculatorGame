@@ -12,12 +12,12 @@ import GoogleMobileAds
 import AVFoundation
 import SpriteKit
 class MainMenuViewController: UIViewController {
+    
     @IBOutlet weak var numberTextField:UITextField!
     @IBOutlet weak var playGame:PressableButton!
     @IBOutlet weak var twoPlayer:PressableButton!
     @IBOutlet weak var more:PressableButton!
     @IBOutlet dynamic weak var bestScore:UITextField!
-    
     
     var bannerView: GADBannerView!
     var shouldRepeat = true
@@ -45,15 +45,15 @@ class MainMenuViewController: UIViewController {
             self.bestScore.text = "BEST : \(bestScore)"
         }
         if shouldRepeat {
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "Winding_Down", ofType: "mp3")!))
-            audioPlayer.numberOfLoops = -1
-            audioPlayer.prepareToPlay()
-            audioPlayer.play()
-        }
-        catch{
-            print(error)
-        }
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "Winding_Down", ofType: "mp3")!))
+                audioPlayer.numberOfLoops = -1
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            }
+            catch{
+                print(error)
+            }
         }
 
     }

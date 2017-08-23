@@ -37,6 +37,7 @@ class ResultView: UIView {
         self.resultField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
         self.resultField.layer.borderWidth = 3.0
         self.resultField.layer.cornerRadius = 10.0
+        self.resultField.contentInset = UIEdgeInsetsMake(10, 0, 0, 0)
     }
     
     var results:String! {
