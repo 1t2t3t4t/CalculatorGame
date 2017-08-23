@@ -33,11 +33,14 @@
 		902470D07D37C65AB85E5F0A /* Pods_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AAA5210D6D282F45F54C58 /* Pods_Calculator.framework */; };
 		EF183C9C1F376E59009CF97B /* PressableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9A1F376E59009CF97B /* PressableButton.swift */; };
 		EF183C9D1F376E59009CF97B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF183C9B1F376E59009CF97B /* Utils.swift */; };
+		EF1A61AF1F4D291800D89898 /* Winding_Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF1A61AE1F4D291800D89898 /* Winding_Down.mp3 */; };
+		EF1A61B11F4D397E00D89898 /* Hypnotic-Puzzle4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF1A61B01F4D397E00D89898 /* Hypnotic-Puzzle4.mp3 */; };
+		EF1A61B31F4D42C900D89898 /* BeepTone.wav in Resources */ = {isa = PBXBuildFile; fileRef = EF1A61B21F4D42C900D89898 /* BeepTone.wav */; };
 		EF5293381F41F8C10029E26C /* InAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5293371F41F8C10029E26C /* InAppManager.swift */; };
 		EF7BD3AB1F40A7DC002ABFEE /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */; };
 		EF7BD3AD1F41BF74002ABFEE /* RateMyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7BD3AC1F41BF74002ABFEE /* RateMyApp.swift */; };
 		EF7BD3B11F41CC71002ABFEE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7BD3B01F41CC71002ABFEE /* StoreKit.framework */; };
-		EFD952561F49914300014315 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD952551F49914300014315 /* Main.storyboard */; };
+		EFB675831F4C23A5009CABAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB675821F4C23A5009CABAA /* Main.storyboard */; };
 		EFD952581F49D9DB00014315 /* RemindUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD952571F49D9DB00014315 /* RemindUser.swift */; };
 		EFD9525A1F49DD5300014315 /* DLLocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD952591F49DD5300014315 /* DLLocalNotifications.swift */; };
 		EFDFB4091F42120E00948FC0 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDFB4081F42120E00948FC0 /* FBSDKShareKit.framework */; };
@@ -105,12 +108,15 @@
 		B919911FC0E7DA2F17B5085E /* Pods_CalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF183C9A1F376E59009CF97B /* PressableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableButton.swift; sourceTree = "<group>"; };
 		EF183C9B1F376E59009CF97B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		EF1A61AE1F4D291800D89898 /* Winding_Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Winding_Down.mp3; sourceTree = "<group>"; };
+		EF1A61B01F4D397E00D89898 /* Hypnotic-Puzzle4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hypnotic-Puzzle4.mp3"; sourceTree = "<group>"; };
+		EF1A61B21F4D42C900D89898 /* BeepTone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BeepTone.wav; sourceTree = "<group>"; };
 		EF5293371F41F8C10029E26C /* InAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppManager.swift; sourceTree = "<group>"; };
 		EF7BD3AA1F40A7DC002ABFEE /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		EF7BD3AC1F41BF74002ABFEE /* RateMyApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateMyApp.swift; sourceTree = "<group>"; };
 		EF7BD3AE1F41CC68002ABFEE /* Calculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calculator.entitlements; sourceTree = "<group>"; };
 		EF7BD3B01F41CC71002ABFEE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		EFD952551F49914300014315 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EFB675821F4C23A5009CABAA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EFD952571F49D9DB00014315 /* RemindUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindUser.swift; sourceTree = "<group>"; };
 		EFD952591F49DD5300014315 /* DLLocalNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLLocalNotifications.swift; sourceTree = "<group>"; };
 		EFDFB4081F42120E00948FC0 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 		8184B1981F2F164A00156D2E = {
 			isa = PBXGroup;
 			children = (
+				EF1A61AB1F4C8F0C00D89898 /* Music */,
 				8184B1A31F2F164A00156D2E /* Calculator */,
 				8184B1B81F2F164B00156D2E /* CalculatorTests */,
 				8184B1C31F2F164B00156D2E /* CalculatorUITests */,
@@ -222,7 +229,7 @@
 		8184B1D31F2F17C500156D2E /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				EFD952551F49914300014315 /* Main.storyboard */,
+				EFB675821F4C23A5009CABAA /* Main.storyboard */,
 				8184B1AD1F2F164B00156D2E /* LaunchScreen.storyboard */,
 			);
 			name = Storyboard;
@@ -298,6 +305,16 @@
 				71CC160CADC49FE6F8EA0F3A /* Pods-CalculatorUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF1A61AB1F4C8F0C00D89898 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				EF1A61B21F4D42C900D89898 /* BeepTone.wav */,
+				EF1A61B01F4D397E00D89898 /* Hypnotic-Puzzle4.mp3 */,
+				EF1A61AE1F4D291800D89898 /* Winding_Down.mp3 */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 		EF7BD3AF1F41CC71002ABFEE /* Frameworks */ = {
@@ -394,6 +411,9 @@
 						DevelopmentTeam = 877839YT4B;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
@@ -442,11 +462,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8184B1FB1F30C2B300156D2E /* ResultView.xib in Resources */,
-				EFD952561F49914300014315 /* Main.storyboard in Resources */,
+				EFB675831F4C23A5009CABAA /* Main.storyboard in Resources */,
 				8184B1E51F2F26C100156D2E /* digital-7 (mono).ttf in Resources */,
+				EF1A61AF1F4D291800D89898 /* Winding_Down.mp3 in Resources */,
 				8184B1AF1F2F164B00156D2E /* LaunchScreen.storyboard in Resources */,
 				EFE779231F41DF630014437B /* PauseView.xib in Resources */,
 				8184B1E41F2F26C100156D2E /* digital-7 (mono italic).ttf in Resources */,
+				EF1A61B31F4D42C900D89898 /* BeepTone.wav in Resources */,
+				EF1A61B11F4D397E00D89898 /* Hypnotic-Puzzle4.mp3 in Resources */,
 				8184B1E31F2F26C100156D2E /* digital-7 (italic).ttf in Resources */,
 				8184B1AC1F2F164B00156D2E /* Assets.xcassets in Resources */,
 				8184B1F11F2F34B400156D2E /* GetSetGoView.xib in Resources */,

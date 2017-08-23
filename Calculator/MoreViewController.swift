@@ -51,8 +51,10 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
     @IBAction func back(_ sender:Any?) {
         self.dismiss(animated: false, completion: nil)
         let vc = MainMenuViewController.instantiateViewController() as! MainMenuViewController
+        vc.shouldRepeat = false
         let window = (UIApplication.shared.delegate as! AppDelegate).window
         window?.rootViewController = vc
+        
     }
     
     @IBAction func buttonAction(_ sender:PressableButton) {
@@ -100,6 +102,7 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
     }
     
     func rateApp() {
+        self.indicator.removeFromSuperview()
         RateMyApp.sharedInstance.okButtonPressed()
     }
     
@@ -130,7 +133,7 @@ extension MoreViewController:GADBannerViewDelegate {
         bannerView.adUnitID = "ca-app-pub-1801504340872159/2434588045"
         bannerView.rootViewController = self
         let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5" ]
+        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
         bannerView.load(request)
     }
     
@@ -138,6 +141,7 @@ extension MoreViewController:GADBannerViewDelegate {
         bannerView.alpha = 0.0
         bannerView.frame.origin.x = 0.0
         bannerView.frame.origin.y = self.view.frame.height - bannerView.frame.height
+        bannerView.frame.size.width = self.view.frame.width
         self.view.addSubview(bannerView)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
             bannerView.alpha = 1.0

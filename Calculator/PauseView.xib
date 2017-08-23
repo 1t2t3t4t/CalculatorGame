@@ -104,6 +104,11 @@
                 <constraint firstItem="BnC-ES-bmI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xo2-eK-IwY"/>
                 <constraint firstItem="2rf-Le-bPj" firstAttribute="trailing" secondItem="BnC-ES-bmI" secondAttribute="trailing" constant="1" id="yVZ-Ae-ueb"/>
             </constraints>
+            <connections>
+                <outlet property="continueButton" destination="2rf-Le-bPj" id="M8G-FC-Yed"/>
+                <outlet property="mainMenuButton" destination="jLp-z5-tZO" id="pmS-Xz-Epi"/>
+                <outlet property="restartButton" destination="BnC-ES-bmI" id="rqi-df-Tve"/>
+            </connections>
         </view>
     </objects>
 </document>

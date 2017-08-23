@@ -41,7 +41,7 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
     
     
     var promptAfterDays:Double = 30
-    var promptAfterUses = 1
+    var promptAfterUses = 5
     var promptAfterCustomEventsCount = 10
     var daysBeforeReminding:Double = 1
     
@@ -49,7 +49,7 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
     var alertMessage = ""
     var alertOKTitle = NSLocalizedString("Rate Now", comment: "RateMyApp")
     var alertRemindLaterTitle = NSLocalizedString("Not Now", comment: "RateMyApp")
-    var appID = ""
+    var appID = "1273603001"
 	
 	var debug = false
     
@@ -293,7 +293,7 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
      func okButtonPressed(){
     
         UserDefaults.standard.set(true, forKey: kDidRateVersion)
-        let appStoreURL = URL(string:reviewURLiOS7+appID)
+        let appStoreURL = URL(string:reviewURL+appID)
         UIApplication.shared.open(appStoreURL!, options:[:], completionHandler: { (success) in
             if success {
                 print("rate")

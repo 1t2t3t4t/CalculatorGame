@@ -113,4 +113,63 @@ extension UIApplication {
     }
 }
 
+extension UIFont {
+    class func font_autoAdjust(_ size : CGFloat) -> UIFont {
+        return UIFont(name: "Digital-7", size: size)!
+    }
+}
+
+extension UIDevice {
+    enum DeviceTypes {
+        case iPhone4_4s
+        case iPhone5_5s
+        case iPhone7_7s
+        case iPhone7p_7ps
+        case after_iPhone7p_7ps
+    }
+    
+    static var deviceType : DeviceTypes {
+        print("yo ip \(UIScreen.main.bounds.height)")
+        switch UIScreen.main.bounds.height {
+            
+        case 480.0:
+            return .iPhone4_4s
+        case 568.0:
+            return .iPhone5_5s
+        case 667.0:
+            print("yo ip7")
+            return .iPhone7_7s
+        case 736.0:
+            return .iPhone7p_7ps
+        default:
+            return .after_iPhone7p_7ps
+        }
+    }
+}
+
+extension Int{
+    
+    var fontSize : CGFloat {
+        
+        var deltaSize : CGFloat = 0;
+        switch (UIDevice.deviceType) {
+        case .iPhone4_4s,
+             .iPhone5_5s :
+            deltaSize = -6
+            break
+        case .iPhone7_7s :
+            deltaSize = 0
+            break
+        case .iPhone7p_7ps :
+            deltaSize = 0
+            break
+        default:
+            deltaSize = 0
+            break
+        }
+        
+        let selfValue = self;
+        return CGFloat(selfValue) + deltaSize;
+    }
+}
 

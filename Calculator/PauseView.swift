@@ -24,6 +24,7 @@ class PauseView: UIView {
     weak var delegate:PauseViewDelegate?
     var twoPlayer = TwoPlayersGameViewController()
     
+    
     @IBAction func buttonClicked(_ sender:UIButton) {
         switch sender.tag {
         case 0:

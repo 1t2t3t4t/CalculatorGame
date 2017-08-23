@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 import GoogleMobileAds
-
+import AVFoundation
+import SpriteKit
 class MainMenuViewController: UIViewController {
     @IBOutlet weak var numberTextField:UITextField!
     @IBOutlet weak var playGame:PressableButton!
@@ -17,7 +18,9 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var more:PressableButton!
     @IBOutlet weak var bestScore:UITextField!
     
+    
     var bannerView: GADBannerView!
+    var shouldRepeat = true
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -38,14 +41,22 @@ class MainMenuViewController: UIViewController {
         if let bestScore = UserDefaults.loadScore(key: "bestScore") {
             self.bestScore.text = "BEST : \(bestScore)"
         }
+        if shouldRepeat {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "Winding_Down", ofType: "mp3")!))
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        }
+        catch{
+            print(error)
+        }
+        }
+
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rate = RateMyApp.sharedInstance
-        rate.appID = "123456"
-        rate.trackAppUsage()
         if UserDefaults.checkPurchase(key: "purchase") == nil {
             startLoadingAd()
         }
@@ -55,7 +66,6 @@ class MainMenuViewController: UIViewController {
         self.bannerView.removeFromSuperview()
         self.bannerView = nil
     }
-    
     @IBAction func clickPlay(_ sender:Any?) {
        //self.performSegue(withIdentifier: Constant.SHOW_PROBLEM, sender: sender)
         let vc = CalculatorGameViewController.instantiateViewController() as! CalculatorGameViewController
@@ -87,7 +97,7 @@ extension MainMenuViewController:GADBannerViewDelegate {
         bannerView.adUnitID = "ca-app-pub-1801504340872159/5814595704"
         bannerView.rootViewController = self
         let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5" ]
+        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
         bannerView.load(request)
     }
     
@@ -95,10 +105,11 @@ extension MainMenuViewController:GADBannerViewDelegate {
         bannerView.alpha = 0.0
         bannerView.frame.origin.x = 0.0
         bannerView.frame.origin.y = self.view.frame.height - bannerView.frame.height
+        bannerView.frame.size.width = self.view.frame.width
         self.view.addSubview(bannerView)
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-        //bannerView.alpha = 1.0
+        bannerView.alpha = 1.0
         }, completion: nil)
         
     }

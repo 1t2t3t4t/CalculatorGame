@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import AVFoundation
 var launchedShortcutItem: UIApplicationShortcutItem?
 
 struct Constant {
@@ -34,3 +34,5 @@ enum ShortcutIdentifier:String {
     }
     
 }
+
+var audioPlayer = AVAudioPlayer()
