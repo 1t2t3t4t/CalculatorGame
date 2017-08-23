@@ -85,8 +85,8 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
     }
     
     func shareApplication() {
-        let firstActivityItem = "How fast can you do this math quiz in 60 seconds?\nLet's find out!\n"
-        let secondActivityItem : NSURL = NSURL(string: "https://www.google.com")!
+        let firstActivityItem = "How fast can you do this intense math quiz in 60 seconds?\nLet's find out!\n"
+        let secondActivityItem : NSURL = NSURL(string: "https://itunes.apple.com/us/app/60-60/id1273603001")!
         
         let activityViewController : UIActivityViewController = UIActivityViewController(
             activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
