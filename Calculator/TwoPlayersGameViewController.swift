@@ -28,7 +28,7 @@ class TwoPlayersGameViewController: UIViewController {
     
     var viewModel = TwoPlayersGameViewModel()
     var timeObject:Timer?
-    var interstitial: GADInterstitial!
+    var interstitial: GADInterstitial?
     var finishGame = false
     
     override var prefersStatusBarHidden: Bool {
@@ -85,7 +85,6 @@ class TwoPlayersGameViewController: UIViewController {
                 catch{
                     print(error)
                 }
-
                 self.viewModel.addNewProblem()
                 self.updatePlayerOneTextField()
                 self.updatePlayerTwoTextField()
@@ -134,6 +133,17 @@ class TwoPlayersGameViewController: UIViewController {
     }
     
     func updatePlayerOneTextField() {
+        print("Count \(self.viewModel.playerOne.total)")
+        if self.viewModel.playerOne.total >= 60 {
+            let finishedView = GetSetGoView.view as! GetSetGoView
+            finishedView.textLabel.text = "DONE"
+            finishedView.tag = 99
+            finishedView.frame = self.playerOneView.bounds
+            self.playerOneView.addSubview(finishedView)
+            if self.viewModel.playerTwo.total >= 60 {
+                self.animateResult()
+            }
+        }
         let currentProblem = self.viewModel.playerOneCurrentProblem
         self.playerOneTextField.text = currentProblem.text
         for i in 0...3 {
@@ -142,6 +152,16 @@ class TwoPlayersGameViewController: UIViewController {
     }
     
     func updatePlayerTwoTextField() {
+        if self.viewModel.playerTwo.total >= 60 {
+            let finishedView = GetSetGoView.view as! GetSetGoView
+            finishedView.textLabel.text = "DONE"
+            finishedView.tag = 99
+            finishedView.frame = self.playerTwoView.bounds
+            self.playerTwoView.addSubview(finishedView)
+            if self.viewModel.playerOne.total >= 60 {
+                self.animateResult()
+            }
+        }
         let currentProblem = self.viewModel.playerTwoCurrentProblem
         self.playerTwoTextField.text = currentProblem.text
         for i in 0...3 {
@@ -167,6 +187,8 @@ class TwoPlayersGameViewController: UIViewController {
     }
     
     func animateResult() {
+        self.playerOneView.subviews.filter({$0.tag == 99}).first?.removeFromSuperview()
+        self.playerTwoView.subviews.filter({$0.tag == 99}).first?.removeFromSuperview()
         let one = GetSetGoView.view as! GetSetGoView
         let two = GetSetGoView.view as! GetSetGoView
         two.transform = CGAffineTransform(rotationAngle: .pi)
@@ -193,8 +215,8 @@ class TwoPlayersGameViewController: UIViewController {
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
         if UserDefaults.checkPurchase(key: "purchase") == nil && interstitial != nil {
-            if interstitial.isReady  {
-                interstitial.present(fromRootViewController: self)
+            if (interstitial?.isReady)!  {
+                interstitial?.present(fromRootViewController: self)
             }
         }
         finishGame = true
@@ -212,10 +234,10 @@ extension TwoPlayersGameViewController:GADInterstitialDelegate {
     
     func startLoadingAd() {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-1801504340872159/9048275468")
-        interstitial.delegate = self
+        interstitial?.delegate = self
         let request = GADRequest()
-         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
-        interstitial.load(request)
+//         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+        interstitial?.load(request)
     }
     
 }

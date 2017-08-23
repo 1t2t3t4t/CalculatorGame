@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import AVFoundation
+
 class CalculatorGameViewController: UIViewController {
     
     @IBOutlet weak var timerLabel:UILabel!
@@ -20,8 +21,10 @@ class CalculatorGameViewController: UIViewController {
     @IBOutlet weak var backButton:PressableButton!
     
     var viewModel:CalculatorGameViewModel = CalculatorGameViewModel()
-    var bannerView:GADBannerView!
-    var interstitial:GADInterstitial!
+    var bannerView:GADBannerView?
+    var interstitial:GADInterstitial?
+    var timer:Timer?
+    
     var finishGame = false
     
     override var prefersStatusBarHidden: Bool {
@@ -34,11 +37,8 @@ class CalculatorGameViewController: UIViewController {
         self.numberTextField.layer.borderWidth = 3.0
         
         backButton.colors = .init(button: UIColor(red: 70/255.0, green: 73/255.0, blue: 76/255.0, alpha: 1), shadow: UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1))
-      
-        
-
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 if UserDefaults.checkPurchase(key: "purchase") == nil {
@@ -99,6 +99,11 @@ class CalculatorGameViewController: UIViewController {
     }
     
     func generateNewRound() {
+        if self.viewModel.choiceCount >= 60 {
+            self.timer?.invalidate()
+            self.gameFinished()
+        }
+        self.viewModel.choiceCount += 1
         self.viewModel.problem = Problem()
         self.choiceOne.setTitle(self.viewModel.problem.choice[0], for: .normal)
         self.choiceTwo.setTitle(self.viewModel.problem.choice[1], for: .normal)
@@ -120,25 +125,24 @@ class CalculatorGameViewController: UIViewController {
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
         if UserDefaults.checkPurchase(key: "purchase") == nil && interstitial != nil {
-            if interstitial.isReady  {
-                interstitial.present(fromRootViewController: self)
+            if (interstitial?.isReady)!  {
+                interstitial?.present(fromRootViewController: self)
             }
         }
         finishGame = true
     }
     
     func clearAd() {
-        self.bannerView.removeFromSuperview()
+        self.bannerView?.removeFromSuperview()
         self.bannerView = nil
         self.interstitial = nil
     }
     
     func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] (Timer) in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] (Timer) in
             guard self != nil else {
                 return
             }
-            
             let time = Int((self?.timerLabel.text!)!)
             if time! <= 0 {
                self?.gameFinished()
@@ -178,17 +182,17 @@ extension CalculatorGameViewController:GADBannerViewDelegate,GADInterstitialDele
     
     func startLoadingAd() {
         bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
-        bannerView.delegate = self
+        bannerView?.delegate = self
         
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-1801504340872159/9929934680")
-        interstitial.delegate = self
+        interstitial?.delegate = self
         
-        bannerView.adUnitID = "ca-app-pub-1801504340872159/6996827191"
-        bannerView.rootViewController = self
+        bannerView?.adUnitID = "ca-app-pub-1801504340872159/6996827191"
+        bannerView?.rootViewController = self
         let request = GADRequest()
-         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
-        bannerView.load(request)
-        interstitial.load(request)
+//         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+        bannerView?.load(request)
+        interstitial?.load(request)
     }
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {

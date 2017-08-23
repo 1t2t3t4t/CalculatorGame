@@ -23,7 +23,7 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
     @IBOutlet weak var restorePurchase:PressableButton!
     @IBOutlet weak var backButton:PressableButton!
     
-    var bannerView: GADBannerView!
+    var bannerView: GADBannerView?
     var indicator = UIActivityIndicatorView()
     
     override var prefersStatusBarHidden: Bool {
@@ -74,12 +74,22 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
         case 3:
             inApp.moreObject = indicator
             indicator.startAnimating()
-            inApp.purchaseProduct()
+            inApp.purchaseProduct(withCompletion: {(success) in
+                if success {
+                    self.bannerView?.removeFromSuperview()
+                    self.bannerView = nil
+                }
+            })
             break
         default:
             inApp.moreObject = indicator
             indicator.startAnimating()
-            inApp.restorePurchase()
+            inApp.restorePurchase(withCompletion: {(success) in
+                if success {
+                    self.bannerView?.removeFromSuperview()
+                    self.bannerView = nil
+                }
+            })
             break
         }
     }
@@ -110,7 +120,7 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
         let composeVC = MFMailComposeViewController()
         composeVC.mailComposeDelegate = self
         // Configure the fields of the interface.
-        composeVC.setToRecipients(["stellateamdev@gmail.com"])
+        composeVC.setToRecipients(["stella.feedbacks@gmail.com"])
         // Present the view controller modally.
         self.indicator.removeFromSuperview()
         self.present(composeVC, animated: true, completion: {})
@@ -129,12 +139,12 @@ extension MoreViewController:GADBannerViewDelegate {
     
     func startLoadingAd() {
         bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
-        bannerView.delegate = self
-        bannerView.adUnitID = "ca-app-pub-1801504340872159/2434588045"
-        bannerView.rootViewController = self
+        bannerView?.delegate = self
+        bannerView?.adUnitID = "ca-app-pub-1801504340872159/2434588045"
+        bannerView?.rootViewController = self
         let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
-        bannerView.load(request)
+//        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+        bannerView?.load(request)
     }
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {

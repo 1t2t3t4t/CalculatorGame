@@ -120,6 +120,7 @@ extension UIFont {
 }
 
 extension UIDevice {
+    
     enum DeviceTypes {
         case iPhone4_4s
         case iPhone5_5s
@@ -147,7 +148,7 @@ extension UIDevice {
     }
 }
 
-extension Int{
+extension Int {
     
     var fontSize : CGFloat {
         

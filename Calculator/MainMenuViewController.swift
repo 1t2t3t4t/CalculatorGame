@@ -19,7 +19,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var more:PressableButton!
     @IBOutlet dynamic weak var bestScore:UITextField!
     
-    var bannerView: GADBannerView!
+    var bannerView: GADBannerView?
     var shouldRepeat = true
     
     override var prefersStatusBarHidden: Bool {
@@ -66,7 +66,7 @@ class MainMenuViewController: UIViewController {
     }
     
     deinit {
-        self.bannerView.removeFromSuperview()
+        self.bannerView?.removeFromSuperview()
         self.bannerView = nil
     }
     @IBAction func clickPlay(_ sender:Any?) {
@@ -95,13 +95,13 @@ extension MainMenuViewController:GADBannerViewDelegate {
     
     func startLoadingAd() {
         bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
-        bannerView.delegate = self
+        bannerView?.delegate = self
         
-        bannerView.adUnitID = "ca-app-pub-1801504340872159/5814595704"
-        bannerView.rootViewController = self
+        bannerView?.adUnitID = "ca-app-pub-1801504340872159/5814595704"
+        bannerView?.rootViewController = self
         let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
-        bannerView.load(request)
+//        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+        bannerView?.load(request)
     }
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {

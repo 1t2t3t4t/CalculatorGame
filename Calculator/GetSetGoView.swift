@@ -10,10 +10,12 @@ import UIKit
 
 typealias completion = () -> Void
 import AVFoundation
+
 class GetSetGoView: UIView {
 
     @IBOutlet weak var textLabel:UILabel!
-    override func awakeFromNib() {
+    
+    func animateOpening(_ string:String? = "READY??", completion: @escaping completion) {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "BeepTone", ofType: "wav")!))
             audioPlayer.numberOfLoops = 0
@@ -22,9 +24,6 @@ class GetSetGoView: UIView {
         catch{
             print(error)
         }
-    }
-    
-    func animateOpening(_ string:String? = "READY??", completion: @escaping completion) {
         self.textLabel.text = string
         audioPlayer.play()
         self.animateLabel { (done) in

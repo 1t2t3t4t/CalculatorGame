@@ -14,6 +14,8 @@ class CalculatorGameViewModel {
     var player = Player()
     var problem = Problem()
     
+    var choiceCount = 0
+    
     func checkBestScore(score:Int) {
         if let best = UserDefaults.loadScore(key: "bestScore") {
             if best < score {
