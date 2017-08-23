@@ -20,6 +20,9 @@ class TwoPlayersGameViewController: UIViewController {
     @IBOutlet weak var timerLabelPlayerOne:UILabel!
     @IBOutlet weak var timerLabelPlayerTwo:UILabel!
     
+    @IBOutlet weak var playerOneView: UIView!
+    @IBOutlet weak var playerTwoView: UIView!
+    
     @IBOutlet weak var pauseButton:PressableButton!
     
     var viewModel = TwoPlayersGameViewModel()
@@ -156,8 +159,8 @@ class TwoPlayersGameViewController: UIViewController {
             self?.timeObject = timer
             let time = Int((self?.timerLabelPlayerOne.text!)!)
             if time! <= 0 {
-                self?.gameFinished()
-                timer.invalidate()
+                self?.animateResult()
+                Timer.invalidate()
             }else{
                 self?.timerLabelPlayerOne.text = "\(time!-1)"
                 self?.timerLabelPlayerTwo.text =  "\(time!-1)"

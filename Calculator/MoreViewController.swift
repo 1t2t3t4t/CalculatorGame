@@ -146,9 +146,5 @@ extension MoreViewController:GADBannerViewDelegate {
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
             bannerView.alpha = 1.0
         }, completion: nil)
-        
     }
-    
 }
-
-

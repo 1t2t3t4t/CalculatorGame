@@ -15,8 +15,6 @@ class InAppManager: NSObject {
     
     class func getProduct() {
         SwiftyStoreKit.retrieveProductsInfo(["com.stella.sixtysixty.unlockad"]) { result in
-            print(result.retrievedProducts.count)
-            
             if let product = result.retrievedProducts.first {
                 let priceString = product.localizedPrice!
                 print("Product: \(product.localizedDescription), price: \(priceString)")

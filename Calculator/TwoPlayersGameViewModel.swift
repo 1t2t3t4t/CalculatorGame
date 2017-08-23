@@ -8,6 +8,25 @@
 
 import Foundation
 
+enum Result {
+    case win
+    case lose
+    case draw
+}
+
+extension Result {
+    var toString:String {
+        switch self {
+        case .win:
+            return "YOU WIN!!"
+        case .lose :
+            return "YOU LOSE"
+        default:
+            return "DRAW"
+        }
+    }
+}
+
 class TwoPlayersGameViewModel {
     
     var problems:[Problem] = []
@@ -45,6 +64,20 @@ class TwoPlayersGameViewModel {
         }
         self.playerTwo.total += 1
         self.addNewProblem()
+    }
+    
+    func isPlayerOneWin() -> Result {
+        if playerOne.score >= playerTwo.score {
+            return playerOne.score == playerTwo.score ? .draw : .win
+        }
+        return .lose
+    }
+    
+    func isPlayerTwoWin() -> Result {
+        if playerOne.score <= playerTwo.score {
+            return playerOne.score == playerTwo.score ? .draw : .win
+        }
+        return .lose
     }
     
 }
