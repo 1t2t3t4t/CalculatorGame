@@ -112,7 +112,7 @@ extension MainMenuViewController:GADBannerViewDelegate {
         self.view.addSubview(bannerView)
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-        bannerView.alpha = 1.0
+       // bannerView.alpha = 1.0
         }, completion: nil)
         
     }

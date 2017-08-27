@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FacebookShare
-import FBSDKShareKit
 
 protocol ResultViewDelegate:class {
     func didPressMainMenu() -> Void

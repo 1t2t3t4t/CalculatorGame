@@ -28,7 +28,7 @@ class TwoPlayersGameViewController: UIViewController {
     
     var viewModel = TwoPlayersGameViewModel()
     var timeObject:Timer?
-    var interstitial: GADInterstitial!
+    var interstitial: GADInterstitial?
     var finishGame = false
     
     override var prefersStatusBarHidden: Bool {
@@ -37,10 +37,10 @@ class TwoPlayersGameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.playerOneTextField.layer.sublayerTransform = CATransform3DMakeTranslation(0,3,0)
+        self.playerOneTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,3,0)
         
         self.playerTwoTextField.transform =  CGAffineTransform(rotationAngle: CGFloat.pi)
-        self.playerTwoTextField.layer.sublayerTransform = CATransform3DMakeTranslation(0,3, 0)
+        self.playerTwoTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,3, 0)
         self.playerTwoTextField.layer.removeAllAnimations()
         
         self.timerLabelPlayerTwo.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
@@ -193,8 +193,8 @@ class TwoPlayersGameViewController: UIViewController {
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
         if UserDefaults.checkPurchase(key: "purchase") == nil && interstitial != nil {
-            if interstitial.isReady  {
-                interstitial.present(fromRootViewController: self)
+            if (interstitial?.isReady)!  {
+                interstitial?.present(fromRootViewController: self)
             }
         }
         finishGame = true
@@ -212,10 +212,10 @@ extension TwoPlayersGameViewController:GADInterstitialDelegate {
     
     func startLoadingAd() {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-1801504340872159/9048275468")
-        interstitial.delegate = self
+        interstitial?.delegate = self
         let request = GADRequest()
-         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
-        interstitial.load(request)
+//         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+        interstitial?.load(request)
     }
     
 }

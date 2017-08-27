@@ -1,50 +1,15 @@
 PODS:
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
-  - FacebookCore (0.2.0):
-    - Bolts (~> 1.8)
-    - FBSDKCoreKit (~> 4.15)
-  - FacebookLogin (0.2.0):
-    - Bolts (~> 1.8)
-    - FacebookCore (~> 0.2)
-    - FBSDKCoreKit (~> 4.15)
-    - FBSDKLoginKit (~> 4.15)
-  - FacebookShare (0.2.0):
-    - Bolts (~> 1.8)
-    - FacebookCore (~> 0.2)
-    - FBSDKCoreKit (~> 4.15)
-    - FBSDKShareKit (~> 4.15)
-  - FBSDKCoreKit (4.25.0):
-    - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.25.0):
-    - FBSDKCoreKit
-  - FBSDKShareKit (4.25.0):
-    - FBSDKCoreKit
   - Google-Mobile-Ads-SDK (7.19.0)
   - SwiftyStoreKit (0.8.4)
 
 DEPENDENCIES:
-  - FacebookCore
-  - FacebookLogin
-  - FacebookShare
   - Google-Mobile-Ads-SDK
   - SwiftyStoreKit
 
 SPEC CHECKSUMS:
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
-  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
-  FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
-  FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
-  FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
-  FBSDKShareKit: aea699d3cac749af08e360f4e949b82ffa8813f5
   Google-Mobile-Ads-SDK: d1bcdbd8347a105a687345b8511701172a5074e9
   SwiftyStoreKit: b235756bd6e541cafbed6e75d28b29b8a1c1caef
 
-PODFILE CHECKSUM: 194d6358e5ccb732c2ffb4707cdb53fc4370b198
+PODFILE CHECKSUM: 723be978500752c7251bbb5b98ddd41e6c8c3aea
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.1.1

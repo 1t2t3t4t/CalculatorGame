@@ -6,9 +6,6 @@ target 'Calculator' do
   use_frameworks!
 pod 'SwiftyStoreKit'
 pod 'Google-Mobile-Ads-SDK'
-pod 'FacebookCore'
-pod 'FacebookLogin'
-pod 'FacebookShare'
   # Pods for Calculator
 
   target 'CalculatorTests' do
