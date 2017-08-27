@@ -33,6 +33,12 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
         backButton.colors = .init(button: UIColor(red: 70/255.0, green: 73/255.0, blue: 76/255.0, alpha: 1), shadow: UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1))
     }
     
+    
+    deinit {
+        self.bannerView?.removeFromSuperview()
+        self.bannerView = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         indicator = UIActivityIndicatorView(frame: CGRect(x: self.view.frame.midX-40, y: self.view.frame.midY-40, width: 80, height: 80))
@@ -72,12 +78,22 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
         case 3:
             inApp.moreObject = indicator
             indicator.startAnimating()
-            inApp.purchaseProduct()
+            inApp.purchaseProduct(withCompletion: {(success) in
+                if success {
+                    self.bannerView?.removeFromSuperview()
+                    self.bannerView = nil
+                }
+            })
             break
         default:
             inApp.moreObject = indicator
             indicator.startAnimating()
-            inApp.restorePurchase()
+            inApp.restorePurchase(withCompletion: {(success) in
+                if success {
+                    self.bannerView?.removeFromSuperview()
+                    self.bannerView = nil
+                }
+            })
             break
         }
     }

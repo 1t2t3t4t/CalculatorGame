@@ -9,6 +9,9 @@
 import Foundation
 import SwiftyStoreKit
 import UIKit
+
+typealias inAppCompletion = (Bool) -> Void
+
 class InAppManager: NSObject {
     
     var moreObject:UIActivityIndicatorView!
@@ -28,13 +31,14 @@ class InAppManager: NSObject {
         }
     }
     
-    func purchaseProduct() {
+    func purchaseProduct(withCompletion completion: @escaping inAppCompletion) {
         SwiftyStoreKit.purchaseProduct("com.stella.sixtysixty.unlockad",atomically: true, applicationUsername:"puzzler",completion: { result in
             self.moreObject.removeFromSuperview()
             switch result {
             case .success(let purchase):
                 print("Purchase Success: \(purchase.productId)")
                 UserDefaults.setPurchase(value: true, key: "purchase")
+                completion(true)
             case .error(let error):
                 switch error.code {
                 case .unknown: print("Unknown error. Please contact support")
@@ -47,15 +51,17 @@ class InAppManager: NSObject {
                 case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
                 case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
                 }
+                completion(false)
             }
         })
     }
     
-    func restorePurchase() {
+    func restorePurchase(withCompletion completion: @escaping inAppCompletion) {
         SwiftyStoreKit.restorePurchases(atomically: true) { results in
             self.moreObject.removeFromSuperview()
             if results.restoreFailedProducts.count > 0 {
                 print("Restore Failed: \(results.restoreFailedProducts)")
+                completion(false)
             }
             else if results.restoredProducts.count > 0 {
                 print("results ")
@@ -64,9 +70,11 @@ class InAppManager: NSObject {
                 let confirm = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(confirm)
                 UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
+                completion(true)
             }
             else {
                 print("Nothing to Restore")
+                completion(false)
             }
         }
     }

@@ -39,6 +39,7 @@ class CalculatorGameViewController: UIViewController {
 
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 if UserDefaults.checkPurchase(key: "purchase") == nil {
