@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PauseView" customModule="Calculator" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PauseView" customModule="_0_60" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rf-Le-bPj" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rf-Le-bPj" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
                     <rect key="frame" x="37" y="188" width="300" height="77"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2rf-Le-bPj" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="05R-1u-e12"/>
@@ -40,7 +40,7 @@
                         <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="lxI-A0-H48"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnC-ES-bmI" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnC-ES-bmI" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
                     <rect key="frame" x="36" y="295" width="300" height="77"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="BnC-ES-bmI" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="cgw-OT-06u"/>
@@ -64,7 +64,7 @@
                         <action selector="buttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Zf6-xM-ZqX"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLp-z5-tZO" customClass="PressableButton" customModule="Calculator" customModuleProvider="target">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLp-z5-tZO" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
                     <rect key="frame" x="36" y="402" width="300" height="77"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="jLp-z5-tZO" secondAttribute="height" multiplier="157:35" constant="-45.399999999999977" id="W8e-vO-1fG"/>

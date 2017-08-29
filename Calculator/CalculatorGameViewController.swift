@@ -18,6 +18,7 @@ class CalculatorGameViewController: UIViewController {
     @IBOutlet weak var choiceThree:UIButton!
     @IBOutlet weak var choiceFour:UIButton!
     @IBOutlet weak var backButton:PressableButton!
+    @IBOutlet weak var stackView:UIStackView!
     
     var viewModel:CalculatorGameViewModel = CalculatorGameViewModel()
     var bannerView:GADBannerView?
@@ -36,6 +37,13 @@ class CalculatorGameViewController: UIViewController {
         backButton.colors = .init(button: UIColor(red: 70/255.0, green: 73/255.0, blue: 76/255.0, alpha: 1), shadow: UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1))
        self.numberTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,0,0)
         
+        if UIDevice.isPadPro105 {
+            stackView.spacing = 15
+            choiceOne.titleLabel?.font = UIFont(name: "Digital-7", size: 32)
+            choiceTwo.titleLabel?.font = UIFont(name: "Digital-7", size: 32)
+            choiceThree.titleLabel?.font = UIFont(name: "Digital-7", size: 32)
+            choiceFour.titleLabel?.font = UIFont(name: "Digital-7", size: 32)
+        }
 
         
     }
@@ -199,7 +207,7 @@ extension CalculatorGameViewController:GADBannerViewDelegate,GADInterstitialDele
         bannerView.frame.size.width = self.view.frame.width
         self.view.addSubview(bannerView)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-           //bannerView.alpha = 1.0
+           bannerView.alpha = 1.0
             print("show banner now")
         }, completion: nil)
     }

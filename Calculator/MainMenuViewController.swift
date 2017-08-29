@@ -18,6 +18,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var twoPlayer:PressableButton!
     @IBOutlet weak var more:PressableButton!
     @IBOutlet dynamic weak var bestScore:UITextField!
+    @IBOutlet weak var stackView:UIStackView!
     
     var bannerView: GADBannerView?
     
@@ -29,6 +30,9 @@ class MainMenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        if UIDevice.isPadPro105 {
+            stackView.spacing = 25
+        }
         self.playGame.colors = .init(button: UIColor(red: 183/255.0, green: 60/255.0, blue: 54/255.0, alpha: 1), shadow: UIColor(red: 136/255.0, green: 45/255.0, blue: 41/255.0, alpha: 1))
         
         self.twoPlayer.colors = .init(button: UIColor(red: 221/255.0, green: 187/255.0, blue: 69/255.0, alpha: 1), shadow: UIColor(red: 162/255.0, green: 113/255.0, blue: 45/255.0, alpha: 1))
@@ -56,6 +60,7 @@ class MainMenuViewController: UIViewController {
                 print(error)
             }
         }
+        
 
     }
     override func viewDidLoad() {
@@ -102,7 +107,7 @@ extension MainMenuViewController:GADBannerViewDelegate {
         bannerView?.adUnitID = "ca-app-pub-1801504340872159/5814595704"
         bannerView?.rootViewController = self
         let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+        //request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
         bannerView?.load(request)
     }
     
@@ -114,7 +119,7 @@ extension MainMenuViewController:GADBannerViewDelegate {
         self.view.addSubview(bannerView)
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-       // bannerView.alpha = 1.0
+       bannerView.alpha = 1.0
         }, completion: nil)
         
     }

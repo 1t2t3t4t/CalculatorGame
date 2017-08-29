@@ -38,7 +38,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BEST : 5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bH-Tu-CSE">
-                                <rect key="frame" x="292" y="68" width="83" height="24.333333333333329"/>
+                                <rect key="frame" x="310" y="68" width="65" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1bH-Tu-CSE" secondAttribute="height" multiplier="44:13" id="xFh-Rm-j0L"/>
                                 </constraints>
@@ -46,11 +46,11 @@
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="E5K-gh-VC2">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E5K-gh-VC2">
                                 <rect key="frame" x="34" y="225" width="347" height="368"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9r-Kh-Hp8" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="347" height="96"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="347" height="102.66666666666669"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="PLAY NOW">
@@ -72,7 +72,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjw-BL-2Xi" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="136" width="347" height="96"/>
+                                        <rect key="frame" x="0.0" y="132.66666666666669" width="347" height="102.66666666666663"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="2-PLAYER ">
@@ -94,7 +94,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUu-ND-tvJ" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="272" width="347" height="96"/>
+                                        <rect key="frame" x="0.0" y="265.33333333333326" width="347" height="102.66666666666669"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="MORE">
@@ -142,6 +142,7 @@
                         <outlet property="more" destination="kUu-ND-tvJ" id="can-nf-J99"/>
                         <outlet property="numberTextField" destination="2Pf-7d-B1Q" id="3Gu-ur-9BI"/>
                         <outlet property="playGame" destination="g9r-Kh-Hp8" id="9PY-VB-wxn"/>
+                        <outlet property="stackView" destination="E5K-gh-VC2" id="G4u-nr-kVN"/>
                         <outlet property="twoPlayer" destination="wjw-BL-2Xi" id="Lc6-jW-OcG"/>
                         <segue destination="j3D-IJ-CNc" kind="presentation" identifier="showProblem" id="eQD-w7-S5u"/>
                         <segue destination="9Eq-3y-s9c" kind="show" identifier="showTwoPlayers" id="oCt-3z-bgo"/>
@@ -321,6 +322,7 @@
                         <outlet property="choiceThree" destination="4ui-b6-WxF" id="A5m-xe-NVN"/>
                         <outlet property="choiceTwo" destination="ntn-f8-ElU" id="UVc-PK-tTR"/>
                         <outlet property="numberTextField" destination="BAF-qm-j8Z" id="xUJ-oT-0Bm"/>
+                        <outlet property="stackView" destination="7HI-kv-Oed" id="ltR-Xc-0iM"/>
                         <outlet property="timerLabel" destination="ngO-a4-CHV" id="Z8g-On-Zt7"/>
                     </connections>
                 </viewController>
@@ -351,7 +353,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-xe-WuL" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="238" width="77" height="69"/>
+                                        <rect key="frame" x="24" y="237" width="77" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dTM-xe-WuL" secondAttribute="height" multiplier="11:10" constant="1" id="IYF-tB-ArS"/>
                                         </constraints>
@@ -375,7 +377,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-IU-wbl" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="121" y="238" width="75" height="69"/>
+                                        <rect key="frame" x="121" y="237" width="75" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PMe-IU-wbl" secondAttribute="height" multiplier="11:10" constant="-1" id="iqy-ab-y2t"/>
                                         </constraints>
@@ -399,7 +401,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwa-Ww-OCM" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="217" y="238" width="75" height="69"/>
+                                        <rect key="frame" x="217" y="237" width="75" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wwa-Ww-OCM" secondAttribute="height" multiplier="11:10" id="Sh4-KK-NLe"/>
                                         </constraints>
@@ -423,7 +425,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38u-qP-f18" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="314" y="238" width="76" height="69"/>
+                                        <rect key="frame" x="314" y="237" width="76" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="38u-qP-f18" secondAttribute="height" multiplier="11:10" id="KDv-Xx-M88"/>
                                         </constraints>
@@ -464,30 +466,36 @@
                                     <constraint firstItem="38u-qP-f18" firstAttribute="leading" secondItem="Wwa-Ww-OCM" secondAttribute="trailing" constant="21.999999999999886" id="4OH-vc-Shb"/>
                                     <constraint firstItem="38u-qP-f18" firstAttribute="baseline" secondItem="dTM-xe-WuL" secondAttribute="baseline" id="5DY-4i-wOB"/>
                                     <constraint firstItem="PMe-IU-wbl" firstAttribute="leading" secondItem="dTM-xe-WuL" secondAttribute="trailing" constant="20" id="8gN-km-tab"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="bottom" secondItem="38u-qP-f18" secondAttribute="bottom" id="9pq-8T-sZY"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="baseline" secondItem="dTM-xe-WuL" secondAttribute="baseline" id="EhY-mo-psA"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="bottom" secondItem="dTM-xe-WuL" secondAttribute="bottom" id="F6M-Lj-ngt"/>
                                     <constraint firstItem="K9W-AO-Plj" firstAttribute="height" secondItem="jKJ-5k-Nnf" secondAttribute="height" multiplier="0.21" id="FVZ-7s-2Cb"/>
                                     <constraint firstItem="gpU-wf-ybI" firstAttribute="centerX" secondItem="jKJ-5k-Nnf" secondAttribute="centerX" id="Fvg-Un-X3s"/>
                                     <constraint firstItem="PMe-IU-wbl" firstAttribute="firstBaseline" secondItem="38u-qP-f18" secondAttribute="firstBaseline" id="GXR-n0-gnS"/>
                                     <constraint firstItem="dTM-xe-WuL" firstAttribute="leading" secondItem="jKJ-5k-Nnf" secondAttribute="leading" constant="24" id="IcN-hR-UrP"/>
-                                    <constraint firstAttribute="bottom" secondItem="PMe-IU-wbl" secondAttribute="bottom" constant="61.333333333333258" id="JwH-B4-w0j"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="leading" secondItem="PMe-IU-wbl" secondAttribute="trailing" constant="21.000000000000057" id="LWF-Ip-eGE"/>
                                     <constraint firstItem="dTM-xe-WuL" firstAttribute="firstBaseline" secondItem="Wwa-Ww-OCM" secondAttribute="firstBaseline" id="O7h-f9-Nj6"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="firstBaseline" secondItem="Wwa-Ww-OCM" secondAttribute="firstBaseline" id="Shy-U3-gcU"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="firstBaseline" secondItem="38u-qP-f18" secondAttribute="firstBaseline" id="XP7-Un-8WO"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="bottom" secondItem="Wwa-Ww-OCM" secondAttribute="bottom" id="Y3N-dr-xFV"/>
                                     <constraint firstAttribute="trailing" secondItem="38u-qP-f18" secondAttribute="trailing" constant="24" id="Yaw-zb-Mxa"/>
                                     <constraint firstItem="dTM-xe-WuL" firstAttribute="firstBaseline" secondItem="PMe-IU-wbl" secondAttribute="firstBaseline" id="auR-RE-grP"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="baseline" secondItem="dTM-xe-WuL" secondAttribute="baseline" id="bek-rP-I0H"/>
                                     <constraint firstItem="PMe-IU-wbl" firstAttribute="baseline" secondItem="dTM-xe-WuL" secondAttribute="baseline" id="dGZ-Hd-V2d"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="firstBaseline" secondItem="PMe-IU-wbl" secondAttribute="firstBaseline" id="dhu-yB-RHe"/>
                                     <constraint firstAttribute="trailing" secondItem="K9W-AO-Plj" secondAttribute="trailing" constant="30" id="efc-RQ-Khc"/>
-                                    <constraint firstAttribute="bottom" secondItem="dTM-xe-WuL" secondAttribute="bottom" constant="61.333333333333258" id="f2v-N4-JRz"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="baseline" secondItem="38u-qP-f18" secondAttribute="baseline" id="f8N-dB-Xfz"/>
                                     <constraint firstItem="38u-qP-f18" firstAttribute="firstBaseline" secondItem="dTM-xe-WuL" secondAttribute="firstBaseline" id="fpo-79-O0K"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="top" secondItem="38u-qP-f18" secondAttribute="top" id="fs6-ft-1C2"/>
                                     <constraint firstItem="K9W-AO-Plj" firstAttribute="top" secondItem="gpU-wf-ybI" secondAttribute="bottom" constant="17" id="h50-L7-EgJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="38u-qP-f18" secondAttribute="bottom" constant="61.333333333333258" id="h6d-6u-Bma"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="firstBaseline" secondItem="38u-qP-f18" secondAttribute="firstBaseline" id="kvz-J5-ufI"/>
                                     <constraint firstItem="dTM-xe-WuL" firstAttribute="top" secondItem="PMe-IU-wbl" secondAttribute="top" id="m8q-aH-BRe"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wwa-Ww-OCM" secondAttribute="bottom" constant="61.333333333333258" id="mB2-a2-a4P"/>
                                     <constraint firstItem="Wwa-Ww-OCM" firstAttribute="baseline" secondItem="PMe-IU-wbl" secondAttribute="baseline" id="nBX-zv-RA6"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="dTM-xe-WuL" secondAttribute="bottom" constant="54" id="oMP-Wm-BcI"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="baseline" secondItem="Wwa-Ww-OCM" secondAttribute="baseline" id="pST-9h-3bp"/>
                                     <constraint firstItem="gpU-wf-ybI" firstAttribute="top" secondItem="jKJ-5k-Nnf" secondAttribute="top" constant="34" id="tHx-2c-dZr"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="firstBaseline" secondItem="dTM-xe-WuL" secondAttribute="firstBaseline" id="tZu-1d-Gg0"/>
+                                    <constraint firstItem="PMe-IU-wbl" firstAttribute="baseline" secondItem="38u-qP-f18" secondAttribute="baseline" id="wJK-10-RcU"/>
                                     <constraint firstItem="38u-qP-f18" firstAttribute="baseline" secondItem="PMe-IU-wbl" secondAttribute="baseline" id="wRc-jI-KjX"/>
                                     <constraint firstItem="PMe-IU-wbl" firstAttribute="top" secondItem="Wwa-Ww-OCM" secondAttribute="top" id="yB6-Zs-RBw"/>
                                 </constraints>
@@ -706,11 +714,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-Lq-NjI">
-                                <rect key="frame" x="31" y="100" width="352" height="552"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-Lq-NjI">
+                                <rect key="frame" x="31" y="100" width="352" height="515"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ng2-hi-Nc5" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="94.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Share This App">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -731,7 +739,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-EI-x2O" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="114.33333333333333" width="352" height="94.333333333333357"/>
+                                        <rect key="frame" x="0.0" y="106" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Rate Us">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -752,7 +760,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9q-tZ-4VP" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="228.66666666666669" width="352" height="94.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="212" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Contact Us">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -773,7 +781,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAv-aj-aZQ" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="343.33333333333337" width="352" height="94.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="318" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Remove Ad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -794,7 +802,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb1-FI-gzm" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="457.66666666666663" width="352" height="94.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="424" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Restore Purchase">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -875,7 +883,7 @@
                             <constraint firstItem="r8G-rL-XzZ" firstAttribute="leading" secondItem="Cad-fg-YZ6" secondAttribute="leadingMargin" id="XeU-RX-IrX"/>
                             <constraint firstItem="H7Y-Lq-NjI" firstAttribute="top" secondItem="cBV-Xk-5n9" secondAttribute="bottom" constant="23" id="jhs-rX-uab"/>
                             <constraint firstItem="cBV-Xk-5n9" firstAttribute="top" secondItem="YMc-2c-F2z" secondAttribute="bottom" constant="15" id="lK5-8c-VgP"/>
-                            <constraint firstItem="H7Y-Lq-NjI" firstAttribute="height" secondItem="Cad-fg-YZ6" secondAttribute="height" multiplier="0.75" id="s60-Zp-XTr"/>
+                            <constraint firstItem="H7Y-Lq-NjI" firstAttribute="height" secondItem="Cad-fg-YZ6" secondAttribute="height" multiplier="0.7" id="s60-Zp-XTr"/>
                         </constraints>
                     </view>
                     <connections>

@@ -145,6 +145,16 @@ extension UIDevice {
             return .after_iPhone7p_7ps
         }
     }
+    
+    
+    
+    // for ipad pro 10.5 device
+    public static var isPadPro105: Bool {
+        if UIScreen.main.nativeBounds.size.height == 960 {
+            return true
+        }
+        return false
+    }
 }
 
 extension Int{
