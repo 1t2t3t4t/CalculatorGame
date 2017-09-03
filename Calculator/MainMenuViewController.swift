@@ -52,8 +52,13 @@ class MainMenuViewController: UIViewController {
         if shouldRepeat {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "Winding_Down", ofType: "mp3")!))
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                try AVAudioSession.sharedInstance().setActive(true)
                 audioPlayer.numberOfLoops = -1
                 audioPlayer.prepareToPlay()
+                if UserDefaults.checkMute(key: "mute") {
+                    audioPlayer.volume = 0.0
+                }
                 audioPlayer.play()
             }
             catch{
@@ -119,7 +124,7 @@ extension MainMenuViewController:GADBannerViewDelegate {
         self.view.addSubview(bannerView)
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-       bannerView.alpha = 1.0
+          bannerView.alpha = 1.0
         }, completion: nil)
         
     }

@@ -18,11 +18,11 @@ extension Result {
     var toString:String {
         switch self {
         case .win:
-            return "YOU WIN!!"
+            return "You Win!"
         case .lose :
-            return "YOU LOSE"
+            return "You Lose"
         default:
-            return "DRAW"
+            return "Draw"
         }
     }
 }
@@ -34,10 +34,11 @@ class TwoPlayersGameViewModel {
     var playerOne = Player()
     var playerTwo = Player()
     
+    
+    
     var resultMessage: String {
         return "Player 1: \(self.playerOne.score)/60\nPlayer 2: \(self.playerTwo.score)/60"
     }
-    
     var playerOneCurrentProblem:Problem {
         return self.problems[self.playerOne.total]
     }

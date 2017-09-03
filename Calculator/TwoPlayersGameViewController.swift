@@ -27,10 +27,11 @@ class TwoPlayersGameViewController: UIViewController {
     @IBOutlet weak var pauseButton:PressableButton!
     
     var viewModel = TwoPlayersGameViewModel()
-    var timeObject:Timer?
+    var timeObject:Timer!
     var interstitial: GADInterstitial?
     var finishGame = false
-    
+    var exceed = false
+    var doneView:GetSetGoView!
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -70,6 +71,7 @@ class TwoPlayersGameViewController: UIViewController {
         if UserDefaults.checkPurchase(key: "purchase") == nil {
             startLoadingAd()
         }
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,8 +80,14 @@ class TwoPlayersGameViewController: UIViewController {
             self.animateOpening {
                 do {
                     audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "Hypnotic-Puzzle4", ofType: "mp3")!))
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                    try AVAudioSession.sharedInstance().setActive(true)
                     audioPlayer.numberOfLoops = -1
                     audioPlayer.prepareToPlay()
+                    if UserDefaults.checkMute(key: "mute") {
+                        print("mute twoplayer")
+                        audioPlayer.volume = 0.0
+                    }
                     audioPlayer.play()
                 }
                 catch{
@@ -108,7 +116,13 @@ class TwoPlayersGameViewController: UIViewController {
         }
         self.viewModel.playerOne.answer = number
         self.viewModel.checkPlayerOneAnswer()
+        print(self.viewModel.playerOne.total)
+        if self.viewModel.playerOne.total >= 60 {
+             playerExceedLimit(player:playerOneView)
+        }
+        else {
         self.updatePlayerOneTextField()
+        }
     }
     
     @IBAction func playerTwoDidAnswer(_ sender:UIButton) {
@@ -120,7 +134,12 @@ class TwoPlayersGameViewController: UIViewController {
         }
         self.viewModel.playerTwo.answer = number
         self.viewModel.checkPlayerTwoAnswer()
-        self.updatePlayerTwoTextField()
+        if self.viewModel.playerTwo.total >= 60 {
+            playerExceedLimit(player:playerTwoView)
+        }
+        else {
+            self.updatePlayerTwoTextField()
+        }
     }
     
     @IBAction func clickPause(_ sender:Any?) {
@@ -129,6 +148,7 @@ class TwoPlayersGameViewController: UIViewController {
         view.frame = self.view.frame
         view.twoPlayer = self
         view.delegate = self
+        print("timeobject \(timeObject)")
         timeObject?.invalidate()
         self.view.addSubview(view)
     }
@@ -149,20 +169,35 @@ class TwoPlayersGameViewController: UIViewController {
         }
     }
     
+    func playerExceedLimit(player:UIView) {
+        if exceed {
+            doneView?.removeFromSuperview()
+            timeObject?.invalidate()
+            self.animateResult()
+        }
+        else {
+            exceed = true
+            self.doneView = (GetSetGoView.view as! GetSetGoView)
+            doneView.textLabel.text = "Done"
+            audioPlayer.play()
+            doneView.frame = self.playerOneView.bounds
+            player.addSubview(doneView!)
+        }
+
+    }
+    
     func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] (timer) in
-            guard self != nil else {
-                return
-            }
-            self?.timeObject = timer
-            let time = Int((self?.timerLabelPlayerOne.text!)!)
-            if time! <= 0 {
-                self?.animateResult()
-                timer.invalidate()
-            }else{
-                self?.timerLabelPlayerOne.text = "\(time!-1)"
-                self?.timerLabelPlayerTwo.text =  "\(time!-1)"
-            }
+         timeObject = Timer.scheduledTimer(timeInterval: 1, target: self,selector: (#selector(TwoPlayersGameViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer() {
+        let time = Int((self.timerLabelPlayerOne.text!))
+        if time! <= 0 {
+            self.animateResult()
+            timeObject?.invalidate()
+        }else{
+            self.timerLabelPlayerOne.text = "\(time!-1)"
+            self.timerLabelPlayerTwo.text =  "\(time!-1)"
         }
     }
     
@@ -202,6 +237,7 @@ class TwoPlayersGameViewController: UIViewController {
     
     func animateOpening(withCompletion completion: @escaping completion) {
         let view = GetSetGoView.view as! GetSetGoView
+        view.playSound()
         view.frame = self.view.frame
         self.view.addSubview(view)
         view.animateOpening(completion: completion)

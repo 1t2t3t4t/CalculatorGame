@@ -12,6 +12,7 @@ struct Player {
     
     var answer:Int = 0
     var score:Int = 0
+    var done:Bool = false
     var total:Int = 0
     
 }

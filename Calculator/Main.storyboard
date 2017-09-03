@@ -21,7 +21,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainMenuViewController" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="_0_60" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="_0vs60" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -49,7 +49,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E5K-gh-VC2">
                                 <rect key="frame" x="34" y="225" width="347" height="368"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9r-Kh-Hp8" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9r-Kh-Hp8" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="347" height="102.66666666666669"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,7 +71,7 @@
                                             <action selector="clickPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEQ-ag-M5G"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjw-BL-2Xi" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjw-BL-2Xi" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="132.66666666666669" width="347" height="102.66666666666663"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,7 +93,7 @@
                                             <action selector="twoPlayersClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kx4-QJ-I6c"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUu-ND-tvJ" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUu-ND-tvJ" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="265.33333333333326" width="347" height="102.66666666666669"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,7 +156,7 @@
         <!--Calculator Game View Controller-->
         <scene sceneID="zJl-Fo-Dei">
             <objects>
-                <viewController storyboardIdentifier="CalculatorGameViewController" id="j3D-IJ-CNc" customClass="CalculatorGameViewController" customModule="_0_60" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculatorGameViewController" id="j3D-IJ-CNc" customClass="CalculatorGameViewController" customModule="_0vs60" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YCY-Zi-39r"/>
                         <viewControllerLayoutGuide type="bottom" id="VBr-2S-CvK"/>
@@ -175,7 +175,7 @@
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="60"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wS-I3-9EX" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wS-I3-9EX" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                 <rect key="frame" x="26" y="32" width="50" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="3mB-1l-4Bj"/>
@@ -212,7 +212,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7HI-kv-Oed">
                                 <rect key="frame" x="42" y="204" width="331" height="442"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEV-Pa-WfH" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEV-Pa-WfH" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="88"/>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
                                         <state key="normal">
@@ -233,7 +233,7 @@
                                             <action selector="buttonPressed:" destination="j3D-IJ-CNc" eventType="touchUpInside" id="o3d-Mk-ePY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntn-f8-ElU" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntn-f8-ElU" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="118" width="331" height="88"/>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
                                         <state key="normal">
@@ -254,7 +254,7 @@
                                             <action selector="buttonPressed:" destination="j3D-IJ-CNc" eventType="touchUpInside" id="KsC-Tg-GHy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-b6-WxF" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-b6-WxF" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="236" width="331" height="88"/>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
                                         <state key="normal">
@@ -275,7 +275,7 @@
                                             <action selector="buttonPressed:" destination="j3D-IJ-CNc" eventType="touchUpInside" id="Yit-Q1-KJG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMi-mS-1j9" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMi-mS-1j9" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="354" width="331" height="88"/>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="44"/>
                                         <state key="normal">
@@ -333,7 +333,7 @@
         <!--Two Players Game View Controller-->
         <scene sceneID="Fob-sX-2SL">
             <objects>
-                <viewController storyboardIdentifier="TwoPlayersGameViewController" id="9Eq-3y-s9c" customClass="TwoPlayersGameViewController" customModule="_0_60" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TwoPlayersGameViewController" id="9Eq-3y-s9c" customClass="TwoPlayersGameViewController" customModule="_0vs60" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eF9-mE-8cD"/>
                         <viewControllerLayoutGuide type="bottom" id="hvK-Fo-QDr"/>
@@ -352,7 +352,7 @@
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="60"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-xe-WuL" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-xe-WuL" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="24" y="237" width="77" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dTM-xe-WuL" secondAttribute="height" multiplier="11:10" constant="1" id="IYF-tB-ArS"/>
@@ -376,7 +376,7 @@
                                             <action selector="playerOneDidAnswer:" destination="9Eq-3y-s9c" eventType="touchUpInside" id="LtX-rI-YS3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-IU-wbl" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-IU-wbl" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="121" y="237" width="75" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PMe-IU-wbl" secondAttribute="height" multiplier="11:10" constant="-1" id="iqy-ab-y2t"/>
@@ -400,7 +400,7 @@
                                             <action selector="playerOneDidAnswer:" destination="9Eq-3y-s9c" eventType="touchUpInside" id="HRg-ca-bDx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwa-Ww-OCM" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwa-Ww-OCM" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="217" y="237" width="75" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wwa-Ww-OCM" secondAttribute="height" multiplier="11:10" id="Sh4-KK-NLe"/>
@@ -424,7 +424,7 @@
                                             <action selector="playerOneDidAnswer:" destination="9Eq-3y-s9c" eventType="touchUpInside" id="6yZ-ja-5ms"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38u-qP-f18" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38u-qP-f18" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="314" y="237" width="76" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="38u-qP-f18" secondAttribute="height" multiplier="11:10" id="KDv-Xx-M88"/>
@@ -510,7 +510,7 @@
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="60"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbn-mF-e2n" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbn-mF-e2n" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="23" y="60" width="76" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Lbn-mF-e2n" secondAttribute="height" multiplier="11:10" id="xAF-J3-JXj"/>
@@ -534,7 +534,7 @@
                                             <action selector="playerTwoDidAnswer:" destination="9Eq-3y-s9c" eventType="touchUpInside" id="pDc-52-a65"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-NP-pWf" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-NP-pWf" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="119" y="60" width="75" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OYD-NP-pWf" secondAttribute="height" multiplier="11:10" id="HKX-VT-qWa"/>
@@ -558,7 +558,7 @@
                                             <action selector="playerTwoDidAnswer:" destination="9Eq-3y-s9c" eventType="touchUpInside" id="N0N-2f-J1X"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-qL-YRk" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-qL-YRk" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="215" y="60" width="76" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="a4i-qL-YRk" secondAttribute="height" multiplier="11:10" id="C2W-Z9-bgg"/>
@@ -582,7 +582,7 @@
                                             <action selector="playerTwoDidAnswer:" destination="9Eq-3y-s9c" eventType="touchUpInside" id="Xbi-ld-ZQY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZK-bq-kjB" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZK-bq-kjB" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="313" y="60" width="76" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7ZK-bq-kjB" secondAttribute="height" multiplier="11:10" id="DHd-JG-TJe"/>
@@ -651,7 +651,7 @@
                                     <constraint firstItem="7ZK-bq-kjB" firstAttribute="top" secondItem="usR-d5-1yO" secondAttribute="top" constant="60" id="yPD-RU-Cai"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHn-jh-hFR" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHn-jh-hFR" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                 <rect key="frame" x="190" y="351" width="34" height="34"/>
                                 <color key="backgroundColor" red="0.76042288540000003" green="0.55466955900000003" blue="0.38826873899999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="pause"/>
@@ -705,7 +705,7 @@
         <!--More View Controller-->
         <scene sceneID="9n0-5j-LWU">
             <objects>
-                <viewController storyboardIdentifier="MoreViewController" id="Rkv-XV-gpP" customClass="MoreViewController" customModule="_0_60" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreViewController" id="Rkv-XV-gpP" customClass="MoreViewController" customModule="_0vs60" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YMc-2c-F2z"/>
                         <viewControllerLayoutGuide type="bottom" id="d2p-j6-Zav"/>
@@ -717,7 +717,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-Lq-NjI">
                                 <rect key="frame" x="31" y="100" width="352" height="515"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ng2-hi-Nc5" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ng2-hi-Nc5" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Share This App">
@@ -738,7 +738,7 @@
                                             <action selector="buttonAction:" destination="Rkv-XV-gpP" eventType="touchUpInside" id="WXi-39-hrk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-EI-x2O" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-EI-x2O" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="106" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Rate Us">
@@ -759,7 +759,7 @@
                                             <action selector="buttonAction:" destination="Rkv-XV-gpP" eventType="touchUpInside" id="IVu-vF-auo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9q-tZ-4VP" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9q-tZ-4VP" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="212" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Contact Us">
@@ -780,7 +780,7 @@
                                             <action selector="buttonAction:" destination="Rkv-XV-gpP" eventType="touchUpInside" id="Z9I-1U-llV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAv-aj-aZQ" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAv-aj-aZQ" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="318" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Remove Ad">
@@ -801,7 +801,7 @@
                                             <action selector="buttonAction:" destination="Rkv-XV-gpP" eventType="touchUpInside" id="esV-sU-Abz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb1-FI-gzm" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb1-FI-gzm" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="424" width="352" height="91"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Restore Purchase">
@@ -838,7 +838,7 @@
                                     <constraint firstItem="Ng2-hi-Nc5" firstAttribute="leading" secondItem="H7Y-Lq-NjI" secondAttribute="leading" id="kHp-ic-FVH"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-rL-XzZ" customClass="PressableButton" customModule="_0_60" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-rL-XzZ" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
                                 <rect key="frame" x="20" y="36" width="54" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WPm-t8-45N"/>
@@ -872,11 +872,39 @@
                                 <color key="textColor" red="0.27843137254901962" green="0.28627450980392155" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeh-2u-jJm" customClass="PressableButton" customModule="_0vs60" customModuleProvider="target">
+                                <rect key="frame" x="340" y="37.333333333333329" width="54" height="39.999999999999986"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="QtJ-EC-6sR"/>
+                                    <constraint firstAttribute="height" constant="40" id="raP-fi-Z32"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="5"/>
+                                <state key="normal" image="mute">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="mute:" destination="Rkv-XV-gpP" eventType="touchUpInside" id="oOq-8E-iFr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8862745098" green="0.86274509799999999" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="H7Y-Lq-NjI" firstAttribute="width" secondItem="Cad-fg-YZ6" secondAttribute="width" multiplier="0.85" id="51C-GS-03n"/>
+                            <constraint firstItem="eeh-2u-jJm" firstAttribute="trailing" secondItem="Cad-fg-YZ6" secondAttribute="trailingMargin" id="5jb-dZ-OjO"/>
                             <constraint firstItem="cBV-Xk-5n9" firstAttribute="centerX" secondItem="Cad-fg-YZ6" secondAttribute="centerX" id="Cdh-Ir-Qj5"/>
+                            <constraint firstItem="eeh-2u-jJm" firstAttribute="baseline" secondItem="r8G-rL-XzZ" secondAttribute="baseline" constant="12" id="D8Q-8O-c9p"/>
                             <constraint firstItem="cBV-Xk-5n9" firstAttribute="centerY" secondItem="r8G-rL-XzZ" secondAttribute="centerY" id="IF9-9t-jri"/>
                             <constraint firstItem="d2p-j6-Zav" firstAttribute="top" secondItem="r8G-rL-XzZ" secondAttribute="bottom" constant="660" id="QBQ-Gm-km2"/>
                             <constraint firstItem="H7Y-Lq-NjI" firstAttribute="centerX" secondItem="Cad-fg-YZ6" secondAttribute="centerX" id="Qdo-Ev-JrS"/>
@@ -893,6 +921,7 @@
                         <outlet property="removeAd" destination="dAv-aj-aZQ" id="PFI-nc-Bdl"/>
                         <outlet property="restorePurchase" destination="Lb1-FI-gzm" id="evK-Bw-z6X"/>
                         <outlet property="shareApp" destination="Ng2-hi-Nc5" id="gZE-yV-vFb"/>
+                        <outlet property="soundButton" destination="eeh-2u-jJm" id="zxG-Pb-yYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="108-ng-gUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -901,6 +930,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mute" width="33" height="33"/>
         <image name="pause" width="34" height="34"/>
     </resources>
 </document>

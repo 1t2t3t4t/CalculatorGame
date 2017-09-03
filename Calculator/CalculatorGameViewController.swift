@@ -24,6 +24,7 @@ class CalculatorGameViewController: UIViewController {
     var bannerView:GADBannerView?
     var interstitial:GADInterstitial?
     var finishGame = false
+    var timeObject:Timer!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -61,8 +62,14 @@ class CalculatorGameViewController: UIViewController {
             self.animateOpening {
                 do {
                     audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "Hypnotic-Puzzle4", ofType: "mp3")!))
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                    try AVAudioSession.sharedInstance().setActive(true)
                     audioPlayer.numberOfLoops = -1
                     audioPlayer.prepareToPlay()
+                    if UserDefaults.checkMute(key: "mute") {
+                        print("calculatorgame mute")
+                        audioPlayer.volume = 0.0
+                    }
                     audioPlayer.play()
                     
                 }
@@ -88,7 +95,14 @@ class CalculatorGameViewController: UIViewController {
         }
         self.viewModel.player.answer = number
         self.viewModel.checkAnswer()
-        self.generateNewRound()
+        self.viewModel.player.total+=1
+        if self.viewModel.player.total >= 60 {
+        
+            self.gameFinished()
+        }
+        else {
+             self.generateNewRound()
+        }
     }
     
     @IBAction func back(_ sender:UIButton) {
@@ -102,6 +116,7 @@ class CalculatorGameViewController: UIViewController {
     func animateOpening(withCompletion completion: @escaping completion) {
         print("enteranimate")
         let view = GetSetGoView.view as! GetSetGoView
+        view.playSound()
         view.frame = self.view.frame
         self.view.addSubview(view)
         view.animateOpening(completion: completion)
@@ -117,6 +132,7 @@ class CalculatorGameViewController: UIViewController {
     }
     
     func gameFinished() {
+        timeObject.invalidate()
         let message = "\(self.viewModel.player.score)/60"
         self.viewModel.checkBestScore(score: self.viewModel.player.score)
         let resultView = ResultView.view as! ResultView
@@ -143,18 +159,16 @@ class CalculatorGameViewController: UIViewController {
     }
     
     func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] (Timer) in
-            guard self != nil else {
-                return
-            }
-            
-            let time = Int((self?.timerLabel.text!)!)
-            if time! <= 0 {
-               self?.gameFinished()
-               Timer.invalidate()
-            }else{
-                self?.timerLabel.text = "\(time!-1)"
-            }
+        timeObject = Timer.scheduledTimer(timeInterval: 1, target: self,selector: (#selector(CalculatorGameViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer() {
+        let time = Int((self.timerLabel.text!))
+        if time! <= 0 {
+            self.gameFinished()
+            timeObject?.invalidate()
+        }else{
+            self.timerLabel.text = "\(time!-1)"
         }
     }
 }

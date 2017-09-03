@@ -94,6 +94,19 @@ extension UserDefaults {
             return nil
         }
     }
+    class func setMute(value:Bool,key:String) {
+        UserDefaults.standard.set(value, forKey: key)
+        UserDefaults.standard.synchronize()
+    }
+    class func checkMute(key:String) -> Bool {
+        if UserDefaults.standard.value(forKey: key) != nil {
+            let ans = UserDefaults.standard.value(forKey: key) as! Bool
+            return ans
+        }
+        else {
+            return false
+        }
+    }
 }
 
 extension UIApplication {

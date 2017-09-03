@@ -20,6 +20,7 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
     @IBOutlet weak var removeAd:PressableButton!
     @IBOutlet weak var restorePurchase:PressableButton!
     @IBOutlet weak var backButton:PressableButton!
+    @IBOutlet weak var soundButton:PressableButton!
     
     var bannerView: GADBannerView?
     var indicator = UIActivityIndicatorView()
@@ -31,7 +32,16 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         backButton.colors = .init(button: UIColor(red: 70/255.0, green: 73/255.0, blue: 76/255.0, alpha: 1), shadow: UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1))
-
+        soundButton.colors = .init(button: UIColor(red: 70/255.0, green: 73/255.0, blue: 76/255.0, alpha: 1), shadow: UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1))
+        soundButton.tintColor = UIColor.white
+        if UserDefaults.checkMute(key: "mute") {
+            soundButton.setImage(UIImage(named:"mute"), for: .normal)
+            audioPlayer.volume = 0.0
+        }
+        else{
+            soundButton.setImage(UIImage(named:"unmute"), for: .normal)
+        }
+    
     }
     
     
@@ -61,7 +71,21 @@ class MoreViewController: UIViewController, MFMailComposeViewControllerDelegate 
         window?.rootViewController = vc
         
     }
-    
+    @IBAction func mute(_ sender:Any?) {
+        if UserDefaults.checkMute(key: "mute") {
+            print("hello dude")
+            audioPlayer.volume = 1.0
+            soundButton.setImage(UIImage(named: "unmute"), for: .normal)
+            UserDefaults.setMute(value: false, key: "mute")
+        }
+        else {
+            soundButton.setImage(UIImage(named: "mute"), for: .normal)
+            
+            audioPlayer.volume = 0.0
+            
+            UserDefaults.setMute(value: true, key: "mute")
+        }
+    }
     @IBAction func buttonAction(_ sender:PressableButton) {
         let inApp = InAppManager()
 

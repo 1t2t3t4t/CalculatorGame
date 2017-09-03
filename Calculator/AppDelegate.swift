@@ -35,7 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        
+        if UserDefaults.checkMute(key: "mute") == nil {
+            UserDefaults.setMute(value: false, key: "mute")
+        }
         // Override point for customization after application launch.
         GADMobileAds.configure(withApplicationID: "ca-app-pub-1801504340872159~6984207147")
         return true

@@ -13,15 +13,22 @@ import AVFoundation
 class GetSetGoView: UIView {
 
     @IBOutlet weak var textLabel:UILabel!
-    override func awakeFromNib() {
+
+    func playSound() {
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "BeepTone", ofType: "wav")!))
-            audioPlayer.numberOfLoops = 0
-            audioPlayer.prepareToPlay()
+        audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "BeepTone", ofType: "wav")!))
+        audioPlayer.numberOfLoops = 0
+        audioPlayer.prepareToPlay()
+        print("enter nig \(UserDefaults.checkMute(key: "mute"))")
+        if UserDefaults.checkMute(key: "mute") {
+            print("enter getsetgoview audio mute")
+            audioPlayer.volume = 0.0
         }
-        catch{
+        }
+        catch {
             print(error)
         }
+
     }
     
     func animateOpening(_ string:String? = "READY??", completion: @escaping completion) {
@@ -42,7 +49,7 @@ class GetSetGoView: UIView {
     
     func customAnimate(_ string:String, completion: completion? = nil) {
         self.textLabel.text = string
-        self.animateLabel(1.2, withCompletion: {(done) in
+        self.animateLabel(0.7, withCompletion: {(done) in
                 self.removeFromSuperview()
                 if completion != nil { completion!() }
         })
