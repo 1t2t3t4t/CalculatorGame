@@ -181,6 +181,9 @@ class TwoPlayersGameViewController: UIViewController {
             doneView.textLabel.text = "Done"
             audioPlayer.play()
             doneView.frame = self.playerOneView.bounds
+            if player == self.playerTwoView {
+                doneView.transform = CGAffineTransform(rotationAngle: .pi)
+            }
             player.addSubview(doneView!)
         }
 
@@ -193,6 +196,7 @@ class TwoPlayersGameViewController: UIViewController {
     func updateTimer() {
         let time = Int((self.timerLabelPlayerOne.text!))
         if time! <= 0 {
+            doneView?.removeFromSuperview()
             self.animateResult()
             timeObject?.invalidate()
         }else{
