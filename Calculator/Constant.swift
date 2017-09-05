@@ -21,6 +21,8 @@ struct Constant {
     static let READY = "READY??"
     static let SET = "SET"
     static let GO = "GO"
+    
+    static let LEADERBOARD_IDENTIFIER = "com.stella.sixtysixty.highscore"
 }
 enum ShortcutIdentifier:String {
     case onePlayer

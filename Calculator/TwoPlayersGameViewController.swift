@@ -254,7 +254,7 @@ extension TwoPlayersGameViewController:GADInterstitialDelegate {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-1801504340872159/9048275468")
         interstitial?.delegate = self
         let request = GADRequest()
-//         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
         interstitial?.load(request)
     }
     

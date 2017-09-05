@@ -41,7 +41,7 @@ class RemindUser : UIViewController,UIAlertViewDelegate{
     
     
     var promptAfterDays:Double = 30
-    var promptAfterUses = 1
+    var promptAfterUses = 2
     var promptAfterCustomEventsCount = 10
     var daysBeforeReminding:Double = 1
     

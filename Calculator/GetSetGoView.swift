@@ -49,7 +49,7 @@ class GetSetGoView: UIView {
     
     func customAnimate(_ string:String, completion: completion? = nil) {
         self.textLabel.text = string
-        self.animateLabel(0.7, withCompletion: {(done) in
+        self.animateLabel(1.2, withCompletion: {(done) in
                 self.removeFromSuperview()
                 if completion != nil { completion!() }
         })

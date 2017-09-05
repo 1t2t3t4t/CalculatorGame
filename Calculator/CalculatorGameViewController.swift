@@ -134,6 +134,7 @@ class CalculatorGameViewController: UIViewController {
     func gameFinished() {
         timeObject.invalidate()
         let message = "\(self.viewModel.player.score)/60"
+        GameCenterManager.sharedInstance.saveHighscore(number: self.viewModel.player.score)
         self.viewModel.checkBestScore(score: self.viewModel.player.score)
         let resultView = ResultView.view as! ResultView
         resultView.frame = self.view.frame
@@ -209,7 +210,7 @@ extension CalculatorGameViewController:GADBannerViewDelegate,GADInterstitialDele
         bannerView?.adUnitID = "ca-app-pub-1801504340872159/6996827191"
         bannerView?.rootViewController = self
         let request = GADRequest()
-//         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+         request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
         bannerView?.load(request)
         interstitial?.load(request)
     }

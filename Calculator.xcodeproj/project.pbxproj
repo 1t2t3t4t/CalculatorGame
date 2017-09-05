@@ -41,6 +41,8 @@
 		EF7BD3AD1F41BF74002ABFEE /* RateMyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7BD3AC1F41BF74002ABFEE /* RateMyApp.swift */; };
 		EF7BD3B11F41CC71002ABFEE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7BD3B01F41CC71002ABFEE /* StoreKit.framework */; };
 		EFB675831F4C23A5009CABAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB675821F4C23A5009CABAA /* Main.storyboard */; };
+		EFD7B5191F5EC45900520DD8 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD7B5181F5EC45900520DD8 /* GameCenterManager.swift */; };
+		EFD7B51B1F5ECA0400520DD8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD7B51A1F5ECA0400520DD8 /* GameKit.framework */; };
 		EFD952581F49D9DB00014315 /* RemindUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD952571F49D9DB00014315 /* RemindUser.swift */; };
 		EFE779231F41DF630014437B /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE779221F41DF630014437B /* PauseView.xib */; };
 		EFE779251F41DFA50014437B /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE779241F41DFA50014437B /* PauseView.swift */; };
@@ -71,7 +73,7 @@
 		3354A0AE6A7A670D8B52D9D3 /* Pods_CalculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AAA5210D6D282F45F54C58 /* Pods_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CC160CADC49FE6F8EA0F3A /* Pods-CalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorUITests/Pods-CalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8184B1A11F2F164A00156D2E /* 60:60.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "60:60.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8184B1A11F2F164A00156D2E /* 60:60.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "60:60.app"; path = 60vs60.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8184B1A41F2F164A00156D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8184B1A61F2F164A00156D2E /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		8184B1AB1F2F164B00156D2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,8 @@
 		EF7BD3AE1F41CC68002ABFEE /* Calculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calculator.entitlements; sourceTree = "<group>"; };
 		EF7BD3B01F41CC71002ABFEE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EFB675821F4C23A5009CABAA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EFD7B5181F5EC45900520DD8 /* GameCenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+		EFD7B51A1F5ECA0400520DD8 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		EFD952571F49D9DB00014315 /* RemindUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindUser.swift; sourceTree = "<group>"; };
 		EFDFB4081F42120E00948FC0 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		EFDFB40A1F42128600948FC0 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = "../../../Library/Developer/Xcode/DerivedData/Calculator-bcbihpefbgxlnlbsmiematyvkhkt/Build/Products/Debug-iphoneos/FacebookCore/FacebookCore.framework"; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFD7B51B1F5ECA0400520DD8 /* GameKit.framework in Frameworks */,
 				EF7BD3B11F41CC71002ABFEE /* StoreKit.framework in Frameworks */,
 				902470D07D37C65AB85E5F0A /* Pods_Calculator.framework in Frameworks */,
 			);
@@ -230,13 +235,13 @@
 		8184B1D41F2F1A0B00156D2E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				EF5293371F41F8C10029E26C /* InAppManager.swift */,
 				EF183C9A1F376E59009CF97B /* PressableButton.swift */,
 				EF183C9B1F376E59009CF97B /* Utils.swift */,
 				8184B1A41F2F164A00156D2E /* AppDelegate.swift */,
 				8184B1B01F2F164B00156D2E /* Info.plist */,
 				8184B1D51F2F1A1900156D2E /* Constant.swift */,
 				8184B1DE1F2F20BE00156D2E /* Extension.swift */,
+				EFD7B51C1F5EEAC600520DD8 /* Managers */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 		EF7BD3AF1F41CC71002ABFEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFD7B51A1F5ECA0400520DD8 /* GameKit.framework */,
 				EFDFB40C1F42129700948FC0 /* FBSDKCoreKit.framework */,
 				EFDFB40A1F42128600948FC0 /* FacebookCore.framework */,
 				EFDFB4081F42120E00948FC0 /* FBSDKShareKit.framework */,
@@ -320,6 +326,15 @@
 				B919911FC0E7DA2F17B5085E /* Pods_CalculatorUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFD7B51C1F5EEAC600520DD8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EFD7B5181F5EC45900520DD8 /* GameCenterManager.swift */,
+				EF5293371F41F8C10029E26C /* InAppManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +419,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
+							};
+							com.apple.GameCenter = {
+								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -635,6 +653,7 @@
 				8184B1F91F30C2A800156D2E /* ResultView.swift in Sources */,
 				8184B1A71F2F164A00156D2E /* MainMenuViewController.swift in Sources */,
 				EF7BD3AB1F40A7DC002ABFEE /* MoreViewController.swift in Sources */,
+				EFD7B5191F5EC45900520DD8 /* GameCenterManager.swift in Sources */,
 				8184B1EF1F2F34A700156D2E /* GetSetGoView.swift in Sources */,
 				EF183C9C1F376E59009CF97B /* PressableButton.swift in Sources */,
 				EF5293381F41F8C10029E26C /* InAppManager.swift in Sources */,
