@@ -51,6 +51,7 @@ class MainMenuViewController: UIViewController {
         }
         if shouldRepeat {
             do {
+                print("test sound check \(UserDefaults.checkMute(key: "mute"))")
                 audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:Bundle.main.path(forResource: "Winding_Down", ofType: "mp3")!))
                 try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
                 try AVAudioSession.sharedInstance().setActive(true)
