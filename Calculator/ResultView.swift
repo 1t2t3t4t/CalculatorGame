@@ -61,7 +61,13 @@ class ResultView: UIView {
        let firstActivityItem = "I've got \(score) out of 60 in 60 seconds. How much will you get? Let's find out!\nDownload 60:60 now."
         let secondActivityItem : NSURL = NSURL(string: "https://itunes.apple.com/us/app/60-60/id1273603001")!
         viewForResult.backgroundColor = UIColor(red: 227/255, green: 220/255, blue: 208/255, alpha: 1)
-        let image : UIImage = viewForResult.asImage()
+        var image : UIImage = UIImage() //viewForResult.asImage()
+        if twoPlayer {
+            image = gameObjectTwoPlayer.view.asImage(boundsValue: CGRect(x: 0, y: 0, width: gameObjectTwoPlayer.view.frame.width, height: gameObjectTwoPlayer.view.frame.height))
+        }
+        else {
+            image = gameObjectOnePlayer.view.asImage(boundsValue: CGRect(x: 0, y: 0, width: gameObjectOnePlayer.view.frame.width, height: gameObjectOnePlayer.view.frame.height-(gameObjectOnePlayer.bannerView?.frame.height)!))
+        }
         
         let activityViewController : UIActivityViewController = UIActivityViewController(
             activityItems: [firstActivityItem, secondActivityItem,image], applicationActivities: nil)

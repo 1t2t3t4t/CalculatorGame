@@ -147,7 +147,7 @@ extension MainMenuViewController:GADBannerViewDelegate {
         bannerView?.adUnitID = "ca-app-pub-1801504340872159/5814595704"
         bannerView?.rootViewController = self
         let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
+        //request.testDevices = [ kGADSimulatorID,"a8c6dfd7defadef3d2b95f64936479e5","86d4d9ee8f8969e52e74a106e72a5d54" ]
         bannerView?.load(request)
     }
     

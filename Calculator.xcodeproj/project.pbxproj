@@ -73,7 +73,7 @@
 		3354A0AE6A7A670D8B52D9D3 /* Pods_CalculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AAA5210D6D282F45F54C58 /* Pods_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CC160CADC49FE6F8EA0F3A /* Pods-CalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorUITests/Pods-CalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8184B1A11F2F164A00156D2E /* 60:60.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "60:60.app"; path = 60vs60.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8184B1A11F2F164A00156D2E /* 60vs60.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 60vs60.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8184B1A41F2F164A00156D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8184B1A61F2F164A00156D2E /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		8184B1AB1F2F164B00156D2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		8184B1A21F2F164A00156D2E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8184B1A11F2F164A00156D2E /* 60:60.app */,
+				8184B1A11F2F164A00156D2E /* 60vs60.app */,
 				8184B1B51F2F164B00156D2E /* CalculatorTests.xctest */,
 				8184B1C01F2F164B00156D2E /* CalculatorUITests.xctest */,
 			);
@@ -357,7 +357,7 @@
 			);
 			name = Calculator;
 			productName = Calculator;
-			productReference = 8184B1A11F2F164A00156D2E /* 60:60.app */;
+			productReference = 8184B1A11F2F164A00156D2E /* 60vs60.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8184B1B41F2F164B00156D2E /* CalculatorTests */ = {

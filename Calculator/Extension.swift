@@ -58,8 +58,8 @@ extension UIView {
     class var view: UIView {
         return Bundle.main.loadNibNamed(String(describing: self), owner: self, options: nil)?[0] as! UIView
     }
-    func asImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+    func asImage(boundsValue:CGRect) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds:boundsValue)
         return renderer.image { rendererContext in
             layer.render(in: rendererContext.cgContext)
         }
