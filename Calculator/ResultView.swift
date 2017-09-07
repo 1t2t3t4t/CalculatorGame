@@ -36,6 +36,7 @@ class ResultView: UIView {
         self.resultField.layer.borderWidth = 3.0
         self.resultField.layer.cornerRadius = 10.0
         self.resultField.contentInset = UIEdgeInsetsMake(10, 0, 0, 0)
+        
     }
     
     var results:String! {

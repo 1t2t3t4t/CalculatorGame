@@ -816,7 +816,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
 				);
 				INFOPLIST_FILE = Calculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stella.sixtysixty;
 				PRODUCT_NAME = 60vs60;
@@ -837,7 +837,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
 				);
 				INFOPLIST_FILE = Calculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stella.sixtysixty;
 				PRODUCT_NAME = 60vs60;

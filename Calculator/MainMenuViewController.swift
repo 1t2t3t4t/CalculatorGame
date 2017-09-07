@@ -53,6 +53,11 @@ class MainMenuViewController: UIViewController {
         self.numberTextField.layer.cornerRadius = 5.0
         self.numberTextField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
         self.numberTextField.layer.borderWidth = 3.0
+        //self.numberTextField.font = UIFont.font_autoAdjust(60)
+        if UIDevice.deviceType == .iPhone4_4s {
+            self.bestScore.font = UIFont.font_autoAdjust(17)
+            self.numberTextField.font = UIFont.font_autoAdjust(58)
+        }
         
         self.bestScore.adjustsFontSizeToFitWidth = true
         self.bestScore.minimumFontSize = 10
@@ -74,7 +79,7 @@ class MainMenuViewController: UIViewController {
                 try AVAudioSession.sharedInstance().setActive(true)
                 audioPlayer.numberOfLoops = -1
                 audioPlayer.prepareToPlay()
-                if UserDefaults.checkMute(key: "mute") {
+                if UserDefaults.checkMute(key: "mute"){
                     audioPlayer.volume = 0.0
                 }
                 audioPlayer.play()

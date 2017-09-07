@@ -294,14 +294,20 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
     
         UserDefaults.standard.set(true, forKey: kDidRateVersion)
         let appStoreURL = URL(string:reviewURL+appID)
-        UIApplication.shared.open(appStoreURL!, options:[:], completionHandler: { (success) in
-            if success {
-                print("rate")
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(appStoreURL!, options:[:], completionHandler: { (success) in
+                if success {
+                    print("rate")
+                }
+                else{
+                    print("rate error")
+                }
+            })
+        } else {
+            if UIApplication.shared.canOpenURL(appStoreURL!) {
+                UIApplication.shared.openURL(appStoreURL!)
             }
-            else{
-                print("rate error")
-            }
-        })
+        }
         
     }
     

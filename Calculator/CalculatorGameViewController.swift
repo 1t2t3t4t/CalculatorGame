@@ -34,7 +34,6 @@ class CalculatorGameViewController: UIViewController {
         self.numberTextField.layer.cornerRadius = 5.0
         self.numberTextField.layer.borderColor = UIColor(red: 56/255.0, green: 60/255.0, blue: 64/255.0, alpha: 1).cgColor
         self.numberTextField.layer.borderWidth = 3.0
-        
         backButton.colors = .init(button: UIColor(red: 70/255.0, green: 73/255.0, blue: 76/255.0, alpha: 1), shadow: UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1))
        self.numberTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,0,0)
         
@@ -138,12 +137,15 @@ class CalculatorGameViewController: UIViewController {
         GameCenterManager.sharedInstance.saveHighscore(number: self.viewModel.player.score)
         self.viewModel.checkBestScore(score: self.viewModel.player.score)
         let resultView = ResultView.view as! ResultView
+        
         resultView.frame = self.view.frame
         resultView.delegate = self
         resultView.results = message
         resultView.gameObjectOnePlayer = self
         resultView.score = self.viewModel.player.score
         resultView.smallView.layer.cornerRadius = 10.0
+            resultView.resultField.textAlignment = .center
+            resultView.resultField.font = UIFont(name: "Digital-7", size: 60.0)
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
         if UserDefaults.checkPurchase(key: "purchase") == nil && interstitial != nil {

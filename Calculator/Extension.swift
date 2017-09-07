@@ -59,12 +59,24 @@ extension UIView {
         return Bundle.main.loadNibNamed(String(describing: self), owner: self, options: nil)?[0] as! UIView
     }
     func asImage(boundsValue:CGRect) -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds:boundsValue)
-        return renderer.image { rendererContext in
-            layer.render(in: rendererContext.cgContext)
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(bounds:boundsValue)
+            return renderer.image { rendererContext in
+                layer.render(in: rendererContext.cgContext)}
+        }
+        else {
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: boundsValue.width, height: boundsValue.height), false, UIScreen.main.scale)
+            
+            drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+            
+            let image = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            return image
+        }
+
         }
     }
-}
+
 
 extension UserDefaults {
     
@@ -127,6 +139,7 @@ extension UIApplication {
 }
 
 extension UIFont {
+    
     class func font_autoAdjust(_ size : CGFloat) -> UIFont {
         return UIFont(name: "Digital-7", size: size)!
     }
@@ -168,6 +181,7 @@ extension UIDevice {
         }
         return false
     }
+    
 }
 
 extension Int{

@@ -38,10 +38,26 @@ class TwoPlayersGameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("hello my love \(UIScreen.main.nativeBounds.size.height)")
         self.playerOneTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,3,0)
-        
+         self.playerTwoTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,3, 0)
+        if UIDevice.isPadPro105 {
+            self.playerOneTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,2,0)
+            self.playerTwoTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,2, 0)
+             self.playerOneTextField.font = UIFont(name: "Digital-7", size: 42)
+             self.playerTwoTextField.font = UIFont(name: "Digital-7", size: 42)
+        }
+        else if UIDevice.deviceType == .iPhone4_4s {
+            self.playerOneTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,1,0)
+            self.playerTwoTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,1, 0)
+            self.playerOneTextField.font = UIFont(name: "Digital-7", size: 38)
+            self.playerTwoTextField.font = UIFont(name: "Digital-7", size: 38)
+            
+        }
+       
         self.playerTwoTextField.transform =  CGAffineTransform(rotationAngle: CGFloat.pi)
-        self.playerTwoTextField.layer.sublayerTransform = CATransform3DMakeTranslation(-10,3, 0)
+       
+       
         self.playerTwoTextField.layer.removeAllAnimations()
         
         self.timerLabelPlayerTwo.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
@@ -222,13 +238,15 @@ class TwoPlayersGameViewController: UIViewController {
     func gameFinished() {
         let resultView = ResultView.view as! ResultView
         resultView.delegate = self
-        resultView.resultField.font = UIFont(name: "Digital-7MonoItalic", size: 28.0)
+        
         
         resultView.results = self.viewModel.resultMessage
         resultView.frame = self.view.frame
         resultView.gameObjectTwoPlayer = self
         resultView.twoPlayer = true
         resultView.smallView.layer.cornerRadius = 10.0
+        resultView.resultField.textAlignment = .center
+        resultView.resultField.font = UIFont(name: "Digital-7", size: 28.0)
         resultView.smallView.layer.masksToBounds = true
         self.view.addSubview(resultView)
         if UserDefaults.checkPurchase(key: "purchase") == nil && interstitial != nil {
